@@ -1,9 +1,9 @@
-16:01:22 **** Incremental Build of configuration Release for project Routenplaner ****
+16:28:48 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../hilfsklassen/Aktualitaet.cpp
+Building file: ../Hello.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hilfsklassen/Aktualitaet.d" -MT"hilfsklassen/Aktualitaet.d" -o "hilfsklassen/Aktualitaet.o" "../hilfsklassen/Aktualitaet.cpp"
-Finished building: ../hilfsklassen/Aktualitaet.cpp
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker

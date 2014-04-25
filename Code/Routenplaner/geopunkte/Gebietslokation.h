@@ -28,12 +28,16 @@ private:
 	 * In der Hierarchie folgende Lokationen verweisen auf diese Id.
 	 */
 	int id;
+
+
 	/**
 	 * Der Grob Typ einer Lokation gibt an, um weche Lokation es sich handelt.
 	 * Er ist nur mit einem Buchstaben gekennzeichnet. Dieser Buchstabe ist im Fall
 	 * der Gebietslokation immer A.
 	 */
 	char typBuchstabe;
+
+
 	/**
 	 * Zur Beschriebung der Lokation geh&ouml;rt eine Zahl. Die Zahl beschreit, um welche
 	 * Lokation es sich handelt.<br>
@@ -55,6 +59,8 @@ private:
 	 * verwendet.
 	 */
 	int typZahl;
+
+
 	/**
 	 * Der feinTyp beschreibt den Typ einer Lokation genauer. <br>
 	 * Der Typ A5 beispielsweise steht f&uuml;r ein Gew&auml;sser. Wird das Gew&auml;sser
@@ -62,6 +68,13 @@ private:
 	 * Binnensee.
 	 */
 	int feinTyp;
+
+	/**
+	 * Der Name der Location.<br>
+	 * Bsp.:Deutschland
+	 */
+	string firstName;
+
 	/**
 	 * Dieses Attribut gibt an, welches Bundesland für die Bearbeitung zuständig ist.
 	 * Dieses Attribut wird im aktuellen Release nicht genutzt, ist aber dennoch der

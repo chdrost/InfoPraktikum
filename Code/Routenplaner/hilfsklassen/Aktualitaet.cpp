@@ -8,13 +8,13 @@
 #include "Aktualitaet.h"
 
 Aktualitaet::Aktualitaet() {
-	initTime(0,0,0,0,0,0);
+	initTime(0, 0, 0, 0, 0, 0);
 
 }
 
 Aktualitaet::Aktualitaet(int tag, int monat, int jahr, int stunde, int minute,
 		int sekunde) {
-	initTime(tag,monat, jahr, stunde, minute,sekunde);
+	initTime(tag, monat, jahr, stunde, minute, sekunde);
 }
 
 Aktualitaet::Aktualitaet(std::string zeit) {
@@ -25,7 +25,7 @@ Aktualitaet::Aktualitaet(std::string zeit) {
 	int monat = 0;
 	int jahr = 0;
 	datumEinlesen(&sekunde, &minute, &stunde, &tag, &monat, &jahr, zeit);
-	initTime(tag,monat, jahr, stunde, minute,sekunde);
+	initTime(tag, monat, jahr, stunde, minute, sekunde);
 }
 
 Aktualitaet::~Aktualitaet() {
@@ -94,13 +94,13 @@ void Aktualitaet::datumEinlesen(int* sekunde, int* minute, int* stunde,
 
 void Aktualitaet::initTime(int tag, int monat, int jahr, int stunde, int minute,
 		int sekunde) {
-		this->zeit = new tm;
-		this->zeit->tm_sec = sekunde;
-		this->zeit->tm_min = minute;
-		this->zeit->tm_hour = stunde;
-		this->zeit->tm_mday = tag;
-		this->zeit->tm_mon = monat;
-		this->zeit->tm_year = jahr;
+	this->zeit = new tm;
+	this->zeit->tm_sec = sekunde;
+	this->zeit->tm_min = minute;
+	this->zeit->tm_hour = stunde;
+	this->zeit->tm_mday = tag;
+	this->zeit->tm_mon = monat;
+	this->zeit->tm_year = jahr;
 }
 
 void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
@@ -108,20 +108,24 @@ void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
 	string fehler = "";
 	int fehlerAnzahl = 0;
 	if (checkSekunde(sekunde)) {
-		fehler += "Die Sekunden muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
+		fehler +=
+				"Die Sekunden muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
 		fehlerAnzahl++;
 	}
 	if (checkMinute(minute)) {
-		fehler += "Die Minuten muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
+		fehler +=
+				"Die Minuten muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
 	}
 	if (checkStunde(stunde)) {
-		fehler += "Die Stunden muessen 0>= sekunde <24 sein! Eingelesen wurde: \n";
+		fehler +=
+				"Die Stunden muessen 0>= sekunde <24 sein! Eingelesen wurde: \n";
 	}
 	if (checkTag(tag)) {
 		fehler += "Die Tage muessen 0>= sekunde <32 sein! Eingelesen wurde: \n";
 	}
 	if (checkMonat(monat)) {
-		fehler += "Die Monate muessen 0>= sekunde <13 sein! Eingelesen wurde: \n";
+		fehler +=
+				"Die Monate muessen 0>= sekunde <13 sein! Eingelesen wurde: \n";
 	}
 	if (checkJahr(jahr)) {
 		fehler += "Unbekannter Fehler im Jahr!\n+ Eingelesen wurde: \n";
@@ -131,4 +135,13 @@ void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
 	if (fehlerAnzahl) {
 		throw new ZeitException(fehler.c_str());
 	}
+}
+
+string Aktualitaet::toString(void) {
+	stringstream erg;
+	//TODO Hierfuer noch ne schoene Fkt. finden
+	erg << zeit->tm_mday << "." << zeit->tm_mon << "." << zeit->tm_year << " "
+			<< zeit->tm_hour << ":"<<
+	zeit->tm_min << ":" << zeit->tm_sec;
+	return erg.str();
 }

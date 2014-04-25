@@ -1,0 +1,17 @@
+/*
+ * ReaderMain.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef READERMAIN_H_
+#define READERMAIN_H_
+
+class ReaderMain {
+public:
+	ReaderMain();
+	virtual ~ReaderMain();
+};
+
+#endif /* READERMAIN_H_ */

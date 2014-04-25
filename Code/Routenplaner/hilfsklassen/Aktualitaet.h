@@ -10,6 +10,7 @@
 
 #include<time.h>
 #include<string>
+#include <sstream>
 #include "./../exceptions/ZeitException.h"
 
 using namespace std;
@@ -135,6 +136,12 @@ public:
 	 */
 	void ckeckDatum(int tag, int monat, int jahr, int stunde, int minute,
 			int sekunde) throw (ZeitException);
+
+	/**
+	 * Diese Methode gibt das Datum wieder in der Form aus, in der es in der Datei steht.
+	 * @return Das Datum in der Form, wie es in die Datei geh&ouml;rt.
+	 */
+	string toString(void);
 };
 
 #endif /* AKTUALITAET_H_ */

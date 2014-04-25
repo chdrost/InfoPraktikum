@@ -8,6 +8,8 @@
 #ifndef HELLO_H_
 #define HELLO_H_
 
+#include "./hilfsklassen/Aktualitaet.h"
+
 class Hello {
 public:
 	Hello();

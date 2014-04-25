@@ -1,0 +1,20 @@
+/*
+ * FileOpener.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef FILEOPENER_H_
+#define FILEOPENER_H_
+
+/**
+ * Diese Klasse &ouml;ffnet eine Datei.<br>
+ */
+class FileOpener {
+public:
+	FileOpener();
+	virtual ~FileOpener();
+};
+
+#endif /* FILEOPENER_H_ */
