@@ -1,0 +1,17 @@
+/*
+ * FileNotFoundException.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef FILENOTFOUNDEXCEPTION_H_
+#define FILENOTFOUNDEXCEPTION_H_
+
+class FileNotFoundException {
+public:
+	FileNotFoundException();
+	virtual ~FileNotFoundException();
+};
+
+#endif /* FILENOTFOUNDEXCEPTION_H_ */

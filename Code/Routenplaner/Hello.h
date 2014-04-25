@@ -9,6 +9,8 @@
 #define HELLO_H_
 
 #include "./hilfsklassen/Aktualitaet.h"
+#include "./reader/FileOpener.h"
+#include <vector>
 
 class Hello {
 public:

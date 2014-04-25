@@ -1,4 +1,4 @@
-16:28:48 **** Incremental Build of configuration Release for project Routenplaner ****
+20:14:03 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
 Building file: ../Hello.cpp
 Invoking: Cross G++ Compiler
@@ -7,9 +7,9 @@ Finished building: ../Hello.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./hilfsklassen/Aktualitaet.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/Punktlokation.o  ./exceptions/ZeitException.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-16:28:49 Build Finished (took 467ms)
+20:14:03 Build Finished (took 516ms)
 

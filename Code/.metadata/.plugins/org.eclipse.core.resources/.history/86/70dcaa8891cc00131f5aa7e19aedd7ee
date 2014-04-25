@@ -1,0 +1,29 @@
+/*
+ * FileOpener.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "FileOpener.h"
+
+FileOpener::FileOpener() {
+}
+
+FileOpener::~FileOpener() {
+	if(datei != NULL){
+		fclose(datei);
+	}
+}
+
+void FileOpener::oeffneDatei(const char* adresse) {
+	ifstream FileTest("testdatei.txt");
+	if(!FileTest){
+		throw FileNotFoundException());
+	}
+	//Die Datei kann nur ausgelesen werden
+	FILE datei = fopen (adresse,"r");
+}
+
+void FileOpener::leseDateiAus() {
+}
