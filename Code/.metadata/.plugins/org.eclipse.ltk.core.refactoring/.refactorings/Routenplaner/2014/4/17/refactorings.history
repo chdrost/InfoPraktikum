@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Routenplaner/geopunkte/Gebiet.cpp&apos; to &apos;Gebietslokation.cpp&apos;" description="Rename resource &apos;Gebiet.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="geopunkte/Gebiet.cpp" name="Gebietslokation.cpp" stamp="1398413284499" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Routenplaner/geopunkte/Gebiet.h&apos; to &apos;Gebietslokation.h&apos;" description="Rename resource &apos;Gebiet.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="geopunkte/Gebiet.h" name="Gebietslokation.h" stamp="1398413906374" updateReferences="true"/>
+</session>

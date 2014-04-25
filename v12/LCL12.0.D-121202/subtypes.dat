@@ -1,0 +1,89 @@
+CLASS;TCD;STCD;SDESC;SNATCODE;SNATDESC
+A;5;2;lake;2;Binnensee
+A;6;1;Tourist area;1;touristisches Gebiet
+A;6;2;Metropolitan Area;2;Ballungsraum
+A;6;3;Industrial area;3;Industrieregion
+A;6;4;Traffic area;4;Verkehrsgebiet
+A;6;5;Meterological area;5;meterologisches Gebiet
+A;6;7;Park and ride site;7;Park + Ride Bereich
+A;6;8;Car park area;8;Parkzone
+A;9;1;Rural county;1;Kreis/Landkreis
+A;9;2;Urban county;2;Kreisfreie Stadt
+L;1;1;Motorway;1;Autobahn
+L;1;2;1st class Road;2;Bundesstraße
+L;1;3;2nd class Road;3;Landes- oder Staatsstraße
+L;1;4;3rd class Road;4;Kreisstraße
+L;2;1;Ring motorway;1;Autobahnring
+L;2;2;Other ring road;2;Ringstraße
+L;6;1;Ferry;1;Fährverbindung
+L;6;2;Vehicular rail link;2;Autoreisezugverbindung
+P;1;1;Motorway intersection;1;Autobahnkreuz
+P;1;2;Motorway triangle;2;Autobahndreieck
+P;1;3;Motorway junction;3;Autobahnanschlussstelle
+P;1;4;Motorway exit;4;Autobahnausfahrt
+P;1;5;Motorway entrance;5;Autobahnauffahrt
+P;1;6;Flyover;6;Überführung
+P;1;7;Underpass;7;Unterführung
+P;1;8;Roundabout;8;Kreisverkehr
+P;1;9;Gyratory;9;Kreisführung um Plätze
+P;1;10;Traffic lights;10;Ampelkreuzung
+P;1;11;Cross road;11;Kreuzung
+P;1;12;T-junction;12;Einmündung
+P;1;13;Intermediate node;13;Übergang
+P;1;14;Connection;14;Verbindungsstraße
+P;1;15;Exit;15;Anschlussstelle
+P;2;1;Distance marker;1;Streckenmarke
+P;3;1;Tunnel;1;Tunnel
+P;3;2;Bridge;2;Brücke
+P;3;3;Service area;3;Raststätte
+P;3;4;Rest area;4;Rastplatz
+P;3;5;View point;5;Aussichtspunkt
+P;3;7;Park and ride site;7;P&R-Parkplatz
+P;3;8;Car park;8;Parkplatz
+P;3;9;Kiosk;9;Parkplatz mit Kiosk
+P;3;10;Kiosk with WC;10;Parkplatz mit Kiosk & WC
+P;3;11;Petrol station;11;Tankstelle
+P;3;12;Petrol station with kiosk;12;Tankstelle mit Kiosk
+P;3;14;Border/frontier;14;Grenzübergang
+P;3;15;Customs post;15;Zollstation
+P;3;16;Toll plaza;16;Mautstation
+P;3;17;Ferry terminal;17;Fähranleger
+P;3;18;Harbour;18;Hafen
+P;3;19;Square;19;Platz
+P;3;20;Fair;20;Marktplatz/Festplatz
+P;3;21;Garage;21;Parkhaus
+P;3;23;Retail park;23;Einkaufszentrum
+P;3;24;Theme park;24;Freizeitpark
+P;3;25;Tourist attraction;25;Sehenswürdigkeit
+P;3;27;Airport;27;Flughafen
+P;3;28;Station;28;Bahnhof
+P;3;29;Hospital;29;Krankenhaus
+P;3;30;Church;30;Kirche
+P;3;31;Stadium;31;Stadion
+P;3;33;Castle;33;Burg
+P;3;35;Exhibition/convention centre;35;Messe-/Kongresszentrum
+P;3;37;Place name;37;benannter Punkt
+P;3;38;Dam;38;Damm
+P;3;39;Dike;39;Deich
+P;3;41;Lock;41;Schleuse
+P;3;42;Mountain crossing/pass;42;Pass
+P;3;43;Railroad crossing;43;Bahnübergang
+P;3;45;Ferry;45;Fähre
+P;3;46;Industrial area;46;Industriegebiet
+P;3;47;Viaduct;47;Viadukt
+P;5;1;Underground parking garage;1;Tiefgarage
+P;5;2;Car park;2;Parkplatz
+P;5;3;Parking garage;3;Parkhaus
+P;5;5;Park and ride side;5;P&R-Parkplatz
+P;5;6;Rest area parking;6;Rastplatz
+P;6;4;Tunnel;4;Tunnel
+P;6;5;Bridge;5;Brücke
+P;6;6;Ferry;6;Fähre
+P;6;7;Square;7;Platz
+P;6;8;Fair;8;Marktplatz/Festplatz
+P;6;9;Retail park;9;Einkaufszentrum
+P;6;10;Theme park;10;Freizeitpark
+P;6;11;Tourist attraction;11;Sehenswürdigkeit
+P;6;12;Stadium;12;Stadion
+P;6;13;Exhibition/convention centre;13;Messe/Kongresszentrum
+P;6;14;Place name;14;Benannter Punkt

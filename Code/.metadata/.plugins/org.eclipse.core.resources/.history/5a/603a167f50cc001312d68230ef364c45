@@ -1,0 +1,17 @@
+/*
+ * Gebiet.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef GEBIET_H_
+#define GEBIET_H_
+
+class Gebiet {
+public:
+	Gebiet();
+	virtual ~Gebiet();
+};
+
+#endif /* GEBIET_H_ */

@@ -1,0 +1,25 @@
+/*
+ * Gebiet.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef GEBIET_H_
+#define GEBIET_H_
+
+/**
+ * Diese Klasse stellt ein Gebiet dar. Gebiete sind laut der Dokumentation des Bundesamtes
+ */
+class Gebiet {
+public:
+	Gebiet();
+	virtual ~Gebiet();
+
+private:
+		int id;
+		char grobTyp;
+		int feinTyp;
+};
+
+#endif /* GEBIET_H_ */

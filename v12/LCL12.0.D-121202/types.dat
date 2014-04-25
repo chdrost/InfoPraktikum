@@ -1,0 +1,21 @@
+CLASS;TCD;TDESC;TNATCD;TNATDESC
+A;1;Continent;1;Kontinent
+A;3;Country;3;Land
+A;5;Water area;5;Gew‰sser
+A;6;Fuzzy area;6;Gebiet (allgemein)
+A;7;Order 1 area;7;Bundesland
+A;8;Order 2 area;8;Regierungsbezirk
+A;9;Order 3 area;9;Kreis/kreisfreie Stadt
+A;10;Order 4 area;10;Gemeinde/Stadt
+A;11;Order 5 area;11;Gemeindeteil
+A;12;Application region;12;Teilgebiet
+L;1;Road;1;Straﬂe
+L;2;Ring road;2;Ringstraﬂe
+L;3;Order 1 segment;3;Segment 1. Ordnung
+L;5;Urban street;5;Stadt-/Gemeindestraﬂe
+L;6;Vehicular link;6;Verkehrsverbindung
+P;1;Junction;1;Knotenpunkt
+P;2;Intermediate point;2;Zwischenpunkt
+P;3;Other landmark point;3;Sonstiger Orientierungspunkt
+P;5;Parking POI;5;Isolierte Parken-POI
+P;6;Other isolated POI;6;Sonstige isolierte POI
