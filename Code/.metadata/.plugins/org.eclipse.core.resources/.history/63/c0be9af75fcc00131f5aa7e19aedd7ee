@@ -1,0 +1,39 @@
+/*
+ * Zeit.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef ZEIT_H_
+#define ZEIT_H_
+#include <time.h>
+/**
+ * Diese Klasse soll den Umgang mit dem Time Struct vereinfachen und angenehmer machen.
+ */
+class Zeit {
+public:
+	/**
+	 * Dieser Konstruktor dient lediglich dem Konstruieren eines Objekts, wenn der Datensatz
+	 * keinen Wert f&uuml;r seine Aktualit&auml;t vorgibt.<br>
+	 * Standardm&auml;&szlig wird mit der Unixzeit(0) initialisiert.
+	 */
+	Zeit();
+	/**
+	 * Dieser Konstruktor enth&auml;lt alle Parameter, die zur Speicherung der Aktualit&auml;t
+	 * ben&ouml;tigt werden.
+	 * @param tag Der Tag im Monat (1-31).
+	 * @param monat Der Monat im Jahr (1-12).
+	 * @param jahr Das Jahr (Zahlenwert, nur durch die Grenzen des Integer begrenzt).
+	 * @param stunde (Die Stunde 0-24).
+	 * @param minute (0-60).
+	 * @param sekunde (0-60).
+	 */
+	Zeit(int tag, int monat, int jahr, int stunde, int minute, int sekunde);
+	Zeit(int tag, int monat, int jahr, int stunde, int minute);
+	virtual ~Zeit();
+private:
+	tm zeitStruct;
+};
+
+#endif /* ZEIT_H_ */

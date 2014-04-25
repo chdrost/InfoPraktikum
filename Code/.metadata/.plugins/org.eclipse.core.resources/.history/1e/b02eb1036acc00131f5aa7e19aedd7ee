@@ -1,0 +1,77 @@
+/*
+ * Aktualitaet.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "Aktualitaet.h"
+
+Aktualitaet::Aktualitaet() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Aktualitaet::~Aktualitaet() {
+	// TODO Auto-generated destructor stub
+}
+
+int Aktualitaet::checkSekunde(int sekunde) {
+	if(sekunde < 0 || sekunde > 59){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int Aktualitaet::checkMinute(int minute) {
+	checkSekunde(minute);
+}
+
+int Aktualitaet::checkStunde(int stunde) {
+	if(stunde < 0 || stunde > 23){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int Aktualitaet::checkTag(int tag) {
+	if(tag < 0 || tag > 31){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int Aktualitaet::checkMonat(int monat) {
+	if(monat< 0 || monat > 12){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int Aktualitaet::checkJahr(int jahr) {
+	// Wird nicht benoetigt
+	return 0;
+}
+
+void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
+		int minute, int sekunde) throw (ZeitException) {
+	string fehler = "";
+	int fehlerAnzahl = 0;
+	if(checkSekunde(sekunde)){
+		fehler += "Die Sekunden muessen 0>= sekunde <60 sein!\n";
+		fehlerAnzahl++;
+	}
+	if(checkMinute(minute)){
+		fehler+= "Die Minuten muessen 0>= sekunde <60 sein!\n";
+	}
+	if(checkStunde(stunde)){
+			fehler+= "Die Stunden muessen 0>= sekunde <24 sein!\n";
+		}
+	if(checkTag(tag)){
+			fehler+= "Die Tage muessen 0>= sekunde <32 sein!\n";
+		}
+}

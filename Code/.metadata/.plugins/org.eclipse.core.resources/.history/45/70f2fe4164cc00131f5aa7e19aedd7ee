@@ -1,0 +1,46 @@
+/*
+ * ZeitException.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "ZeitException.h"
+
+ZeitException::ZeitException() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ZeitException::~ZeitException() {
+	// TODO Auto-generated destructor stub
+}
+
+int ZeitException::checkSekunde(int sekunde) {
+	if(sekunde < 0 || sekunde > 59){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int ZeitException::checkMinute(int minute) {
+	checkSekunde(minute);
+}
+
+int ZeitException::checkStunde(int stunde) {
+	if(stunde < 0 || stunde > 23){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int ZeitException::checkTag(int tag) {
+}
+
+int ZeitException::checkMonat(int monat) {
+}
+
+int ZeitException::checkJahr(int jahr) {
+}

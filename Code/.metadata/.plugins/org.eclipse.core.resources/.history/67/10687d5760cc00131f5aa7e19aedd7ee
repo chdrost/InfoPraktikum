@@ -1,0 +1,17 @@
+/*
+ * Aktualitaet.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef AKTUALITAET_H_
+#define AKTUALITAET_H_
+
+class Aktualitaet {
+public:
+	Aktualitaet();
+	virtual ~Aktualitaet();
+};
+
+#endif /* AKTUALITAET_H_ */

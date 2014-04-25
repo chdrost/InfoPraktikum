@@ -1,0 +1,89 @@
+/*
+ * ZeitException.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef ZEITEXCEPTION_H_
+#define ZEITEXCEPTION_H_
+#include <exception>
+/**
+ * Diese Exception wird geworfen, wenn Fehler in der Umwandlung von Zeiten auftreten.<br>
+ * Weiterhin sind hier auch Methoden enthalten, die diese Pr&uuml;fung durchf&uumhren.<br>
+ * Die Pr&uuml;fmethoden geben im Fehlerfall eine 1 zur&uuml;ck. Wenn alles I.O. ist, eine
+ * 0.
+ */
+class ZeitException: public std::exception {
+public:
+	ZeitException();
+	virtual ~ZeitException();
+	/**
+	 * Methode, die den Grund der Exception zur&uuml;ck gibt.
+	 * @return Den Grund des Fehlers.
+	 */
+	const char * what () const throw ()
+	  {
+	    return "Bei der Ueberpruefung der Zeiten ist ein Fehler festgestellt worden.";
+	  }
+
+
+	/**
+	 * Pr&uml;ft, ob die Sekundenangabe ein plausibler Wert ist. Es werden nur 0>= Werte <60
+	 * akzeptiert.
+	 * @param sekunde Die Anzahl der Sekunden.
+	 * @return 0, wenn i.O. 1, wenn Fehler.
+	 */
+private:
+	int checkSekunde(int sekunde);
+	/**
+		 * Pr&uml;ft, ob die Minutenangabe ein plausibler Wert ist. Es werden nur 0>= Werte <60
+		 * akzeptiert.
+		 * @param stunde Die Anzahl der Minuten.
+		 * @return 0, wenn i.O. 1, wenn Fehler.
+		 */
+	int checkMinute(int sekunde);
+	/**
+		 * Pr&uml;ft, ob die Stundenangabe ein plausibler Wert ist. Es werden nur 0>= Werte <24
+		 * akzeptiert.
+		 * @param stunde Die Anzahl der Stunden.
+		 * @return 0, wenn i.O. 1, wenn Fehler.
+		 */
+	int checkStunde(int stunde);
+	/**
+		 * Pr&uml;ft, ob die Tagesangabe ein plausibler Wert ist. Es werden nur 0>= Werte <32
+		 * akzeptiert.
+		 * @param tag Die Anzahl der Tage (vgl. Kalender).
+		 * @return 0, wenn i.O. 1, wenn Fehler.
+		 */
+	int checkTag(int tag);
+	/**
+		 * Pr&uml;ft, ob die Monatsangabe ein plausibler Wert ist. Es werden nur 0>= Werte <13
+		 * akzeptiert.
+		 * @param sekunde Die Anzahl der Monate (Bsp. 1 f&uuml;r Januar).
+		 * @return 0, wenn i.O. 1, wenn Fehler.
+		 */
+	int checkMonat(int monat);
+	/**
+		Aktuell nicht implementiert.
+		 * @param sekunde Die Jahreszahl.
+		 * @return 0, immer 0.
+		 */
+	int checkJahr(int jahr);
+
+public:
+	/**
+	 * Diese Methode pr&uuml;ft die &uuml;bergebenen Werte auf ihre Plausibilit&auml;t.
+	 * Hierzu werden die einzelnen "check" Methoden aufgerufen.
+	 * @param tag
+	 * @param monat
+	 * @param jahr
+	 * @param stunde
+	 * @param minute
+	 * @param sekunde
+	 */
+	void ckeckDatum(int tag, int monat, int jahr, int stunde, int minute,
+			int sekunde) throw(ZeitException);
+};
+
+#endif /* ZEITEXCEPTION_H_ */

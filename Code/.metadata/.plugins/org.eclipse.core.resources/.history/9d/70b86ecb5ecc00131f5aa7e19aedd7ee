@@ -1,0 +1,17 @@
+/*
+ * Zeit.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef ZEIT_H_
+#define ZEIT_H_
+
+class Zeit {
+public:
+	Zeit();
+	virtual ~Zeit();
+};
+
+#endif /* ZEIT_H_ */

@@ -8,6 +8,10 @@
 #ifndef GEBIET_H_
 #define GEBIET_H_
 
+#include <string>
+using namespace std;
+
+
 /**
  * Diese Klasse stellt ein Gebiet dar. Gebietslokationen sind laut der Dokumentation
  * des Bundesamtes mit einem "A" gekennzeichnet. Sie definieren grobe Gebiete,
@@ -58,6 +62,14 @@ private:
 	 * Binnensee.
 	 */
 	int feinTyp;
+	/**
+	 * Dieses Attribut gibt an, welches Bundesland für die Bearbeitung zuständig ist.
+	 * Dieses Attribut wird im aktuellen Release nicht genutzt, ist aber dennoch der
+	 * Vollst&auml;ndigkeit halber enthalten.
+	 */
+	string adminBundesLand;
+
+
 };
 
 #endif /* GEBIET_H_ */
