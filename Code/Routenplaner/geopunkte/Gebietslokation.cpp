@@ -12,6 +12,9 @@ Gebietslokation::Gebietslokation() {
 
 }
 
+Gebietslokation::Gebietslokation(vector<string> zeile) {
+}
+
 Gebietslokation::~Gebietslokation() {
 	// TODO Auto-generated destructor stub
 }

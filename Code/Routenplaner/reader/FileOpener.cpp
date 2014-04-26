@@ -22,14 +22,26 @@ void FileOpener::oeffneDatei(const char* adresse) {
 		throw FileNotFoundException("Die Datei konnte nicht gefunden werden.");
 	}
 }
+/**
+ void FileOpener::leseDateiAus() {
+ string zeile;
+ while (getline(datei, zeile)) {
+ datenSatz.push_back(zeile);
+ }
+ }*/
 
 void FileOpener::leseDateiAus() {
-	string zeile;
+	string zeile, spalte;
+	vector<string> zeilenVector;
 	while (getline(datei, zeile)) {
-		datenSatz.push_back(zeile);
+		istringstream stringStream(zeile);
+		while (getline(stringStream, spalte, ';')) {
+			zeilenVector.push_back(spalte);
+		}
+		geteilterDatensatz.push_back(zeilenVector);
+		zeilenVector.clear();
 	}
 }
-
 void FileOpener::spalteZeilen(void) {
 	vector<string> zwischenVector;
 	string zwischenString;
@@ -38,12 +50,13 @@ void FileOpener::spalteZeilen(void) {
 			it++) {
 		zeile = *it;
 		for (string::iterator sit = zeile.begin(); sit != zeile.end(); sit++) {
-			if (*it == ";") {
+			if (*sit == ';') {
 				zwischenVector.push_back(zwischenString);
 				zwischenString = "";
 			}
-			zwischenString += *it;
+			zwischenString += *sit;
 		}
+		//cout<< "Zwischenstring: " <<zwischenString << "\n";
 		geteilterDatensatz.push_back(zwischenVector);
 	}
 }

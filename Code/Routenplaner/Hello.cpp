@@ -13,7 +13,6 @@ Hello::Hello() {
 }
 
 Hello::~Hello() {
-	// TODO Auto-generated destructor stub
 }
 
 #include <iostream>                                     // Ein- und Ausgabebibliothek
@@ -31,17 +30,19 @@ int main() {                                             // Hauptfunktion
 	datei->oeffneDatei(
 			"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/testdatei.csv");
 	datei->leseDateiAus();
-	vector<string> vec = datei->getDatenSatz();
-	cout << "\n" << "Die Groesse des Vectors: " << vec.size() << "\n";
-
-	for (vector<string>::iterator i = vec.begin(); i != vec.end(); i++) {
-		cout << *i << "\n";
+	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
+	vector< vector<string> > erg = datei->getGeteilterDatensatz();
+	vector<string> zwischen;
+	for(vector< vector<string> >::iterator it = erg.begin(); it != erg.end(); it++){
+		zwischen = *it;
+		for(vector<string>::iterator innerer = zwischen.begin(); innerer != zwischen.end(); innerer++){
+			cout<< *innerer<< "  ";
+		}
+		cout << "\n\n";
 	}
 
-	cout << "\n------------Teilen der Zeilen--------------\n";
-	datei->spalteZeilen();
+	delete datei;
 
-	cout << "ende";
-	return 0;                        // Optionale Rückgabe an das Betriebssystem
+return 0;                        // Optionale Rückgabe an das Betriebssystem
 }
 

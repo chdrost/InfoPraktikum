@@ -10,6 +10,7 @@
 
 #include "./hilfsklassen/Aktualitaet.h"
 #include "./reader/FileOpener.h"
+#include "geopunkte/LokationsVerwaltung.h"
 #include <vector>
 
 class Hello {

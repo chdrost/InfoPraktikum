@@ -9,9 +9,10 @@
 #define LOKATIONSVERWALTUNG_H_
 
 #include <vector>
-#include <set>
+#include <map>
 #include <string>
 #include "Gebietslokation.h"
+#include "AttributDefines.h"
 using namespace std;
 
 /**
@@ -24,20 +25,32 @@ class LokationsVerwaltung {
 public:
 	LokationsVerwaltung();
 	virtual ~LokationsVerwaltung();
+	/**
+	 * Diese Methode entscheidet anhand des Types der Zeile, welches Objekt erstellt werden
+	 * soll, erstellt es und l&auml;dt es in die Datenstrukturen.
+	 * @param Ein Vector aus Strings, der einer Zeile unseres Datensatzes entspricht.
+	 */
+	void objektErstellen(vector<string> zeile);
+
+	/**
+	 * Diese Methode verteilt den Pointer auf die verschiedenen Datenstrukturen.
+	 * @param lokation Ein Pointer auf eine Gebietslokation.
+	 */
+	void speichereGebietsLokation(Gebietslokation *lokation);
 private:
 	/**
 	 * Dieses Attribut ist die prim&auml;re Datenstruktur f&uuml;r die Datens&auml;tze.
 	 *Dort sind die Gebietslokationen organisiert, die wiederum rekrusiv Datens&auml;tze
 	 *Dort mit Linearen Lokationen und Punktlokationen enthalten.
 	 */
-	vector<Gebietslokation> gebieteVector;
+	vector<Gebietslokation*> gebieteVector;
 
 	/**
 	 * Dieses Attribut erlaubt den schnellen Zugriff auf Objekte anhand ihrer Id.
 	 * Der Schl&uuml;ssel ist der LOCATIONCODE einer Lokation, der Value ist der Pointer
 	 * auf das Objekt selber.
 	 */
-	set<int, Gebietslokation*> gebieteSet;
+	map<int, Gebietslokation*> gebieteMap;
 
 	/**
 	 * Dieses Attribut erlaubt das schnelle Suchen einer Lokation anhand eines Namens.<br>
@@ -45,7 +58,7 @@ private:
 	 * Multiset realisiert. Bei der Abfrage muss darauf geachtet werden, dass mehrere
 	 * R&uuml;ckgabewerte auftreten k&ouml;nnen.
 	 */
-	multiset<string, Gebietslokation*> mySet;
+	multimap<string, Gebietslokation*> namenMap;
 };
 
 #endif /* LOKATIONSVERWALTUNG_H_ */
