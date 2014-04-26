@@ -25,8 +25,25 @@ void FileOpener::oeffneDatei(const char* adresse) {
 
 void FileOpener::leseDateiAus() {
 	string zeile;
-	while (getline(datei, zeile))
-	{
-	    datenSatz.push_back(zeile);
+	while (getline(datei, zeile)) {
+		datenSatz.push_back(zeile);
+	}
+}
+
+void FileOpener::spalteZeilen(void) {
+	vector<string> zwischenVector;
+	string zwischenString;
+	string zeile;
+	for (vector<string>::iterator it = datenSatz.begin(); it != datenSatz.end();
+			it++) {
+		zeile = *it;
+		for (string::iterator sit = zeile.begin(); sit != zeile.end(); sit++) {
+			if (*it == ";") {
+				zwischenVector.push_back(zwischenString);
+				zwischenString = "";
+			}
+			zwischenString += *it;
+		}
+		geteilterDatensatz.push_back(zwischenVector);
 	}
 }

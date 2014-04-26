@@ -11,8 +11,11 @@
 #include <vector>
 #include <string>
 
+
 #include <iostream>
 #include <fstream>
+
+#include <sstream>
 
 
 #include "./../exceptions/FileNotFoundException.h"
@@ -41,7 +44,13 @@ public:
 	 * im Vector abgelegt.<br>
 	 * Das Einlesen geschieht in einem eigenen Thread. //TODO Thread implementieren
 	 */
-	void leseDateiAus();
+	void leseDateiAus(void);
+
+	/**
+	 * Diese Methode spaltet die Zeilen der eingelesenen Datei in ihre Einzelteile auf.
+	 * Als Seperator wird das Zeilen <i>;</i> genutzt.
+	 */
+	void spalteZeilen(void);
 
 private:
 	/**
@@ -50,6 +59,13 @@ private:
 	 * im Speicher.
 	 */
 	vector<string> datenSatz;
+
+	/**
+	 * Dieses Attribut speichert den Datensatz. Es besteht aus einem Vector, der wiederum
+	 * Vectoren enth&auml;lt. Die Untervectoren enthalten die einzelnen Spalten der
+	 * eingelesenen Zeilen.
+	 */
+	vector< vector<string> > geteilterDatensatz;
 
 	/**
 	 * Die ge&ouml;ffnete Datei.

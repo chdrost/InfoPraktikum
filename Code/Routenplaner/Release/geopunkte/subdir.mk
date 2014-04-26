@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../geopunkte/Gebietslokation.cpp \
 ../geopunkte/Linearlokation.cpp \
+../geopunkte/LokationsVerwaltung.cpp \
 ../geopunkte/Punktlokation.cpp 
 
 OBJS += \
 ./geopunkte/Gebietslokation.o \
 ./geopunkte/Linearlokation.o \
+./geopunkte/LokationsVerwaltung.o \
 ./geopunkte/Punktlokation.o 
 
 CPP_DEPS += \
 ./geopunkte/Gebietslokation.d \
 ./geopunkte/Linearlokation.d \
+./geopunkte/LokationsVerwaltung.d \
 ./geopunkte/Punktlokation.d 
 
 

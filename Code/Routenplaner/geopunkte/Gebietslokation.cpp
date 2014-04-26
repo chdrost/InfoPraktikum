@@ -1,18 +1,18 @@
 /*
- * Gebiet.cpp
+ * Gebietslokation.cpp
  *
- *  Created on: 25.04.2014
+ *  Created on: 26.04.2014
  *      Author: christoph
  */
 
 #include "Gebietslokation.h"
 
-Gebiet::Gebiet() {
+Gebietslokation::Gebietslokation() {
 	// TODO Auto-generated constructor stub
 
 }
 
-Gebiet::~Gebiet() {
+Gebietslokation::~Gebietslokation() {
 	// TODO Auto-generated destructor stub
 }
 

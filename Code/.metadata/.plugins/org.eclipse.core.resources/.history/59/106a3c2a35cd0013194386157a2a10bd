@@ -1,0 +1,17 @@
+/*
+ * LokationsVerwaltung.h
+ *
+ *  Created on: 26.04.2014
+ *      Author: christoph
+ */
+
+#ifndef LOKATIONSVERWALTUNG_H_
+#define LOKATIONSVERWALTUNG_H_
+
+class LokationsVerwaltung {
+public:
+	LokationsVerwaltung();
+	virtual ~LokationsVerwaltung();
+};
+
+#endif /* LOKATIONSVERWALTUNG_H_ */
