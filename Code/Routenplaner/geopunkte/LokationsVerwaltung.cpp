@@ -22,13 +22,15 @@ LokationsVerwaltung::~LokationsVerwaltung() {
 }
 
 void LokationsVerwaltung::objektErstellen(vector<string> *zeile) {
-	switch (zeile->at(TYPE).at(1)) {
-	//TODO Das mit Regex schreiben
-	case 'A':
-		Gebietslokation *loc = new Gebietslokation(zeile);
-		speichereGebietsLokation(loc);
-		break;
+	//cout<<zeile->at(TYPE)<<"\n";
+	if(regex_match(zeile->at(TYPE) , regex("\"A(.*)"))){
+		cout<< "Gebiet gefunden\n";
+	}else if(regex_match(zeile->at(TYPE) , regex("\"L(.*)"))){
+		cout<< "Linearlok gefunden\n";
+	}else if(regex_match(zeile->at(TYPE) , regex("\"P(.*)"))){
+		cout<<"Punktlokation gefunden \n";
 	}
+
 }
 
 void LokationsVerwaltung::speichereGebietsLokation(Gebietslokation* lokation) {
