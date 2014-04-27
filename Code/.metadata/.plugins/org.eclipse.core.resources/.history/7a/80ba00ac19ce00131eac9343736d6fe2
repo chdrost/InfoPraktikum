@@ -1,0 +1,25 @@
+/*
+ * Linearlokation.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "Linearlokation.h"
+
+Linearlokation::Linearlokation(vector<string> *zeile,
+		Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap) :
+		Gebietslokation(zeile) {
+	this->roadNumer = zeile->at(ROADNUMBER);
+	this->roadName = zeile->at(ROADNAME);
+	this->secondName = zeile->at(SECOND_NAME);
+	this->areaReference = gebieteMap[stoi(zeile->at(AREA_REFERENCE))];
+	this->negativeOffset = gebieteMap[stoi(zeile->at(NEGATIVE_OFFSET))];
+	this->positiveOffset = gebieteMap[zeile->at(POSITIVE_OFFSET)];
+
+}
+
+Linearlokation::~Linearlokation() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -12,6 +12,7 @@
 #include <vector>
 #include "../hilfsklassen/Aktualitaet.h"
 #include "AttributDefines.h"
+#include "Linearlokation.h"
 
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
@@ -107,6 +108,11 @@ private:
 	 *nicht genutzt.
 	 */
 	Aktualitaet *aktualitaet;
+
+	/**
+	 * In diesem Vector sind die Linearlocations enthalten, die zu diesem Gebiet ge&ouml;ren.
+	 */
+	vector<Linearlokation*> linLocations;
 };
 
 #endif /* GEBIETSLOKATION_H_ */

@@ -22,13 +22,12 @@ LokationsVerwaltung::~LokationsVerwaltung() {
 }
 
 void LokationsVerwaltung::objektErstellen(vector<string> *zeile) {
-	//cout<<zeile->at(TYPE)<<"\n";
-	if(regex_match(zeile->at(TYPE) , regex("\"A(.*)"))){
-		cout<< "Gebiet gefunden\n";
-	}else if(regex_match(zeile->at(TYPE) , regex("\"L(.*)"))){
-		cout<< "Linearlok gefunden\n";
-	}else if(regex_match(zeile->at(TYPE) , regex("\"P(.*)"))){
-		cout<<"Punktlokation gefunden \n";
+	if (regex_match(zeile->at(TYPE), regex("\"A(.*)"))) {
+		//speichereGebietsLokation(new Gebietslokation(zeile));
+	} else if (regex_match(zeile->at(TYPE), regex("\"L(.*)"))) {
+		cout << "Spalte 32  "<<zeile->at(31) << "\n";
+	} else if (regex_match(zeile->at(TYPE), regex("\"P(.*)"))) {
+		//cout << "Punktlokation gefunden \n";
 	}
 
 }

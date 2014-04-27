@@ -1,0 +1,60 @@
+/*
+ * Linearlokation.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef LINEARLOKATION_H_
+#define LINEARLOKATION_H_
+
+#include "Gebietslokation.h"
+
+class Linearlokation: public Gebietslokation {
+public:
+	Linearlokation(vector<string> *zeile, Gebietslokation *areaReference);
+	virtual ~Linearlokation();
+private:
+	/**
+	 * Die Stra&szlig;ennummer. Sie besteht aus dem Bezeichner der Stra&szlig;e
+	 * und der Nummer der Stra&szlig;e. <br>
+	 * Bsp.: A620
+	 */
+	string roadNumer;
+
+	/**
+	 * Der Stra&szlig;enname.<br>
+	 * Beispiel: B405 (Stra&szlig;ennummer), Metzer Stra&szlig;e (Stra&szlig;enname).
+	 */
+	string roadName;
+
+	/**
+	 * Ein zus&auml;tzlicher Name der Lokation.<br>
+	 * Lt. Doku des Bundesamtes "Zweiter Name".
+	 */
+	string secondName;
+
+	/**
+	 * Area Verweis auf das Gebiet, in dem die Lokation liegt.<br>
+	 * Dieses Attribut enth&auml;lt einen Pointer auf ein @link Gebietslokation @endlink
+	 * Objekt.
+	 */
+	Gebietslokation *areaReference;
+
+	/**
+	 * Verweis auf die Vorg&auml;ngerlokation bezogen auf die Erfassungsrichtung.
+	 * <br>Dieses Attribut enth&auml;lt einen Pointer auf die vorherige
+	 * Lokation.
+	 */
+	Linearlokation *negativeOffset;
+
+	/**
+	 * Verweis auf die Nachfolgerlokation bezogen auf die Erfassungsrichtung.
+	 * <br>Dieses Attribut enth&auml;lt einen Pointer auf die vorherige
+	 * Lokation.
+	 */
+	Linearlokation *positiveOffset;
+
+};
+
+#endif /* LINEARLOKATION_H_ */
