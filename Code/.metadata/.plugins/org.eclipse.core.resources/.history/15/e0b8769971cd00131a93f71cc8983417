@@ -1,0 +1,24 @@
+/*
+ * Gebietslokation.cpp
+ *
+ *  Created on: 26.04.2014
+ *      Author: christoph
+ */
+
+#include "Gebietslokation.h"
+
+Gebietslokation::Gebietslokation() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Gebietslokation::Gebietslokation(vector<string> *zeile) {
+	this->id = stoi(zeile->at(LOCATIONCODE));
+	this->typBuchstabe = zeile->at(TYPE).at(0);
+	this->typZahl = stoi(zeile->at(TYPE).at(1));
+}
+
+Gebietslokation::~Gebietslokation() {
+	// TODO Auto-generated destructor stub
+}
+

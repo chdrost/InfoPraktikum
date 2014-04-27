@@ -29,10 +29,6 @@ public:
 	FileOpener();
 	virtual ~FileOpener();
 
-	const vector<string>& getDatenSatz() const {
-		return datenSatz;
-	}
-
 	/**
 	 * Diese Methode &ouml;ffnet den Dateistream.
 	 * @param adresse Die Adresse, wo die Datei gespeichert ist.
@@ -52,24 +48,17 @@ public:
 	 */
 	void spalteZeilen(void);
 
-	const vector<vector<string> >& getGeteilterDatensatz() const {
-		return geteilterDatensatz;
+	const vector<vector<string> >& getDatensatz() const {
+		return (datenSatz);
 	}
 
 private:
-	/**
-	 * In diesen Vector werden die Zeilen der Datei eingelesen.<br>
-	 * An dieser Stelle sind die Werte noch nicht verarbeitet, sie liegen lediglich
-	 * im Speicher.
-	 */
-	vector<string> datenSatz;
-
 	/**
 	 * Dieses Attribut speichert den Datensatz. Es besteht aus einem Vector, der wiederum
 	 * Vectoren enth&auml;lt. Die Untervectoren enthalten die einzelnen Spalten der
 	 * eingelesenen Zeilen.
 	 */
-	vector< vector<string> > geteilterDatensatz;
+	vector< vector<string> > datenSatz;
 
 	/**
 	 * Die ge&ouml;ffnete Datei.

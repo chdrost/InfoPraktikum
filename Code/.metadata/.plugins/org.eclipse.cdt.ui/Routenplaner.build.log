@@ -1,13 +1,15 @@
-20:00:02 **** Incremental Build of configuration Release for project Routenplaner ****
+13:33:04 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../Hello.cpp
+Building file: ../hilfsklassen/Aktualitaet.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
-../Hello.cpp:34:2: error: use of undeclared identifier 'sleep'
-        sleep(80);
-        ^
-1 error generated.
-make: *** [Hello.o] Error 1
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/Aktualitaet.d" -MT"hilfsklassen/Aktualitaet.d" -o "hilfsklassen/Aktualitaet.o" "../hilfsklassen/Aktualitaet.cpp"
+Finished building: ../hilfsklassen/Aktualitaet.cpp
+ 
+Building target: Routenplaner
+Invoking: Cross G++ Linker
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
+Finished building target: Routenplaner
+ 
 
-20:00:02 Build Finished (took 412ms)
+13:33:06 Build Finished (took 1s.731ms)
 

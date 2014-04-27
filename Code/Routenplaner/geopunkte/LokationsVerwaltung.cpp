@@ -9,7 +9,6 @@
 
 LokationsVerwaltung::LokationsVerwaltung() {
 	// TODO Auto-generated constructor stub
-
 }
 
 LokationsVerwaltung::~LokationsVerwaltung() {
@@ -22,8 +21,9 @@ LokationsVerwaltung::~LokationsVerwaltung() {
 	}
 }
 
-void LokationsVerwaltung::objektErstellen(vector<string> zeile) {
-	switch (zeile.at(TYPE).at(0)) {
+void LokationsVerwaltung::objektErstellen(vector<string> *zeile) {
+	switch (zeile->at(TYPE).at(1)) {
+	//TODO Das mit Regex schreiben
 	case 'A':
 		Gebietslokation *loc = new Gebietslokation(zeile);
 		speichereGebietsLokation(loc);

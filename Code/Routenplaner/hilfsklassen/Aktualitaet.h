@@ -7,11 +7,21 @@
 
 #ifndef AKTUALITAET_H_
 #define AKTUALITAET_H_
-
+#include <cstring>
 #include<time.h>
 #include<string>
 #include <sstream>
+#include <regex>
 #include "./../exceptions/ZeitException.h"
+
+#include  <iostream> //TODO nachdem cout raus, dann das auch raus
+
+#define TAG 0
+#define MONAT 1
+#define JAHR 2
+#define STUNDE 3
+#define MINUTE 4
+#define SEKUNDE 5
 
 using namespace std;
 class Aktualitaet {
@@ -78,8 +88,6 @@ private:
 	 */
 	int checkSekunde(int sekunde);
 
-
-
 	/**
 	 * Pr&uml;ft, ob die Minutenangabe ein plausibler Wert ist. Es werden nur 0>= Werte <60
 	 * akzeptiert.
@@ -87,7 +95,6 @@ private:
 	 * @return 0, wenn i.O. 1, wenn Fehler.
 	 */
 	int checkMinute(int sekunde);
-
 
 	/**
 	 * Pr&uml;ft, ob die Stundenangabe ein plausibler Wert ist. Es werden nur 0>= Werte <24
@@ -97,7 +104,6 @@ private:
 	 */
 	int checkStunde(int stunde);
 
-
 	/**
 	 * Pr&uml;ft, ob die Tagesangabe ein plausibler Wert ist. Es werden nur 0>= Werte <32
 	 * akzeptiert.
@@ -106,7 +112,6 @@ private:
 	 */
 	int checkTag(int tag);
 
-
 	/**
 	 * Pr&uml;ft, ob die Monatsangabe ein plausibler Wert ist. Es werden nur 0>= Werte <13
 	 * akzeptiert.
@@ -114,7 +119,6 @@ private:
 	 * @return 0, wenn i.O. 1, wenn Fehler.
 	 */
 	int checkMonat(int monat);
-
 
 	/**
 	 Aktuell nicht implementiert.

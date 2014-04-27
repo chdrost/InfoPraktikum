@@ -1,0 +1,175 @@
+/*
+ * Aktualitaet.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "Aktualitaet.h"
+
+Aktualitaet::Aktualitaet() {
+	initTime(0, 0, 0, 0, 0, 0);
+
+}
+
+Aktualitaet::Aktualitaet(int tag, int monat, int jahr, int stunde, int minute,
+		int sekunde) {
+	initTime(tag, monat, jahr, stunde, minute, sekunde);
+}
+
+Aktualitaet::Aktualitaet(std::string zeit) {
+	int sekunde = 0;
+	int minute = 0;
+	int stunde = 0;
+	int tag = 0;
+	int monat = 0;
+	int jahr = 0;
+	datumEinlesen(&sekunde, &minute, &stunde, &tag, &monat, &jahr, zeit);
+	initTime(tag, monat, jahr, stunde, minute, sekunde);
+}
+
+Aktualitaet::~Aktualitaet() {
+	delete zeit;
+}
+
+int Aktualitaet::checkSekunde(int sekunde) {
+	if (sekunde < 0 || sekunde > 59) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+int Aktualitaet::checkMinute(int minute) {
+	return checkSekunde(minute);
+}
+
+int Aktualitaet::checkStunde(int stunde) {
+	if (stunde < 0 || stunde > 23) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+int Aktualitaet::checkTag(int tag) {
+	if (tag < 0 || tag > 31) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+int Aktualitaet::checkMonat(int monat) {
+	if (monat < 0 || monat > 12) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+int Aktualitaet::checkJahr(int jahr) {
+	// Wird nicht benoetigt
+	return 0;
+}
+
+void Aktualitaet::datumEinlesen(int* sekunde, int* minute, int* stunde,
+		int* tag, int* monat, int* jahr, string datum) {
+	/**string substring[6];
+	 int i = 0;
+	 //Nur die Zahlen auslesen
+	 for (string::iterator it = datum.begin(); it < datum.end(); it++) {
+	 if (isdigit(*it)) {
+	 substring[i] += *it;
+	 } else {
+	 i++;
+	 }
+	 }*/
+	regex rgx("[0-9]", regex_constants::optimize);
+	smatch match;
+	cout<<"Vor RegEx\n\n";
+	if(regex_search(datum, match, rgx, regex_constants::match_default )) {
+
+		cout << "Matches in "<<datum<<" : " << match.size() << "\n";
+		/*cout << "Match1" << match[1] << "\n";
+		cout << "Match2" << match[2] << "\n";
+		cout << "Match3" << match[3] << "\n";
+		cout << "Match4" << match[4] << "\n";
+		cout << "Match5" << match[5] << "\n";
+		cout << "Match6"<<match[6]<<"\n";*/
+		/*if (sizeof(match) > 5) {
+		 *sekunde = stoi(match[5]);
+		 }
+		 if (sizeof(match) > 4) {
+		 *minute = stoi(match[4]);
+		 }
+		 if (!match[3].empty()) {
+		 *stunde = stoi(match[3]);
+		 }
+		 if (!match[0].empty()) {
+		 *tag = stoi(match[0]);
+		 }
+		 if (!match[1].empty()) {
+		 *monat = stoi(match[1]);
+		 }
+		 if (!match[2].empty()) {
+		 cout << "Sub5: " << match[2] << "\n";
+		 *jahr = stoi(match[2]);
+		 }
+		 */
+	}
+	exit(0);
+}
+
+void Aktualitaet::initTime(int tag, int monat, int jahr, int stunde, int minute,
+		int sekunde) {
+	this->zeit = new tm;
+	this->zeit->tm_sec = sekunde;
+	this->zeit->tm_min = minute;
+	this->zeit->tm_hour = stunde;
+	this->zeit->tm_mday = tag;
+	this->zeit->tm_mon = monat;
+	this->zeit->tm_year = jahr;
+}
+
+void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
+		int minute, int sekunde) throw (ZeitException) {
+	string fehler = "";
+	int fehlerAnzahl = 0;
+	if (checkSekunde(sekunde)) {
+		fehler +=
+				"Die Sekunden muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
+		fehlerAnzahl++;
+	}
+	if (checkMinute(minute)) {
+		fehler +=
+				"Die Minuten muessen 0>= sekunde <60 sein! Eingelesen wurde: \n";
+	}
+	if (checkStunde(stunde)) {
+		fehler +=
+				"Die Stunden muessen 0>= sekunde <24 sein! Eingelesen wurde: \n";
+	}
+	if (checkTag(tag)) {
+		fehler += "Die Tage muessen 0>= sekunde <32 sein! Eingelesen wurde: \n";
+	}
+	if (checkMonat(monat)) {
+		fehler +=
+				"Die Monate muessen 0>= sekunde <13 sein! Eingelesen wurde: \n";
+	}
+	if (checkJahr(jahr)) {
+		fehler += "Unbekannter Fehler im Jahr!\n+ Eingelesen wurde: \n";
+	}
+
+//Falls ein Fehler aufgetreten ist, dann Exception mit der entsprechenden Meldung.
+	if (fehlerAnzahl) {
+		throw new ZeitException(fehler.c_str());
+	}
+}
+
+string Aktualitaet::toString(void) {
+	stringstream erg;
+//TODO Hierfuer noch ne schoene Fkt. finden
+	erg << zeit->tm_mday << "." << zeit->tm_mon << "." << zeit->tm_year << " "
+			<< zeit->tm_hour << ":" << zeit->tm_min << ":" << zeit->tm_sec;
+	return erg.str();
+}

@@ -10,7 +10,10 @@
 
 #include <string>
 #include <vector>
+#include "../hilfsklassen/Aktualitaet.h"
 #include "AttributDefines.h"
+
+#include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
 using namespace std;
 /**
@@ -26,7 +29,7 @@ public:
 	 * Aus dem Vector werden die entsprechenden Attribute der Zeile ausgelesen.
 	 * @param Ein Vector, der einer Zeile aus dem Datensatz entspricht.
 	 */
-	Gebietslokation(vector<string> zeile);
+	Gebietslokation(vector<string> *zeile);
 	virtual ~Gebietslokation();
 
 	string getFirstName() const {
@@ -98,6 +101,12 @@ private:
 	 * Vollst&auml;ndigkeit halber enthalten.
 	 */
 	string adminBundesLand;
+
+	/**
+	 *Beschreibt vermutlich die Aktualit&auml;t des Datensatzes. Wird im aktuellen Release
+	 *nicht genutzt.
+	 */
+	Aktualitaet *aktualitaet;
 };
 
 #endif /* GEBIETSLOKATION_H_ */

@@ -75,21 +75,34 @@ int Aktualitaet::checkJahr(int jahr) {
 
 void Aktualitaet::datumEinlesen(int* sekunde, int* minute, int* stunde,
 		int* tag, int* monat, int* jahr, string datum) {
-	string substring[6];
-	int i = 0;
-	for (string::iterator it = datum.begin(); it < datum.end(); it++) {
-		if (isdigit(*it)) {
-			substring[i] += *it;
-		} else {
-			i++;
-		}
+	/**string substring[6];
+	 int i = 0;
+	 //Nur die Zahlen auslesen
+	 for (string::iterator it = datum.begin(); it < datum.end(); it++) {
+	 if (isdigit(*it)) {
+	 substring[i] += *it;
+	 } else {
+	 i++;
+	 }
+	 }*/
+	//Mithilfe Regex den Datumsstring aufspalten und in ein Array blasen
+	const regex pattern("\\d+");
+
+	const sregex_token_iterator end;
+	int ergebisArray[SEKUNDE+1];
+	int anzahlWerte = 0;
+	for (sregex_token_iterator i(datum.begin(), datum.end(), pattern); i != end;
+			++i, ++anzahlWerte) {
+		ergebisArray[anzahlWerte] = stoi(*i);
 	}
-	*sekunde = stoi(substring[5]);
-	*minute = stoi(substring[4]);
-	*stunde = stoi(substring[3]);
-	*tag = stoi(substring[0]);
-	*monat = stoi(substring[1]);
-	*jahr = stoi(substring[2]);
+	if (anzahlWerte > SEKUNDE) {
+		*sekunde = ergebisArray[SEKUNDE];
+		*minute = ergebisArray[MINUTE];
+		*stunde = ergebisArray[STUNDE];
+		*tag = ergebisArray[TAG];
+		*monat = ergebisArray[MONAT];
+		*jahr = ergebisArray[JAHR];
+	}
 }
 
 void Aktualitaet::initTime(int tag, int monat, int jahr, int stunde, int minute,
@@ -131,7 +144,7 @@ void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
 		fehler += "Unbekannter Fehler im Jahr!\n+ Eingelesen wurde: \n";
 	}
 
-	//Falls ein Fehler aufgetreten ist, dann Exception mit der entsprechenden Meldung.
+//Falls ein Fehler aufgetreten ist, dann Exception mit der entsprechenden Meldung.
 	if (fehlerAnzahl) {
 		throw new ZeitException(fehler.c_str());
 	}
@@ -139,9 +152,8 @@ void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
 
 string Aktualitaet::toString(void) {
 	stringstream erg;
-	//TODO Hierfuer noch ne schoene Fkt. finden
+//TODO Hierfuer noch ne schoene Fkt. finden
 	erg << zeit->tm_mday << "." << zeit->tm_mon << "." << zeit->tm_year << " "
-			<< zeit->tm_hour << ":"<<
-	zeit->tm_min << ":" << zeit->tm_sec;
+			<< zeit->tm_hour << ":" << zeit->tm_min << ":" << zeit->tm_sec;
 	return erg.str();
 }
