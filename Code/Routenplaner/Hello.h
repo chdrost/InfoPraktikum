@@ -8,7 +8,6 @@
 #ifndef HELLO_H_
 #define HELLO_H_
 
-#include "./hilfsklassen/Aktualitaet.h"
 #include "./reader/FileOpener.h"
 #include "geopunkte/LokationsVerwaltung.h"
 #include <vector>

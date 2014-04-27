@@ -25,3 +25,10 @@ Gebietslokation::~Gebietslokation() {
 	delete aktualitaet;
 }
 
+const string& Gebietslokation::getFirstName() const {
+	return firstName;
+}
+
+int Gebietslokation::getId() const {
+	return id;
+}

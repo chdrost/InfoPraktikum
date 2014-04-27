@@ -8,28 +8,28 @@
 #ifndef LINEARLOKATION_H_
 #define LINEARLOKATION_H_
 
-#include "Gebietslokation.h"
-#include <map>
-
+#include"./Gebietslokation.h"
 /**
  * Diese Klasse stellt eine Linearlocation dar.<br> In ihr sind alle Atribute enthalten,
  * die eine Linearlocation enth&auml;lt.
  */
-class Linearlokation: public Gebietslokation {
+//class Gebietslokation;
+class Linearlokation : public Gebietslokation{
 public:
 	Linearlokation(vector<string> *zeile, Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap);
 	virtual ~Linearlokation();
+
 	const string& getAdminCounty() const;
-	const Gebietslokation*& getAreaReference() const;
+	 Gebietslokation* getAreaReference() ;
 	bool isInNegative() const;
 	bool isInPositive() const;
-	const Linearlokation*& getInterruptsRoad() const;
-	const Linearlokation*& getIntersectioncode() const;
-	const Linearlokation*& getNegativeOffset() const;
+	 Linearlokation* getInterruptsRoad() ;
+	 Linearlokation* getIntersectioncode() ;
+	 Linearlokation* getNegativeOffset() ;
 	bool isOutNegative() const;
 	bool isOutPositive() const;
 	const string& getPoldir() const;
-	const Linearlokation*& getPositiveOffset() const;
+	 Linearlokation* getPositiveOffset() ;
 	bool isPresentNegative() const;
 	bool isPresentPositive() const;
 	const string& getRoadName() const;

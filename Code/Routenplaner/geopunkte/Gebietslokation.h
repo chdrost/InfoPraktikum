@@ -10,9 +10,11 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include "../hilfsklassen/Aktualitaet.h"
 #include "AttributDefines.h"
-#include "Linearlokation.h"
+
+//#include "Linearlokation.h"
 
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
@@ -22,6 +24,7 @@ using namespace std;
  * des Bundesamtes mit einem "A" gekennzeichnet. Sie definieren grobe Gebiete,
  * wie beispielsweise Kontinente, L&auml;nder Ballungsr&auml;me oder Fl&uml;sse.
  */
+class Linearlokation;
 class Gebietslokation {
 public:
 	Gebietslokation();
@@ -32,14 +35,8 @@ public:
 	 */
 	Gebietslokation(vector<string> *zeile);
 	virtual ~Gebietslokation();
-
-	string getFirstName() const {
-		return firstName;
-	}
-
-	int getId() const {
-		return id;
-	}
+	const string& getFirstName() const;
+	int getId() const;
 
 private:
 	/**

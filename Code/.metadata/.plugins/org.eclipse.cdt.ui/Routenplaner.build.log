@@ -1,30 +1,15 @@
-17:31:38 **** Incremental Build of configuration Release for project Routenplaner ****
+20:06:00 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../geopunkte/Gebietslokation.cpp
+Building file: ../geopunkte/Linearlokation.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
-In file included from ../geopunkte/Gebietslokation.cpp:8:
-In file included from ../geopunkte/Gebietslokation.h:15:
-../geopunkte/Linearlokation.h:18:30: error: expected class name
-class Linearlokation: public Gebietslokation {
-                             ^
-../geopunkte/Linearlokation.h:20:40: error: unknown type name 'Gebietslokation'
-        Linearlokation(vector<string> *zeile, Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap);
-                                              ^
-../geopunkte/Linearlokation.h:20:81: error: use of undeclared identifier 'Gebietslokation'
-        Linearlokation(vector<string> *zeile, Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap);
-                                                                                       ^
-../geopunkte/Linearlokation.h:20:97: error: expected expression
-        Linearlokation(vector<string> *zeile, Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap);
-                                                                                                       ^
-../geopunkte/Linearlokation.h:23:8: error: unknown type name 'Gebietslokation'
-        const Gebietslokation*& getAreaReference() const;
-              ^
-../geopunkte/Linearlokation.h:67:2: error: unknown type name 'Gebietslokation'
-        Gebietslokation *areaReference;
-        ^
-6 errors generated.
-make: *** [geopunkte/Gebietslokation.o] Error 1
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Linearlokation.d" -MT"geopunkte/Linearlokation.d" -o "geopunkte/Linearlokation.o" "../geopunkte/Linearlokation.cpp"
+Finished building: ../geopunkte/Linearlokation.cpp
+ 
+Building target: Routenplaner
+Invoking: Cross G++ Linker
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
+Finished building target: Routenplaner
+ 
 
-17:31:38 Build Finished (took 513ms)
+20:06:00 Build Finished (took 565ms)
 

@@ -43,7 +43,7 @@ const string& Linearlokation::getAdminCounty() const {
 	return adminCounty;
 }
 
-const Gebietslokation*& Linearlokation::getAreaReference() const {
+ Gebietslokation* Linearlokation::getAreaReference()  {
 	return areaReference;
 }
 
@@ -55,15 +55,15 @@ bool Linearlokation::isInPositive() const {
 	return inPositive;
 }
 
-const Linearlokation*& Linearlokation::getInterruptsRoad() const {
+ Linearlokation* Linearlokation::getInterruptsRoad()  {
 	return interruptsRoad;
 }
 
-const Linearlokation*& Linearlokation::getIntersectioncode() const {
+ Linearlokation* Linearlokation::getIntersectioncode()  {
 	return intersectioncode;
 }
 
-const Linearlokation*& Linearlokation::getNegativeOffset() const {
+ Linearlokation* Linearlokation::getNegativeOffset()  {
 	return negativeOffset;
 }
 
@@ -79,7 +79,7 @@ const string& Linearlokation::getPoldir() const {
 	return poldir;
 }
 
-const Linearlokation*& Linearlokation::getPositiveOffset() const {
+ Linearlokation* Linearlokation::getPositiveOffset()  {
 	return positiveOffset;
 }
 
