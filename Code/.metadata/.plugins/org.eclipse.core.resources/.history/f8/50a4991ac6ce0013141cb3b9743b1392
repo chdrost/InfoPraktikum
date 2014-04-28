@@ -1,0 +1,29 @@
+/*
+ * Punktlokation.cpp
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#include "Punktlokation.h"
+
+Punktlokation::Punktlokation(vector<string> *zeile,
+		Gebietslokation *areaReference) :
+		Linearlokation(zeile, areaReference) {
+	//TODO Linearreference
+	try {
+		this->netzKontenNummerVor = stoi(zeile->at(NETZKNOTEN1_NR));
+	} catch (const std::invalid_argument &e) {
+		this->netzKontenNummerVor = 0;
+	}
+	try{
+		this->netzKontenNummerNach = stoi(zeile->at(NETZKNOTEN2_NR));
+			} catch (const std::invalid_argument &e) {
+				this->netzKontenNummerNach = 0;
+			}
+}
+
+Punktlokation::~Punktlokation() {
+	// TODO Auto-generated destructor stub
+}
+

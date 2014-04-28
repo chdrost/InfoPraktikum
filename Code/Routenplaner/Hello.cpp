@@ -25,19 +25,10 @@ int main() {                                             // Hauptfunktion
 	datei->leseDateiAus();
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
-	/*
-	 vector<string> zwischen;
-	 for(vector< vector<string> >::iterator it = erg.begin(); it != erg.end(); it++){
-	 zwischen = *it;
-	 for(vector<string>::iterator innerer = zwischen.begin(); innerer != zwischen.end(); innerer++){
-	 cout<< *innerer<< "  ";
-	 }
-	 cout << "\n\n";
-	 }*/
 
 	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
 	lokVerwaltung->objekteErstellen(&erg);
-	cout << "\nGroesse Vector: "<< lokVerwaltung->getGebieteVector().size();
+	cout << "\nGroesse Vector: " << lokVerwaltung->getGebieteVector().size();
 
 	delete datei;
 	delete lokVerwaltung;

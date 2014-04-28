@@ -20,82 +20,82 @@ Linearlokation::~Linearlokation() {
 }
 
 const string& Linearlokation::getAdminCounty() const {
-	return adminCounty;
+	return (adminCounty);
 }
 
 Gebietslokation* Linearlokation::getAreaReference() {
-	return areaReference;
+	return (areaReference);
 }
 
 bool Linearlokation::isInNegative() const {
-	return inNegative;
+	return (inNegative);
 }
 
 bool Linearlokation::isInPositive() const {
-	return inPositive;
+	return (inPositive);
 }
 
 Linearlokation* Linearlokation::getInterruptsRoad() {
-	return interruptsRoad;
+	return (interruptsRoad);
 }
 
 Linearlokation* Linearlokation::getIntersectioncode() {
-	return intersectioncode;
+	return (intersectioncode);
 }
 
 Linearlokation* Linearlokation::getNegativeOffset() {
-	return negativeOffset;
+	return (negativeOffset);
 }
 
 bool Linearlokation::isOutNegative() const {
-	return outNegative;
+	return (outNegative);
 }
 
 bool Linearlokation::isOutPositive() const {
-	return outPositive;
+	return (outPositive);
 }
 
 const string& Linearlokation::getPoldir() const {
-	return poldir;
+	return (poldir);
 }
 
 Linearlokation* Linearlokation::getPositiveOffset() {
-	return positiveOffset;
+	return (positiveOffset);
 }
 
 bool Linearlokation::isPresentNegative() const {
-	return presentNegative;
+	return (presentNegative);
 }
 
 bool Linearlokation::isPresentPositive() const {
-	return presentPositive;
+	return (presentPositive);
 }
 
 const string& Linearlokation::getRoadName() const {
-	return roadName;
+	return (roadName);
 }
 
 const string& Linearlokation::getRoadNumer() const {
-	return roadNumer;
+	return (roadNumer);
 }
 
 const string& Linearlokation::getSecondName() const {
-	return secondName;
+	return (secondName);
 }
 
 bool Linearlokation::isTern() const {
-	return tern;
+	return (tern);
 }
 
 bool Linearlokation::isUrban() const {
-	return urban;
+	return (urban);
 }
 
 int Linearlokation::getVeraendert() const {
-	return veraendert;
+	return (veraendert);
 }
 
-void Linearlokation::setAreaReference( Gebietslokation* areaReference) {
+void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 	this->areaReference = areaReference;
 }
 
@@ -108,56 +108,51 @@ void Linearlokation::leseWerteEin(vector<string>* zeile) {
 		this->urban = stoi(zeile->at(URBAN));
 	} catch (const std::invalid_argument &e) {
 		this->urban = 0;
-		cerr<<"\n"<<zeile->at(URBAN)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->inPositive = stoi(zeile->at(IN_POSITIVE));
 	} catch (const std::invalid_argument &e) {
 		this->inPositive = 0;
-		cerr<<"\n"<<zeile->at(IN_POSITIVE)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->outPositive = stoi(zeile->at(OUT_POSITIVE));
 	} catch (const std::invalid_argument &e) {
 		this->outPositive = false;
-		cerr<<"\n"<<zeile->at(OUT_POSITIVE)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->inNegative = stoi(zeile->at(IN_NEGATIVE));
 	} catch (const std::invalid_argument &e) {
 		this->inNegative = false;
-		cerr<<"\n"<<zeile->at(IN_NEGATIVE)<<"\n Cerr ausgeloest";
 	}
 	try {
 		this->outNegative = stoi(zeile->at(OUT_NEGATIVE));
 	} catch (const std::invalid_argument &e) {
 		this->outNegative = false;
-		cerr<<"\n"<<zeile->at(OUT_NEGATIVE)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->presentPositive = stoi(zeile->at(PRESENT_POSITIVE));
 	} catch (const std::invalid_argument &e) {
 		this->presentPositive = false;
-		cerr<<"\n"<<zeile->at(PRESENT_POSITIVE)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->presentNegative = stoi(zeile->at(PRESENT_NEGATIVE));
 	} catch (const std::invalid_argument &e) {
 		this->presentNegative = false;
-		cerr<<"\n"<<zeile->at(PRESENT_NEGATIVE)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->veraendert = stoi(zeile->at(VERAENDERT));
 	} catch (const std::invalid_argument &e) {
 		this->veraendert = false;
-		cerr<<"\n"<<zeile->at(VERAENDERT)<<"  Cerr ausgeloest\n";
 	}
 	try {
 		this->tern = stoi(zeile->at(TERN));
 	} catch (const std::invalid_argument &e) {
 		this->tern = false;
-		cerr<<"\n"<<zeile->at(TERN)<<"  Cerr ausgeloest\n";
 	}
 	this->poldir = zeile->at(POLDIR);
 	this->adminCounty = zeile->at(ADMIN_County);
+}
+
+void Linearlokation::addPktLokation(Punktlokation* pktLocation) {
+	this->punktLokations.push_back(pktLocation);
 }

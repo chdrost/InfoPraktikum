@@ -8,7 +8,7 @@
 #include "GeoKoordinate.h"
 
 GeoKoordinate::GeoKoordinate(string xKoordinate, string yKoordinate) {
-	this->laengenGrad = new  gradAngabe();
+	this->laengenGrad = new gradAngabe();
 	gradEinlesen(xKoordinate, this->laengenGrad);
 
 	this->breitenGrad = new gradAngabe();
@@ -16,11 +16,16 @@ GeoKoordinate::GeoKoordinate(string xKoordinate, string yKoordinate) {
 }
 
 GeoKoordinate::~GeoKoordinate() {
-	// TODO Auto-generated destructor stub
+	delete this->breitenGrad;
+	delete this->laengenGrad;
 }
 
-void GeoKoordinate::gradEinlesen(string zeichen,  gradAngabe* angabe) {
-	angabe->grad = stoi(zeichen.substr(BEGIN_GRAD, LAENGE_ANGABE));
-	angabe->minuten = stoi(zeichen.substr(BEGIN_MINUTE, LAENGE_ANGABE));
-	angabe->sekunden = stoi(zeichen.substr(BEGIN_SEKUNDE, LAENGE_ANGABE));
+void GeoKoordinate::gradEinlesen(string zeichen, gradAngabe* angabe) {
+	try {
+		angabe->grad = stoi(zeichen.substr(BEGIN_GRAD, LAENGE_ANGABE));
+		angabe->minuten = stoi(zeichen.substr(BEGIN_MINUTE, LAENGE_ANGABE));
+		angabe->sekunden = stoi(zeichen.substr(BEGIN_SEKUNDE, LAENGE_ANGABE));
+	} catch (const invalid_argument &e) {
+		std::cerr << "\n" << e.what() << "\n";
+	}
 }

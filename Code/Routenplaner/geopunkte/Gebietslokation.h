@@ -42,6 +42,14 @@ public:
 	 * @param lokation Die Linearlokation, die angeh&auml;ngt werden soll.
 	 */
 	void addLinLokation(Linearlokation *lokation);
+
+	/**
+	 * Gibt informationen zu dem Objekt zur&uuml;ck.
+	 * @return Ein String, wo was drin steht.
+	 */
+	string toString();
+
+
 	const string& getFirstName() const;
 	int getId() const;
 private:

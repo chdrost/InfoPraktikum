@@ -13,11 +13,17 @@
  * Diese Klasse stellt eine Linearlocation dar.<br> In ihr sind alle Atribute enthalten,
  * die eine Linearlocation enth&auml;lt.
  */
-//class Gebietslokation;
+class Punktlokation;
 class Linearlokation: public Gebietslokation {
 public:
 	Linearlokation(vector<string> *zeile, Gebietslokation *areaReference);
 	virtual ~Linearlokation();
+
+	/**
+	 * Mit dieser Methode wird eine Punklokation in die Linearlokation eingetragen.
+	 * @param pktLocation Der Pointer auf die einzutragende Punktlokation.
+	 */
+	void addPktLokation(Punktlokation *pktLocation);
 
 	const string& getAdminCounty() const;
 	Gebietslokation* getAreaReference();
@@ -169,6 +175,12 @@ private:
 	 * Datei eingelesen wurden.
 	 */
 	void leseWerteEin(vector<string> *zeile);
+
+	/**
+	 * Dieser Vector enth&auml;lt die Punktlokationen, die diese
+	 * Linearlokation als Linear Reference angegeben haben.
+	 */
+	vector<Punktlokation*> punktLokations;
 
 };
 

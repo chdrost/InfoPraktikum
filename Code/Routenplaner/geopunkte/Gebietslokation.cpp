@@ -7,11 +7,10 @@
 
 #include "Gebietslokation.h"
 
-
 Gebietslokation::Gebietslokation(vector<string> *zeile) {
 	this->id = stoi(zeile->at(LOCATIONCODE));
 	this->typBuchstabe = zeile->at(TYPE).at(1);
-	this->typZahl = (int)(zeile->at(TYPE).at(2));
+	this->typZahl = (int) (zeile->at(TYPE).at(2));
 	this->feinTyp = stoi(zeile->at(SUBTYPE));
 	this->firstName = zeile->at(FIRST_NAME);
 	this->adminBundesLand = zeile->at(ADMIN_County);
@@ -23,13 +22,19 @@ Gebietslokation::~Gebietslokation() {
 }
 
 const string& Gebietslokation::getFirstName() const {
-	return firstName;
+	return (firstName);
 }
 
 int Gebietslokation::getId() const {
-	return id;
+	return (id);
 }
 
 void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 	this->linLocations.push_back(lokation);
+}
+
+string Gebietslokation::toString() {
+	stringstream s;
+	s <<"Id = " << this->id << "\nName= " << this->firstName;
+	return (s.str());
 }

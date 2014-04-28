@@ -13,12 +13,11 @@
 #include <string>
 #include "Gebietslokation.h"
 #include "Linearlokation.h"
+#include "Punktlokation.h"
 #include "AttributDefines.h"
 #include <regex>
 
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
-#include "../hilfsklassen/GeoKoordinate.h"
-
 
 #define GEBIETSLOKATION A
 #define LINLOKATION L
@@ -60,8 +59,17 @@ public:
 	 */
 	void speichereLinearLokation(vector<string> *zeile);
 
+	/**
+	 * Diese Methode erstellt ein Punklokations Objekt und verteilt den Pointer
+	 * auf die verschiedenen Datenstrukturen.<br>
+	 * Dabei werden auch die entsprechenden Linearlokationen gesucht, in denen die
+	 * Punktlokationen abgelegt werden.
+	 * @param lokation Ein Pointer Die Zeile mit den Informationen.
+	 */
+	void speicherePunkLokation(vector<string> *zeile);
+
 	const vector<Gebietslokation*>& getGebieteVector() const {
-		return gebieteVector;
+		return (gebieteVector);
 	}
 
 	/**
@@ -76,7 +84,22 @@ public:
 	 *</ol>
 	 * @param datenSatz Der Vector, der die eingelesene Datei enth&auml;lt.
 	 */
-	void objekteErstellen(vector< vector<string> > *datenSatz);
+	void objekteErstellen(vector<vector<string> > *datenSatz);
+
+	/**
+	 * Methode um die Values in die Maps einzutragen.
+	 * @param lok Eine Referenz vom Typ Gebietslokation. Sie wird in die Maps
+	 * eingetragen.
+	 */
+	void insertMap(Gebietslokation *lok);
+
+	/**
+	 * Mit dieser Methode kann man geziehlt nach dem Namen einer Lokalit&auml;t
+	 * suchen.
+	 * @param name Der Name der Lokation, die gesucht werden soll.
+	 * @return Der Inhalt der toString Methode des gefunden Objekts.
+	 */
+	string suchName(string name);
 
 private:
 	/**

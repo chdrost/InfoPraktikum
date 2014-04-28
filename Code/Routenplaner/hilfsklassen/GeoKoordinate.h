@@ -14,6 +14,9 @@
 #define LAENGE_ANGABE 2
 
 #include <string>
+
+#include  <iostream> //TODO nachdem cout raus, dann das auch raus
+
 using namespace std;
 
 /**
