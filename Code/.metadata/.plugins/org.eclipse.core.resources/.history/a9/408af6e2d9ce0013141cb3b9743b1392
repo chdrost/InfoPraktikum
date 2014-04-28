@@ -52,7 +52,6 @@ int main() {                                             // Hauptfunktion
 		if(gefundeneLokation == NULL){
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
 		}else{
-			cout<<"\nAdresse der gefunden Lokation: "<<gefundeneLokation<<"\n";
 			cout<< gefundeneLokation->toString();
 		}
 		gefundeneLokation = NULL;

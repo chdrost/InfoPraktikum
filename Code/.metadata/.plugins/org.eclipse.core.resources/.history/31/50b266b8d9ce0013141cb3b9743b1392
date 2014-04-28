@@ -42,7 +42,7 @@ int main() {                                             // Hauptfunktion
 	 * */
 
 	string eingabe = "";
-	Gebietslokation *gefundeneLokation = NULL;
+	Gebietslokation *gefundeneLokation;
 	while (eingabe != "end") {
 		eingabe = "";
 		cout << "\nBitte den gesuchten Begriff eingeben: (end fuer ende)\n";
@@ -52,7 +52,6 @@ int main() {                                             // Hauptfunktion
 		if(gefundeneLokation == NULL){
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
 		}else{
-			cout<<"\nAdresse der gefunden Lokation: "<<gefundeneLokation<<"\n";
 			cout<< gefundeneLokation->toString();
 		}
 		gefundeneLokation = NULL;
