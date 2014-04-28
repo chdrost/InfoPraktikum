@@ -12,7 +12,12 @@ Gebietslokation::Gebietslokation(vector<string> *zeile) {
 	this->typBuchstabe = zeile->at(TYPE).at(1);
 	this->typZahl = (int) (zeile->at(TYPE).at(2));
 	this->feinTyp = stoi(zeile->at(SUBTYPE));
-	this->firstName = zeile->at(FIRST_NAME);
+	string str = zeile->at(FIRST_NAME);
+	//Der Name ist mit "" angegeben. Diese muessen raus.
+	//TODO mal sehen, ob das schneller geht
+	str.erase(str.begin());
+	str.erase(str.end()-1);
+	this->firstName = str;
 	this->adminBundesLand = zeile->at(ADMIN_County);
 	this->aktualitaet = new Aktualitaet(zeile->at(ACTUALITY));
 }
@@ -35,6 +40,6 @@ void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 
 string Gebietslokation::toString() {
 	stringstream s;
-	s <<"Id = " << this->id << "\nName= " << this->firstName;
+	s <<"Id = " << this->id <<"\nTyp= "<<typBuchstabe<<typZahl<< "\nName= " << this->firstName<<"\n\n";
 	return (s.str());
 }

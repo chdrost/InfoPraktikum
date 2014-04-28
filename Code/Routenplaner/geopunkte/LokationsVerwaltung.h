@@ -99,7 +99,8 @@ public:
 	 * @param name Der Name der Lokation, die gesucht werden soll.
 	 * @return Der Inhalt der toString Methode des gefunden Objekts.
 	 */
-	string suchName(string name);
+	Gebietslokation* suchName(string name);
+	const multimap<string, Gebietslokation*>& getNamenMap() const;
 
 private:
 	/**

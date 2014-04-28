@@ -89,6 +89,10 @@ void LokationsVerwaltung::insertMap(Gebietslokation* lok) {
 	namenMap.insert(pair<string, Gebietslokation*>(lok->getFirstName(), lok));
 }
 
-string LokationsVerwaltung::suchName(string name) {
-	return ( namenMap.find(name)->second->toString());
+Gebietslokation* LokationsVerwaltung::suchName(string name) {
+	return ( namenMap.find(name)->second);
+}
+
+const multimap<string, Gebietslokation*>& LokationsVerwaltung::getNamenMap() const {
+	return (namenMap);
 }

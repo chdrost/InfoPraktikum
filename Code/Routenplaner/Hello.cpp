@@ -13,6 +13,7 @@ Hello::Hello() {
 }
 
 Hello::~Hello() {
+
 }
 
 #include <iostream>                                     // Ein- und Ausgabebibliothek
@@ -29,6 +30,28 @@ int main() {                                             // Hauptfunktion
 	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
 	lokVerwaltung->objekteErstellen(&erg);
 	cout << "\nGroesse Vector: " << lokVerwaltung->getGebieteVector().size();
+	cout << "\nGroesse Vector: " << lokVerwaltung->getNamenMap().size();
+
+	for (auto it = lokVerwaltung->getNamenMap().begin();
+			it != lokVerwaltung->getNamenMap().end(); it++) {
+		cout << "\nName: " << it->first << "Value: " << it->second->toString();
+	}
+	/*
+	 * Suche
+	 * */
+
+	string eingabe = "";
+	while (eingabe != "end") {
+		eingabe = "";
+		cout << "\nBitte den gesuchten Begriff eingeben: (end fuer ende)\n";
+		cin >> eingabe;
+		Gebietslokation *gefundeneLokation = lokVerwaltung->suchName(eingabe);
+		if(gefundeneLokation == NULL){
+			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
+		}else{
+			cout<< gefundeneLokation->toString();
+		}
+	}
 
 	delete datei;
 	delete lokVerwaltung;
