@@ -35,9 +35,15 @@ public:
 	 */
 	Gebietslokation(vector<string> *zeile);
 	virtual ~Gebietslokation();
+
+	/**
+	 * Mit dieser Methode kann dem Vector mit den Linearlokationen ein
+	 * Element angeh&auml;ngt werden.
+	 * @param lokation Die Linearlokation, die angeh&auml;ngt werden soll.
+	 */
+	void addLinLokation(Linearlokation *lokation);
 	const string& getFirstName() const;
 	int getId() const;
-
 private:
 	/**
 	 * Die Id einer Lokation erlaubt eine eindeutige Zuordnung dieser Lokation.

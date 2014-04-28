@@ -12,6 +12,7 @@
 #include <map>
 #include <string>
 #include "Gebietslokation.h"
+#include "Linearlokation.h"
 #include "AttributDefines.h"
 #include <regex>
 
@@ -20,7 +21,6 @@
 #define GEBIETSLOKATION A
 #define LINLOKATION L
 #define PUNKTLOKATION P
-
 
 using namespace std;
 
@@ -38,8 +38,11 @@ public:
 	 * Diese Methode entscheidet anhand des Types der Zeile, welches Objekt erstellt werden
 	 * soll, erstellt es und l&auml;dt es in die Datenstrukturen.
 	 * @param Ein Vector aus Strings, der einer Zeile unseres Datensatzes entspricht.
+	 *
+	 * @deprecated Die Unterscheidung findet schon in w&auml;hrend der Schleifendurchl&auml;fe
+	 * statt.
 	 */
-	void objektErstellen(vector<string> *zeile);
+	void objektErstellen(vector<string> *zeile, string pattern);
 
 	/**
 	 * Diese Methode verteilt den Pointer auf die verschiedenen Datenstrukturen.
@@ -47,9 +50,31 @@ public:
 	 */
 	void speichereGebietsLokation(Gebietslokation *lokation);
 
+	/**
+	 * Diese Methode verteilt den Pointer auf die verschiedenen Datenstrukturen.<br>
+	 * Dabei werden auch die entsprechenden Gebietslokationen gesucht, in denen die
+	 * Linearlokationen abgelegt werden.
+	 * @param lokation Ein Pointer Die Zeile mit den Informationen.
+	 */
+	void speichereLinearLokation(vector<string> *zeile);
+
 	const vector<Gebietslokation*>& getGebieteVector() const {
 		return gebieteVector;
 	}
+
+	/**
+	 * Diese Methode durchla&aumlft den Datensatz Vector mehrmals.<br>
+	 * Da die Objekte untereinander Abh&auml;ngigkeiten haben, m&uuml;ssen
+	 * sie in mehreren Schritten erstellt werden:
+	 *<ol>
+	 *	<li> Erstellen der Gebietslokationen.</li>
+	 *	<li> Erstellen der Linearlokationen </li>
+	 *	<li> Erstellen der Punktlokationen </li>
+	 *	<li> Zuordnen der Abh&auml;ngkeiten </li>
+	 *</ol>
+	 * @param datenSatz Der Vector, der die eingelesene Datei enth&auml;lt.
+	 */
+	void objekteErstellen(vector< vector<string> > *datenSatz);
 
 private:
 	/**

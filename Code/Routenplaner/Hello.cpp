@@ -36,11 +36,7 @@ int main() {                                             // Hauptfunktion
 	 }*/
 
 	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
-	int i=0;
-	for (vector<vector<string> >::iterator it = erg.begin(); it != erg.end();
-			it++, i++) {
-		lokVerwaltung->objektErstellen(&erg.at(i));
-	}
+	lokVerwaltung->objekteErstellen(&erg);
 	cout << "\nGroesse Vector: "<< lokVerwaltung->getGebieteVector().size();
 
 	delete datei;

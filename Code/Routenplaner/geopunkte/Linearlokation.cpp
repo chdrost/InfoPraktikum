@@ -8,31 +8,11 @@
 #include "Linearlokation.h"
 
 Linearlokation::Linearlokation(vector<string> *zeile,
-		Gebietslokation *areaReference, map<int, Gebietslokation*> *gebieteMap) :
+		Gebietslokation *areaReference) :
 		Gebietslokation(zeile) {
-	this->roadNumer = zeile->at(ROADNUMBER);
-	this->roadName = zeile->at(ROADNAME);
-	this->secondName = zeile->at(SECOND_NAME);
-	this->areaReference = gebieteMap->at(stoi(zeile->at(AREA_REFERENCE)));
-	this->negativeOffset = (Linearlokation*) gebieteMap->at(
-			stoi(zeile->at(NEGATIVE_OFFSET)));
-	this->positiveOffset = (Linearlokation*) gebieteMap->at(
-			stoi(zeile->at(POSITIVE_OFFSET)));
-	this->urban = stoi(zeile->at(URBAN));
-	this->intersectioncode = (Linearlokation*) gebieteMap->at(
-			stoi(zeile->at(INTERSECTIONSCODE)));
-	this->interruptsRoad = (Linearlokation*) gebieteMap->at(
-			stoi(zeile->at(INTERRUPTS_ROAD)));
-	this->inPositive = stoi(zeile->at(IN_POSITIVE));
-	this->outPositive = stoi(zeile->at(OUT_POSITIVE));
-	this->inNegative = stoi(zeile->at(IN_NEGATIVE));
-	this->outNegative = stoi(zeile->at(OUT_NEGATIVE));
-	this->presentPositive = stoi(zeile->at(PRESENT_POSITIVE));
-	this->presentNegative = stoi(zeile->at(PRESENT_NEGATIVE));
-	this->veraendert = stoi(zeile->at(VERAENDERT));
-	this->tern = stoi(zeile->at(TERN));
-	this->poldir = zeile->at(POLDIR);
-	this->adminCounty = zeile->at(ADMIN_County);
+	this->areaReference = areaReference;
+	leseWerteEin(zeile);
+
 }
 
 Linearlokation::~Linearlokation() {
@@ -43,7 +23,7 @@ const string& Linearlokation::getAdminCounty() const {
 	return adminCounty;
 }
 
- Gebietslokation* Linearlokation::getAreaReference()  {
+Gebietslokation* Linearlokation::getAreaReference() {
 	return areaReference;
 }
 
@@ -55,15 +35,15 @@ bool Linearlokation::isInPositive() const {
 	return inPositive;
 }
 
- Linearlokation* Linearlokation::getInterruptsRoad()  {
+Linearlokation* Linearlokation::getInterruptsRoad() {
 	return interruptsRoad;
 }
 
- Linearlokation* Linearlokation::getIntersectioncode()  {
+Linearlokation* Linearlokation::getIntersectioncode() {
 	return intersectioncode;
 }
 
- Linearlokation* Linearlokation::getNegativeOffset()  {
+Linearlokation* Linearlokation::getNegativeOffset() {
 	return negativeOffset;
 }
 
@@ -79,7 +59,7 @@ const string& Linearlokation::getPoldir() const {
 	return poldir;
 }
 
- Linearlokation* Linearlokation::getPositiveOffset()  {
+Linearlokation* Linearlokation::getPositiveOffset() {
 	return positiveOffset;
 }
 
@@ -113,4 +93,71 @@ bool Linearlokation::isUrban() const {
 
 int Linearlokation::getVeraendert() const {
 	return veraendert;
+}
+
+void Linearlokation::setAreaReference( Gebietslokation* areaReference) {
+	this->areaReference = areaReference;
+}
+
+void Linearlokation::leseWerteEin(vector<string>* zeile) {
+//TODO Defaultwerte als Konstanten und cerr entfernen
+	this->roadNumer = zeile->at(ROADNUMBER);
+	this->roadName = zeile->at(ROADNAME);
+	this->secondName = zeile->at(SECOND_NAME);
+	try {
+		this->urban = stoi(zeile->at(URBAN));
+	} catch (const std::invalid_argument &e) {
+		this->urban = 0;
+		cerr<<"\n"<<zeile->at(URBAN)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->inPositive = stoi(zeile->at(IN_POSITIVE));
+	} catch (const std::invalid_argument &e) {
+		this->inPositive = 0;
+		cerr<<"\n"<<zeile->at(IN_POSITIVE)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->outPositive = stoi(zeile->at(OUT_POSITIVE));
+	} catch (const std::invalid_argument &e) {
+		this->outPositive = false;
+		cerr<<"\n"<<zeile->at(OUT_POSITIVE)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->inNegative = stoi(zeile->at(IN_NEGATIVE));
+	} catch (const std::invalid_argument &e) {
+		this->inNegative = false;
+		cerr<<"\n"<<zeile->at(IN_NEGATIVE)<<"\n Cerr ausgeloest";
+	}
+	try {
+		this->outNegative = stoi(zeile->at(OUT_NEGATIVE));
+	} catch (const std::invalid_argument &e) {
+		this->outNegative = false;
+		cerr<<"\n"<<zeile->at(OUT_NEGATIVE)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->presentPositive = stoi(zeile->at(PRESENT_POSITIVE));
+	} catch (const std::invalid_argument &e) {
+		this->presentPositive = false;
+		cerr<<"\n"<<zeile->at(PRESENT_POSITIVE)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->presentNegative = stoi(zeile->at(PRESENT_NEGATIVE));
+	} catch (const std::invalid_argument &e) {
+		this->presentNegative = false;
+		cerr<<"\n"<<zeile->at(PRESENT_NEGATIVE)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->veraendert = stoi(zeile->at(VERAENDERT));
+	} catch (const std::invalid_argument &e) {
+		this->veraendert = false;
+		cerr<<"\n"<<zeile->at(VERAENDERT)<<"  Cerr ausgeloest\n";
+	}
+	try {
+		this->tern = stoi(zeile->at(TERN));
+	} catch (const std::invalid_argument &e) {
+		this->tern = false;
+		cerr<<"\n"<<zeile->at(TERN)<<"  Cerr ausgeloest\n";
+	}
+	this->poldir = zeile->at(POLDIR);
+	this->adminCounty = zeile->at(ADMIN_County);
 }
