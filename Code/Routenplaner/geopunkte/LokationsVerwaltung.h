@@ -17,6 +17,8 @@
 #include <regex>
 
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
+#include "../hilfsklassen/GeoKoordinate.h"
+
 
 #define GEBIETSLOKATION A
 #define LINLOKATION L

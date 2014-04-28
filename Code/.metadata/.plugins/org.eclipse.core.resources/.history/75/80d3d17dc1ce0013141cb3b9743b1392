@@ -1,0 +1,20 @@
+/*
+ * GeoKoordinate.cpp
+ *
+ *  Created on: 28.04.2014
+ *      Author: christoph
+ */
+
+#include "GeoKoordinate.h"
+
+GeoKoordinate::GeoKoordinate(string xKoordinate, string yKoordinate) {
+	// TODO Auto-generated constructor stub
+
+}
+
+GeoKoordinate::~GeoKoordinate() {
+	// TODO Auto-generated destructor stub
+}
+
+void GeoKoordinate::gradEinlesen(string zeichen, struct gradAngabe* angabe) {
+}

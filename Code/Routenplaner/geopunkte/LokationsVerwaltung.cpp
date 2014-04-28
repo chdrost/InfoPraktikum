@@ -60,11 +60,15 @@ void LokationsVerwaltung::objekteErstellen(vector<vector<string> >* datenSatz) {
 	//Zeiter Durchlauf, Erstellen der Linearlokationen
 	for(auto it = datenSatz->begin(); it != datenSatz->end(); it++){
 		if (regex_match(it->at(TYPE), regex("\"L(.*)"))) {
-					speichereLinearLokation(&*it);
+					//speichereLinearLokation(&*it);
 				}
 		}
 	//Dritter Durchlauf, Erstellen der Punktlokationen
-	//TODO Punktlokationen einlesen
+	for(auto it = datenSatz->begin(); it != datenSatz->end(); it++){
+			if (regex_match(it->at(TYPE), regex("\"P(.*)"))) {
+					GeoKoordinate(it->at(X_KOORDINATE), it->at(Y_KOORDINATE));
+					}
+			}
 
 	//Vierter Durchlauf, Verknuepfung der Abhaengigleiten
 	//TODO Abhaengigkeiten verlinken

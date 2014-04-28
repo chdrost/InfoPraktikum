@@ -1,15 +1,80 @@
-11:03:54 **** Incremental Build of configuration Release for project Routenplaner ****
+13:04:15 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
+Building file: ../reader/FileOpener.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"reader/FileOpener.d" -MT"reader/FileOpener.d" -o "reader/FileOpener.o" "../reader/FileOpener.cpp"
+Finished building: ../reader/FileOpener.cpp
+ 
+Building file: ../hilfsklassen/Aktualitaet.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/Aktualitaet.d" -MT"hilfsklassen/Aktualitaet.d" -o "hilfsklassen/Aktualitaet.o" "../hilfsklassen/Aktualitaet.cpp"
+Finished building: ../hilfsklassen/Aktualitaet.cpp
+ 
+Building file: ../hilfsklassen/GeoKoordinate.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/GeoKoordinate.d" -MT"hilfsklassen/GeoKoordinate.d" -o "hilfsklassen/GeoKoordinate.o" "../hilfsklassen/GeoKoordinate.cpp"
+Finished building: ../hilfsklassen/GeoKoordinate.cpp
+ 
+Building file: ../geopunkte/Gebietslokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
+Finished building: ../geopunkte/Gebietslokation.cpp
+ 
 Building file: ../geopunkte/Linearlokation.cpp
 Invoking: Cross G++ Compiler
 g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Linearlokation.d" -MT"geopunkte/Linearlokation.d" -o "geopunkte/Linearlokation.o" "../geopunkte/Linearlokation.cpp"
 Finished building: ../geopunkte/Linearlokation.cpp
  
+Building file: ../geopunkte/LokationsVerwaltung.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/LokationsVerwaltung.d" -MT"geopunkte/LokationsVerwaltung.d" -o "geopunkte/LokationsVerwaltung.o" "../geopunkte/LokationsVerwaltung.cpp"
+Finished building: ../geopunkte/LokationsVerwaltung.cpp
+ 
+Building file: ../geopunkte/Punktlokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Punktlokation.d" -MT"geopunkte/Punktlokation.d" -o "geopunkte/Punktlokation.o" "../geopunkte/Punktlokation.cpp"
+In file included from ../geopunkte/Punktlokation.cpp:8:
+../geopunkte/Punktlokation.h:22:18: warning: private field 'linearReference' is not used [-Wunused-private-field]
+        Linearlokation *linearReference;
+                        ^
+../geopunkte/Punktlokation.h:34:6: warning: private field 'netzKontenNummerVor' is not used [-Wunused-private-field]
+        int netzKontenNummerVor;
+            ^
+../geopunkte/Punktlokation.h:39:6: warning: private field 'netzKontenNummerNach' is not used [-Wunused-private-field]
+        int netzKontenNummerNach;
+            ^
+../geopunkte/Punktlokation.h:45:6: warning: private field 'station' is not used [-Wunused-private-field]
+        int station;
+            ^
+../geopunkte/Punktlokation.h:52:6: warning: private field 'laengenGrad' is not used [-Wunused-private-field]
+        int laengenGrad;
+            ^
+../geopunkte/Punktlokation.h:59:6: warning: private field 'breitenGrad' is not used [-Wunused-private-field]
+        int breitenGrad;
+            ^
+6 warnings generated.
+Finished building: ../geopunkte/Punktlokation.cpp
+ 
+Building file: ../exceptions/FileNotFoundException.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"exceptions/FileNotFoundException.d" -MT"exceptions/FileNotFoundException.d" -o "exceptions/FileNotFoundException.o" "../exceptions/FileNotFoundException.cpp"
+Finished building: ../exceptions/FileNotFoundException.cpp
+ 
+Building file: ../exceptions/ZeitException.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"exceptions/ZeitException.d" -MT"exceptions/ZeitException.d" -o "exceptions/ZeitException.o" "../exceptions/ZeitException.cpp"
+Finished building: ../exceptions/ZeitException.cpp
+ 
+Building file: ../Hello.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
+ 
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/GeoKoordinate.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-11:03:55 Build Finished (took 616ms)
+13:04:21 Build Finished (took 6s.200ms)
 

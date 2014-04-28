@@ -7,7 +7,7 @@
 
 #include "Punktlokation.h"
 
-Punktlokation::Punktlokation() {
+Punktlokation::Punktlokation(vector<string> *zeile, Gebietslokation *areaReference) : Linearlokation(zeile,areaReference) {
 	// TODO Auto-generated constructor stub
 
 }

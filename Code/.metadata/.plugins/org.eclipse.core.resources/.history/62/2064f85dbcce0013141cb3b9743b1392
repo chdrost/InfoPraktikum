@@ -1,0 +1,17 @@
+/*
+ * GeoKoordinate.h
+ *
+ *  Created on: 28.04.2014
+ *      Author: christoph
+ */
+
+#ifndef GEOKOORDINATE_H_
+#define GEOKOORDINATE_H_
+
+class GeoKoordinate {
+public:
+	GeoKoordinate();
+	virtual ~GeoKoordinate();
+};
+
+#endif /* GEOKOORDINATE_H_ */
