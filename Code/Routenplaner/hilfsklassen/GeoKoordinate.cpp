@@ -29,3 +29,7 @@ void GeoKoordinate::gradEinlesen(string zeichen, gradAngabe* angabe) {
 		std::cerr << "\n" << e.what() << "\n";
 	}
 }
+
+float GeoKoordinate::entfernungBerechnen(GeoKoordinate ziel) {
+
+}

@@ -72,6 +72,13 @@ public:
 	 * @param gradAngabe Ein Pointer auf das Struct, in das die Werte abgelegt werden sollen.
 	 */
 	void gradEinlesen(string zeichen, gradAngabe* angabe);
+
+	/**
+	 * Berechnet die entfernung von der aktuellen GeoKoordinate zu einer Ziel Geokoordinate
+	 * Gibt den Wert der entfernung in Km als Float zurueck
+	 * @param ziel die entfernte Geokoordinate zu der der Weg berechnet wrden soll
+	 */
+	float entfernungBerechnen(GeoKoordinate ziel);
 private:
 
 	/**
