@@ -1,35 +1,74 @@
 /*
- * Gebiet.h
+ * Gebietslokation.h
  *
- *  Created on: 25.04.2014
+ *  Created on: 26.04.2014
  *      Author: christoph
  */
 
-#ifndef GEBIET_H_
-#define GEBIET_H_
+#ifndef GEBIETSLOKATION_H_
+#define GEBIETSLOKATION_H_
 
+#include <string>
+#include <vector>
+#include <map>
+#include "../hilfsklassen/Aktualitaet.h"
+#include "AttributDefines.h"
+
+//#include "Linearlokation.h"
+
+#include  <iostream> //TODO nachdem cout raus, dann das auch raus
+
+using namespace std;
 /**
  * Diese Klasse stellt ein Gebiet dar. Gebietslokationen sind laut der Dokumentation
  * des Bundesamtes mit einem "A" gekennzeichnet. Sie definieren grobe Gebiete,
  * wie beispielsweise Kontinente, L&auml;nder Ballungsr&auml;me oder Fl&uml;sse.
  */
-class Gebiet {
+class Linearlokation;
+class Gebietslokation {
 public:
-	Gebiet();
-	virtual ~Gebiet();
+	Gebietslokation();
+	/**
+	 * Dieser Konstruktor soll als Standardkonstruktor genutzt werden. <br>
+	 * Aus dem Vector werden die entsprechenden Attribute der Zeile ausgelesen.
+	 * @param Ein Vector, der einer Zeile aus dem Datensatz entspricht.
+	 */
+	Gebietslokation(vector<string> *zeile);
+	virtual ~Gebietslokation();
 
+	/**
+	 * Mit dieser Methode kann dem Vector mit den Linearlokationen ein
+	 * Element angeh&auml;ngt werden.
+	 * @param lokation Die Linearlokation, die angeh&auml;ngt werden soll.
+	 */
+	void addLinLokation(Linearlokation *lokation);
+
+	/**
+	 * Gibt informationen zu dem Objekt zur&uuml;ck.
+	 * @return Ein String, wo was drin steht.
+	 */
+	string toString();
+
+
+	const string& getFirstName() const;
+	int getId() const;
 private:
 	/**
 	 * Die Id einer Lokation erlaubt eine eindeutige Zuordnung dieser Lokation.
-	 * In der Hierarchie folgende Lokationen verweisen auf diese Id.
+	 * In der Hierarchie folgende Lokationen verweisen auf diese Id.<br>
+	 * Die ID entspricht dem "LOCATIONCODE" der Dokumentation.
 	 */
 	int id;
+
 	/**
 	 * Der Grob Typ einer Lokation gibt an, um weche Lokation es sich handelt.
 	 * Er ist nur mit einem Buchstaben gekennzeichnet. Dieser Buchstabe ist im Fall
 	 * der Gebietslokation immer A.
+	 * Das Feld "TYPE" in der Dokumentation des Bundesamtes setzt sich aus @link typBuchstabe
+	 * @endlink und @link typZahl @endlink zusammen.
 	 */
 	char typBuchstabe;
+
 	/**
 	 * Zur Beschriebung der Lokation geh&ouml;rt eine Zahl. Die Zahl beschreit, um welche
 	 * Lokation es sich handelt.<br>
@@ -48,9 +87,12 @@ private:
 	 * 		<li>Teilgebiet</li>
 	 * </ol>
 	 * F&uml;r die Benennung wurde jeweils die Beschreibung des ersten @link feinTyp @endLink
-	 * verwendet.
+	 * verwendet.<br>
+	 * Das Feld "TYPE" in der Dokumentation des Bundesamtes setzt sich aus @link typBuchstabe
+	 * @endlink und @link typZahl @endlink zusammen.
 	 */
 	int typZahl;
+
 	/**
 	 * Der feinTyp beschreibt den Typ einer Lokation genauer. <br>
 	 * Der Typ A5 beispielsweise steht f&uuml;r ein Gew&auml;sser. Wird das Gew&auml;sser
@@ -58,6 +100,30 @@ private:
 	 * Binnensee.
 	 */
 	int feinTyp;
+
+	/**
+	 * Der Name der Location.<br>
+	 * Bsp.:Deutschland
+	 */
+	string firstName;
+
+	/**
+	 * Dieses Attribut gibt an, welches Bundesland für die Bearbeitung zuständig ist.
+	 * Dieses Attribut wird im aktuellen Release nicht genutzt, ist aber dennoch der
+	 * Vollst&auml;ndigkeit halber enthalten.
+	 */
+	string adminBundesLand;
+
+	/**
+	 *Beschreibt vermutlich die Aktualit&auml;t des Datensatzes. Wird im aktuellen Release
+	 *nicht genutzt.
+	 */
+	Aktualitaet *aktualitaet;
+
+	/**
+	 * In diesem Vector sind die Linearlocations enthalten, die zu diesem Gebiet ge&ouml;ren.
+	 */
+	vector<Linearlokation*> linLocations;
 };
 
-#endif /* GEBIET_H_ */
+#endif /* GEBIETSLOKATION_H_ */

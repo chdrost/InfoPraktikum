@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../geopunkte/Gebietslokation.cpp \
 ../geopunkte/Linearlokation.cpp \
+../geopunkte/LokationsVerwaltung.cpp \
 ../geopunkte/Punktlokation.cpp 
 
 OBJS += \
 ./geopunkte/Gebietslokation.o \
 ./geopunkte/Linearlokation.o \
+./geopunkte/LokationsVerwaltung.o \
 ./geopunkte/Punktlokation.o 
 
 CPP_DEPS += \
 ./geopunkte/Gebietslokation.d \
 ./geopunkte/Linearlokation.d \
+./geopunkte/LokationsVerwaltung.d \
 ./geopunkte/Punktlokation.d 
 
 
@@ -23,7 +26,7 @@ CPP_DEPS += \
 geopunkte/%.o: ../geopunkte/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

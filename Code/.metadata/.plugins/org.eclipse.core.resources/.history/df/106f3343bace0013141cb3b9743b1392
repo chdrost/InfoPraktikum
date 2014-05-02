@@ -1,0 +1,28 @@
+/*
+ * Punktlokation.h
+ *
+ *  Created on: 25.04.2014
+ *      Author: christoph
+ */
+
+#ifndef PUNKTLOKATION_H_
+#define PUNKTLOKATION_H_
+
+#include"Linearlokation.h"
+
+class Punktlokation : public Linearlokation {
+public:
+	Punktlokation(vector<string> *zeile, Gebietslokation *areaReference);
+	virtual ~Punktlokation();
+
+private:
+	/**
+	 * Pointer auf die &uuml;bergeordnete Linearlokation.
+	 */
+	Linearlokation *linearReference;
+
+	//exitNumber; TODO rausfinden, was man damit macht und was f&uuml;r ein Datentyp das ist
+
+};
+
+#endif /* PUNKTLOKATION_H_ */

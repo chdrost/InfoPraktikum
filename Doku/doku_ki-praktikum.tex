@@ -1,0 +1,186 @@
+% !TEX encoding = UTF-8 Unicode
+%Präambel
+
+%Report für große Doukumente. Dieser ist in Kapitel (\chapter{}) aufgeteilt
+%\documentclass[12pt, a4paper, ngerman]{report} 
+
+%Article für normale Doumente
+\documentclass[12pt, a4paper, ngerman]{article}
+
+%Deutsche Beschreibungen von generiertem Text (table of contents => Inhaltsverzeichnis)
+\usepackage[ngerman]{babel}
+
+%Umlaute
+\usepackage[utf8]{inputenc}
+
+%Schriftart Helvetica 
+\usepackage[scaled]{helvet}
+
+%Seitenränder
+\usepackage{geometry}
+%top = Abstand nach oben
+%left = Abstand nach links
+%right = Abstand nach rechts
+%bottom= Abstand nach unten
+%heapsep= Abstand zwische Kopfzeile und Text
+%footskip= Abstand zwischen Text und Fußzeile
+\geometry{a4paper, top=25mm, left=30mm, right=25mm, bottom=30mm, headsep=10mm, footskip=12mm}
+
+%Farben nutzen
+\usepackage{xcolor}
+
+%Grafiken einbinden
+\usepackage{graphicx}
+
+%Zusätzliche Positionsbefehle
+\usepackage{float} 
+
+%Die Einrücktiefe bei einem neuen Absatz
+\setlength{\parindent}{0pt}
+
+%Fülltext
+\usepackage{blindtext}
+
+%Fuer Zitate	
+\PassOptionsToPackage{backend=bibtex}{biblatex}
+\usepackage[natbib=true,style=numeric]{biblatex}
+\usepackage[babel,german=guillemets]{csquotes}
+\bibliography{quellen.bib} 
+
+% Aufnahme von \paragraph in das Inhaltsverzeichnis 
+\setcounter{tocdepth}{3}  
+
+%Nummerierung vertiefen, \paragraph kommt mit ins Inhaltsverzeichnis
+\setcounter{secnumdepth}{4} 
+
+%Feste Tabellen
+\usepackage{tabulary}
+
+%caption für nummerierte Tabellenüberschriften
+%booktabs für die Steuerung von Linien
+\usepackage{caption, booktabs}
+
+%Eigene Kommandos
+% Osi Modell
+\newcommand{\osi}{ISO/OSI Referenzmodell\xspace}
+\newcommand{\fcs}{FCS, Frame Checking Sequence,\xspace}
+\newcommand{\punkt}[1]{\begin{itemize} \item #1 \end{itemize}}
+
+
+\usepackage{bytefield}
+
+%Ende Präambel
+	
+\begin{document}
+
+\begin{titlepage}
+		\begin{center}
+			\includegraphics[width=.8\linewidth]{Grafiken/logo_htw.jpg}\\[1cm]    
+			\textsc{\LARGE Hochschule für Technik und Wirtschaft \newline Fakultät für Ingenieurwissenschaften}\\[1.5cm]
+			\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} \HRule \\[0.4cm] { \huge \bfseries Dokumentation des Ki Praktikums}\\[0.4cm]
+			\HRule \\[1.5cm]
+
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushleft} \large
+					\emph{Projektleiter:} \\
+					\emph{Team 1:}Christoph Drost\\
+					\emph{Team 2:} Deniz Kadiogullari
+					\end{flushleft}
+			\end{minipage}
+			\hfill
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushright} \large
+					\emph{Betreuer:} \\
+					Prof. Dr. Weber \\
+				\end{flushright}
+			\end{minipage}
+			\vfill
+			{\large \today}
+		\end{center}
+	\end{titlepage}
+
+
+%Inhaltsverzeichnis auf eigener Seite
+\tableofcontents
+\newpage 
+
+\section{Aufbau des Datensatzes}
+
+Der Datensatz wurde in Form einer CSV Datei zur Verfügung gestellt. Er besteht aus 45 Spalten, die jeweils die Attribute eines Satzes zur beschreiben. \\ \\
+
+\begin{bytefield}[bitwidth=4.1em]{8}
+	\bitheader{0-7} \\
+	\begin{rightwordgroup}{01}
+		\bitbox{1}{00} & \bitbox{1}{01} & \bitbox{1}{02}&\bitbox{1}{03} & \bitbox{1}{04} & \bitbox{1}{05}\bitbox{1}{06} & \bitbox{1}{07}
+	\end{rightwordgroup} \\
+	\begin{rightwordgroup}{02}
+		\bitbox{1}{08} & \bitbox{1}{09} & \bitbox{1}{10}&\bitbox{1}{11} & \bitbox{1}{12} & \bitbox{1}{13}\bitbox{1}{14} & \bitbox{1}{15}
+	\end{rightwordgroup} \\
+	\begin{rightwordgroup}{03}
+		\bitbox{1}{16} & \bitbox{1}{16} & \bitbox{1}{17}&\bitbox{1}{18} & \bitbox{1}{19} & \bitbox{1}{20}\bitbox{1}{21} & \bitbox{1}{21}
+	\end{rightwordgroup} \\
+	\begin{rightwordgroup}{04}
+		 \bitbox{1}{22} & \bitbox{1}{23}&\bitbox{1}{24} & \bitbox{1}{25} & \bitbox{1}{26}\bitbox{1}{27} & \bitbox{1}{28} & \bitbox{1}{29} 
+	\end{rightwordgroup} \\
+	\begin{rightwordgroup}{05}
+		\bitbox{1}{30} & \bitbox{1}{31} & \bitbox{1}{32}&\bitbox{1}{33} & \bitbox{1}{34} & \bitbox{1}{35}\bitbox{1}{36} & \bitbox{1}{37}
+	\end{rightwordgroup} \\
+	\begin{rightwordgroup}{06}
+		\bitbox{1}{38} & \bitbox{1}{39} & \bitbox{1}{40}&\bitbox{1}{41} & \bitbox{1}{42} & \bitbox{1}{43}\bitbox{1}{44} & \bitbox{1}{45}
+	\end{rightwordgroup} \\
+\end{bytefield}
+	
+\textbf{Erklärung}
+\begin{enumerate}
+	\item Loc\_Id, eindeutiger numerischer Wert des Datensatzes.
+	\item Gebietstyp. Dadurch wird das Gebiet des Datensatzes beschrieben. Bsp. A3 für ein eigenes Land, L1 für Autobahn.
+	\item  Untertyp des Gebiets, dient dazu, das Gebiet genauer zu klassifizieren.
+	\item Kurzbezeichnung für Straße, Bsp: A620.
+	\item Straßenname, bzw. Gebietsname. Bsp: Messegelände, Ruhrallee
+	\item Erster Straßenname. Bsp: Essen-Heisingen ? von ?
+	\item Zweiter Straßennahme ? Bis ?????
+	\item Area-Verweis (über Loc\_Id) auf das Gebiet, in dem die Lokation liegt
+	\item Linear Reference ???????????
+	\item Verweis auf Vorgängerlokation (Loc\_Id) bezogen auf die Erfassungsrichtung
+	\item Verweis auf Nachfolgerlokation (Loc\_Id) bezogen auf die Erfassungsrichtung
+	\item Flag, ob Verkehr städtischen Charakters vorliegt (1=ja, 0=nein)
+	\item Verweis auf Lokation (Loc\_Id) einer anderen Straße an gleicher Stelle (zirkuläre Verkettung)
+	\item Verweis auf die nächste Lokation nach der Unterbrechung im Staßenverlauf (wahrscheinlich Loc\_Id)
+	\item Flag, ob Lokation in Erfassungsrichtung zugänglich ist (1=ja, 0=nein)
+	\item Flag, ob Lokation in Erfassungsrichtung verlassen werden kann (1=ja, 0=nein)
+	\item Flag, ob Lokation entgegen der Erfassungsrichtung zugänglich ist (1=ja, 0=nein)
+	\item Flag, ob Lokation entgegen der Erfassungsrichtung verlassen werden kann (1=ja, 0=nein)
+	\item Flag, ob Lokation in Erfassungsrichtung vorhanden ist (1=ja, 0=nein)
+	\item Flag, ob Lokation entgegen der Erfassungsrichtung vorhanden ist (1=ja, 0=nein)
+	\item Anschlussstellennummer/Knotenpunktnummer (bei BAB)
+	\item Nummer der in Erfassungsrichtung ausgewiesenen Umleitungsempfehlung
+	\item Nummer der entgegen der Erfassungsrichtung ausgewiesenen Umleitungsempfehlung
+	\item Flag, ob Datensatz bei Aktualisierungslauf gegenüber der Vorgängerversion verändert wurde (nur vor Release erkennbar 0=nein, 1=ja, 2=neu, 3=löschen)
+	\item Angabe, ob Lokation zum TERN-Netz gehört (1=ja, 0=nein)
+	\item Netzknotennummer der Lokation oder Netzknotennummer des vor der Lokation liegenden Netzknoten
+	\item Netzknotennummer des nach der Lokation liegenden Netzknoten
+	\item Entfernung der Lokation vom Netzknoten 1 (Angabe in m) in Richtung Netzknoten 2
+	\item Angabe der x-Koordinate nach WGS84 ohne vorangestellte Nullen (s. EN ISO 14819-3)
+	\item Angabe der y-Koordinate nach WGS84 ohne vorangestellte Nullen (s. EN ISO 14819-3)
+	\item Hinweis auf zuständige Polizeidienststelle (Nur Name)
+	\item Hinweis auf für Bearbeitung zuständiges Bundesland (Kurzzeichen nach StBA) 
+	
+	
+\end{enumerate}	
+
+Die Felder 31-44 sind nicht dokumentiert.
+
+\subsection{Erster Versuch der Interpretation}
+Lokation: Saarbrücken-Malstatter Brücke
+
+\textbf{Vorläufig wichtige Attribute}
+
+Geo Koordinate: X: 00697225; Y: 4923550  (Google: ca. 49.235514, ca. 6.971922)
+
+Area Verweis: 2291 = Saarbrücken
+
+Linear Reference:  7172 =  First Name = Saarlouis ; Second Name = Saarbrücken evtl. verweist die Linear Reference auf 
+
+\newpage
+\listoffigures
+\end{document}

@@ -1,39 +1,15 @@
-10:41:00 **** Incremental Build of configuration Release for project Routenplaner ****
+15:34:58 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../geopunkte/Gebietslokation.cpp
+Building file: ../Hello.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
-In file included from ../geopunkte/Gebietslokation.cpp:8:
-../geopunkte/Gebietslokation.h:26:6: warning: private field 'id' is not used [-Wunused-private-field]
-        int id;
-            ^
-../geopunkte/Gebietslokation.h:32:7: warning: private field 'typBuchstabe' is not used [-Wunused-private-field]
-        char typBuchstabe;
-             ^
-../geopunkte/Gebietslokation.h:53:6: warning: private field 'typZahl' is not used [-Wunused-private-field]
-        int typZahl;
-            ^
-../geopunkte/Gebietslokation.h:60:6: warning: private field 'feinTyp' is not used [-Wunused-private-field]
-        int feinTyp;
-            ^
-Finished building: ../geopunkte/Gebietslokation.cpp
-4 warnings generated.
- 
-Building file: ../geopunkte/Linearlokation.cpp
-Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"geopunkte/Linearlokation.d" -MT"geopunkte/Linearlokation.d" -o "geopunkte/Linearlokation.o" "../geopunkte/Linearlokation.cpp"
-Finished building: ../geopunkte/Linearlokation.cpp
- 
-Building file: ../geopunkte/Punktlokation.cpp
-Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"geopunkte/Punktlokation.d" -MT"geopunkte/Punktlokation.d" -o "geopunkte/Punktlokation.o" "../geopunkte/Punktlokation.cpp"
-Finished building: ../geopunkte/Punktlokation.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/Punktlokation.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/GeoKoordinate.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-10:41:00 Build Finished (took 162ms)
+15:34:59 Build Finished (took 669ms)
 
