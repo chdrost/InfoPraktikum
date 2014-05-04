@@ -32,11 +32,10 @@ int main() {                                             // Hauptfunktion
 	cout << "\nGroesse Vector: " << lokVerwaltung->getGebieteVector().size();
 	cout << "\nGroesse Vector: " << lokVerwaltung->getNamenMap().size();
 
-
-	for (auto it = lokVerwaltung->getNamenMap().begin();
-			it != lokVerwaltung->getNamenMap().end(); it++) {
-		cout << "\nName: " << it->first << "Value: " << it->second->toString();
-	}
+	/* (auto it = lokVerwaltung->getNamenMap().begin();
+	 it != lokVerwaltung->getNamenMap().end(); it++) {
+	 cout << "\nName: " << it->first << "Value: " << it->second->toString();
+	 }*/
 	/*
 	 * Suche
 	 * */
@@ -49,11 +48,12 @@ int main() {                                             // Hauptfunktion
 		cin >> eingabe;
 		gefundeneLokation = lokVerwaltung->suchName(eingabe);
 
-		if(gefundeneLokation == NULL){
+		if (gefundeneLokation == NULL) {
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
-		}else{
-			cout<<"\nAdresse der gefunden Lokation: "<<gefundeneLokation<<"\n";
-			cout<< gefundeneLokation->toString();
+		} else {
+			cout << "\nAdresse der gefunden Lokation: " << gefundeneLokation
+					<< "\n";
+			cout << gefundeneLokation->toString();
 		}
 		gefundeneLokation = NULL;
 	}

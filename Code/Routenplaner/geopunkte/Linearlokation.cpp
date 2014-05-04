@@ -156,3 +156,52 @@ void Linearlokation::leseWerteEin(vector<string>* zeile) {
 void Linearlokation::addPktLokation(Punktlokation* pktLocation) {
 	this->punktLokations.push_back(pktLocation);
 }
+
+//TODO Hier checken, ob stoi typensicher werden soll oder ob es Sinn macht, einfach den
+//Fehler zu unterdruecken
+void Linearlokation::speichereOffset(map<int, Gebietslokation*>* gebieteMap,
+		vector<string> *zeile) {
+	try {
+		int positiveOffset = stoi(zeile->at(POSITIVE_OFFSET));
+		this->positiveOffset = (Linearlokation*) gebieteMap->find(positiveOffset)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
+	try {
+		int negativeOffset = stoi(zeile->at(NEGATIVE_OFFSET));
+		this->negativeOffset = (Linearlokation*)gebieteMap->find(negativeOffset)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
+}
+
+void Linearlokation::speichereIntersectionCode(
+		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
+	try {
+			int interSectionCode = stoi(zeile->at(INTERSECTIONSCODE));
+			this->intersectioncode = (Linearlokation*) gebieteMap->find(interSectionCode)->second;
+		} catch (invalid_argument &e) {
+			//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+			//nichts eingelesen zu werden.
+		}
+}
+
+void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
+		vector<string>* zeile) {
+	speichereOffset(gebieteMap,zeile);
+	speichereInterruptsRoad(gebieteMap,zeile);
+	speichereIntersectionCode(gebieteMap,zeile);
+}
+
+void Linearlokation::speichereInterruptsRoad(
+		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
+	try {
+			int interruptsRoad = stoi(zeile->at(POSITIVE_OFFSET));
+			this->interruptsRoad = (Linearlokation*) gebieteMap->find(interruptsRoad)->second;
+		} catch (invalid_argument &e) {
+			//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+			//nichts eingelesen zu werden.
+		}
+}

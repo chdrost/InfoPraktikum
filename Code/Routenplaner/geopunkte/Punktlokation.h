@@ -13,7 +13,8 @@
 
 class Punktlokation: public Linearlokation {
 public:
-	Punktlokation(vector<string> *zeile, Linearlokation *areaReference);
+	Punktlokation(vector<string> *zeile, Gebietslokation *areaReference,
+			Linearlokation *linearReference);
 	virtual ~Punktlokation();
 
 private:

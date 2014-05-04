@@ -124,6 +124,30 @@ private:
 	 * R&uuml;ckgabewerte auftreten k&ouml;nnen.
 	 */
 	multimap<string, Gebietslokation*> namenMap;
+
+	/**
+	 * Diese Methode pr&uuml;ft anhand einer Regular Expression ob die &uuml;bergebene
+	 * Zeile eine Gebietslokation enth&auml;lt.
+	 * @param zeile Ein Vector, der eine Zeile aus dem Datensatz repr&auml;sentiert.
+	 * @return FALSE, wenn es sich bei der Zeile nicht um eine Gebietslokation handelt. TRUE andernfalls.
+	 */
+	bool checkGebietsLokation(vector<string> *zeile);
+
+	/**
+	 * Diese Methode pr&uuml;ft anhand einer Regular Expression ob die &uuml;bergebene
+	 * Zeile eine Linearlokation enth&auml;lt.
+	 * @param zeile Ein Vector, der eine Zeile aus dem Datensatz repr&auml;sentiert.
+	 * @return FALSE, wenn es sich bei der Zeile nicht um eine Linearlokation handelt. TRUE andernfalls.
+	 */
+	bool checkLineaLokation(vector<string> *zeile);
+
+	/**
+	 * Diese Methode pr&uuml;ft anhand einer Regular Expression ob die &uuml;bergebene
+	 * Zeile eine Punktlokation enth&auml;lt.
+	 * @param zeile Ein Vector, der eine Zeile aus dem Datensatz repr&auml;sentiert.
+	 * @return FALSE, wenn es sich bei der Zeile nicht um eine Punktlokation handelt. TRUE andernfalls.
+	 */
+	bool checkPunktlokation(vector<string> *zeile);
 };
 
 #endif /* LOKATIONSVERWALTUNG_H_ */

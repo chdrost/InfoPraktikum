@@ -8,9 +8,9 @@
 #include "Punktlokation.h"
 
 Punktlokation::Punktlokation(vector<string> *zeile,
-		Linearlokation *areaReference) :
+		Gebietslokation *areaReference, Linearlokation *linearReference) :
 		Linearlokation(zeile, areaReference) {
-	//TODO Linearreference
+	this->linearReference = linearReference;
 	if (!zeile->at(NETZKNOTEN1_NR).empty()) {
 		try {
 			this->netzKontenNummerVor = stoi(zeile->at(NETZKNOTEN1_NR));
