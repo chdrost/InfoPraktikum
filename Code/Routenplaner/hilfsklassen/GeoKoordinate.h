@@ -14,19 +14,10 @@
 #define LAENGE_ANGABE 2
 
 #include <string>
-
+#include <cmath>
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
 using namespace std;
-
-/**
- * Dieses Struct enth&auml;lt die einzelnen Grad Werte des Strings aus der Datei.
- */
-struct gradAngabe{
-	int grad;
-	int minuten;
-	int sekunden;
-};
 
 /**
  * Diese Klasse stellt eine Georkoordinate dar.<br>
@@ -71,7 +62,7 @@ public:
 	 * wurde.
 	 * @param gradAngabe Ein Pointer auf das Struct, in das die Werte abgelegt werden sollen.
 	 */
-	void gradEinlesen(string zeichen, gradAngabe* angabe);
+	void gradEinlesen(string zeichen, float *angabe);
 
 	/**
 	 * Berechnet die entfernung von der aktuellen GeoKoordinate zu einer Ziel Geokoordinate
@@ -86,14 +77,14 @@ private:
 	 * Auch Ostkoordinate.<br>
 	 * In der Dokumentation als X Koordinate bezeichnet.
 	 */
-	gradAngabe *laengenGrad;
+	float laengenGrad;
 
 	/**
 	 * Der Breitengrad der Lokation.<br>
 	 * Auch Nordkoordinate. <br>
 	 * In der Dokumentation als Y-Koordinate bezeichnet.
 	 */
-	gradAngabe *breitenGrad;
+	float breitenGrad;
 
 };
 

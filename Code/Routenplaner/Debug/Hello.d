@@ -1,15 +1,13 @@
-Hello.d: ../Hello.cpp ../Hello.h .././hilfsklassen/Aktualitaet.h \
-  .././hilfsklassen/./../exceptions/ZeitException.h \
-  .././reader/FileOpener.h \
+Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
   .././reader/./../exceptions/FileNotFoundException.h \
   ../geopunkte/LokationsVerwaltung.h ../geopunkte/Gebietslokation.h \
-  ../geopunkte/AttributDefines.h
+  ../geopunkte/../hilfsklassen/Aktualitaet.h \
+  ../geopunkte/../hilfsklassen/./../exceptions/ZeitException.h \
+  ../geopunkte/AttributDefines.h ../geopunkte/Linearlokation.h \
+  ../geopunkte/Punktlokation.h \
+  ../geopunkte/../hilfsklassen/GeoKoordinate.h
 
 ../Hello.h:
-
-.././hilfsklassen/Aktualitaet.h:
-
-.././hilfsklassen/./../exceptions/ZeitException.h:
 
 .././reader/FileOpener.h:
 
@@ -19,4 +17,14 @@ Hello.d: ../Hello.cpp ../Hello.h .././hilfsklassen/Aktualitaet.h \
 
 ../geopunkte/Gebietslokation.h:
 
+../geopunkte/../hilfsklassen/Aktualitaet.h:
+
+../geopunkte/../hilfsklassen/./../exceptions/ZeitException.h:
+
 ../geopunkte/AttributDefines.h:
+
+../geopunkte/Linearlokation.h:
+
+../geopunkte/Punktlokation.h:
+
+../geopunkte/../hilfsklassen/GeoKoordinate.h:
