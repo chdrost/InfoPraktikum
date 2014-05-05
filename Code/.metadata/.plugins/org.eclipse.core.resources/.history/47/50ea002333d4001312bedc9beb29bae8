@@ -211,7 +211,6 @@ void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
 
 string Linearlokation::toString() {
 	stringstream s;
-	//TODO Rekursion aus toString() entfernen
 	s << "\nLinearlokation\nName:" << this->firstName;
 			s<< "\nDarin enthalten:\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
