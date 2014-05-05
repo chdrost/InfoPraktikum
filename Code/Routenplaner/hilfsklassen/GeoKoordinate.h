@@ -70,6 +70,8 @@ public:
 	 * @param ziel die entfernte Geokoordinate zu der der Weg berechnet wrden soll
 	 */
 	float entfernungBerechnen(GeoKoordinate ziel);
+
+	string toString();
 private:
 
 	/**
