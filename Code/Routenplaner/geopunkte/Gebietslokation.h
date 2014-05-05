@@ -13,6 +13,7 @@
 #include <map>
 #include "../hilfsklassen/Aktualitaet.h"
 #include "AttributDefines.h"
+#include<sstream>
 
 //#include "Linearlokation.h"
 
@@ -47,12 +48,12 @@ public:
 	 * Gibt informationen zu dem Objekt zur&uuml;ck.
 	 * @return Ein String, wo was drin steht.
 	 */
-	string toString();
+	virtual string toString();
 
 
 	const string& getFirstName() const;
 	int getId() const;
-private:
+protected:
 	/**
 	 * Die Id einer Lokation erlaubt eine eindeutige Zuordnung dieser Lokation.
 	 * In der Hierarchie folgende Lokationen verweisen auf diese Id.<br>

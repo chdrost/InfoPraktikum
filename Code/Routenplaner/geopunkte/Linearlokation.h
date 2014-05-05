@@ -43,6 +43,12 @@ public:
 	void verweiseAufbauen(map<int, Gebietslokation*> *gebieteMap,
 			vector<string> *zeile);
 
+	/**
+	 * Gibt einen String mit Optionen &uuml;ber das Obejket zur&uuml;ck.
+	 * @return Ein String mit den Informationen &uuml;ber das Objekt.
+	 */
+	virtual string toString();
+
 	const string& getAdminCounty() const;
 	Gebietslokation* getAreaReference();
 	bool isInNegative() const;
@@ -64,7 +70,7 @@ public:
 	int getVeraendert() const;
 	void setAreaReference(Gebietslokation* areaReference);
 
-private:
+protected:
 	/**
 	 * Die Stra&szlig;ennummer. Sie besteht aus dem Bezeichner der Stra&szlig;e
 	 * und der Nummer der Stra&szlig;e. <br>

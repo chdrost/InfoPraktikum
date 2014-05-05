@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5954E19319177FFD00C0D7F0 /* FileNotFoundException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */; };
+		5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */; };
+		5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */; };
+		5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */; };
+		5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */; };
+		5954E19819177FFD00C0D7F0 /* Punktlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */; };
+		5954E19919177FFD00C0D7F0 /* Hello.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18719177FFD00C0D7F0 /* Hello.cpp */; };
+		5954E19A19177FFD00C0D7F0 /* Aktualitaet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */; };
+		5954E19B19177FFD00C0D7F0 /* GeoKoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */; };
+		5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5954E16A19177FB100C0D7F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5954E16C19177FB100C0D7F0 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RoutenplanerX; sourceTree = BUILT_PRODUCTS_DIR; };
+		5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileNotFoundException.cpp; sourceTree = "<group>"; };
+		5954E17A19177FFD00C0D7F0 /* FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileNotFoundException.h; sourceTree = "<group>"; };
+		5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeitException.cpp; sourceTree = "<group>"; };
+		5954E17C19177FFD00C0D7F0 /* ZeitException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeitException.h; sourceTree = "<group>"; };
+		5954E17E19177FFD00C0D7F0 /* AttributDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributDefines.h; sourceTree = "<group>"; };
+		5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gebietslokation.cpp; sourceTree = "<group>"; };
+		5954E18019177FFD00C0D7F0 /* Gebietslokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gebietslokation.h; sourceTree = "<group>"; };
+		5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearlokation.cpp; sourceTree = "<group>"; };
+		5954E18219177FFD00C0D7F0 /* Linearlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linearlokation.h; sourceTree = "<group>"; };
+		5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LokationsVerwaltung.cpp; sourceTree = "<group>"; };
+		5954E18419177FFD00C0D7F0 /* LokationsVerwaltung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LokationsVerwaltung.h; sourceTree = "<group>"; };
+		5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Punktlokation.cpp; sourceTree = "<group>"; };
+		5954E18619177FFD00C0D7F0 /* Punktlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punktlokation.h; sourceTree = "<group>"; };
+		5954E18719177FFD00C0D7F0 /* Hello.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hello.cpp; path = ../../../Routenplaner/Hello.cpp; sourceTree = "<group>"; };
+		5954E18819177FFD00C0D7F0 /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hello.h; path = ../../../Routenplaner/Hello.h; sourceTree = "<group>"; };
+		5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Aktualitaet.cpp; sourceTree = "<group>"; };
+		5954E18B19177FFD00C0D7F0 /* Aktualitaet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aktualitaet.h; sourceTree = "<group>"; };
+		5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeoKoordinate.cpp; sourceTree = "<group>"; };
+		5954E18D19177FFD00C0D7F0 /* GeoKoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoKoordinate.h; sourceTree = "<group>"; };
+		5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileOpener.cpp; sourceTree = "<group>"; };
+		5954E19019177FFD00C0D7F0 /* FileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOpener.h; sourceTree = "<group>"; };
+		5954E19119177FFD00C0D7F0 /* testdatei.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testdatei.csv; path = ../../../Routenplaner/testdatei.csv; sourceTree = "<group>"; };
+		5954E19219177FFD00C0D7F0 /* utf8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = utf8.csv; path = ../../../Routenplaner/utf8.csv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5954E16919177FB100C0D7F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5954E16319177FB100C0D7F0 = {
+			isa = PBXGroup;
+			children = (
+				5954E16E19177FB100C0D7F0 /* RoutenplanerX */,
+				5954E16D19177FB100C0D7F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5954E16D19177FB100C0D7F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5954E16C19177FB100C0D7F0 /* RoutenplanerX */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5954E16E19177FB100C0D7F0 /* RoutenplanerX */ = {
+			isa = PBXGroup;
+			children = (
+				5954E17819177FFD00C0D7F0 /* exceptions */,
+				5954E17D19177FFD00C0D7F0 /* geopunkte */,
+				5954E18719177FFD00C0D7F0 /* Hello.cpp */,
+				5954E18819177FFD00C0D7F0 /* Hello.h */,
+				5954E18919177FFD00C0D7F0 /* hilfsklassen */,
+				5954E18E19177FFD00C0D7F0 /* reader */,
+				5954E19119177FFD00C0D7F0 /* testdatei.csv */,
+				5954E19219177FFD00C0D7F0 /* utf8.csv */,
+			);
+			path = RoutenplanerX;
+			sourceTree = "<group>";
+		};
+		5954E17819177FFD00C0D7F0 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */,
+				5954E17A19177FFD00C0D7F0 /* FileNotFoundException.h */,
+				5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */,
+				5954E17C19177FFD00C0D7F0 /* ZeitException.h */,
+			);
+			name = exceptions;
+			path = ../../../Routenplaner/exceptions;
+			sourceTree = "<group>";
+		};
+		5954E17D19177FFD00C0D7F0 /* geopunkte */ = {
+			isa = PBXGroup;
+			children = (
+				5954E17E19177FFD00C0D7F0 /* AttributDefines.h */,
+				5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */,
+				5954E18019177FFD00C0D7F0 /* Gebietslokation.h */,
+				5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */,
+				5954E18219177FFD00C0D7F0 /* Linearlokation.h */,
+				5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */,
+				5954E18419177FFD00C0D7F0 /* LokationsVerwaltung.h */,
+				5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */,
+				5954E18619177FFD00C0D7F0 /* Punktlokation.h */,
+			);
+			name = geopunkte;
+			path = ../../../Routenplaner/geopunkte;
+			sourceTree = "<group>";
+		};
+		5954E18919177FFD00C0D7F0 /* hilfsklassen */ = {
+			isa = PBXGroup;
+			children = (
+				5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */,
+				5954E18B19177FFD00C0D7F0 /* Aktualitaet.h */,
+				5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */,
+				5954E18D19177FFD00C0D7F0 /* GeoKoordinate.h */,
+			);
+			name = hilfsklassen;
+			path = ../../../Routenplaner/hilfsklassen;
+			sourceTree = "<group>";
+		};
+		5954E18E19177FFD00C0D7F0 /* reader */ = {
+			isa = PBXGroup;
+			children = (
+				5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */,
+				5954E19019177FFD00C0D7F0 /* FileOpener.h */,
+			);
+			name = reader;
+			path = ../../../Routenplaner/reader;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5954E16B19177FB100C0D7F0 /* RoutenplanerX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5954E17519177FB100C0D7F0 /* Build configuration list for PBXNativeTarget "RoutenplanerX" */;
+			buildPhases = (
+				5954E16819177FB100C0D7F0 /* Sources */,
+				5954E16919177FB100C0D7F0 /* Frameworks */,
+				5954E16A19177FB100C0D7F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoutenplanerX;
+			productName = RoutenplanerX;
+			productReference = 5954E16C19177FB100C0D7F0 /* RoutenplanerX */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5954E16419177FB100C0D7F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Christoph Drost";
+			};
+			buildConfigurationList = 5954E16719177FB100C0D7F0 /* Build configuration list for PBXProject "RoutenplanerX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5954E16319177FB100C0D7F0;
+			productRefGroup = 5954E16D19177FB100C0D7F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5954E16B19177FB100C0D7F0 /* RoutenplanerX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5954E16819177FB100C0D7F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5954E19919177FFD00C0D7F0 /* Hello.cpp in Sources */,
+				5954E19B19177FFD00C0D7F0 /* GeoKoordinate.cpp in Sources */,
+				5954E19A19177FFD00C0D7F0 /* Aktualitaet.cpp in Sources */,
+				5954E19319177FFD00C0D7F0 /* FileNotFoundException.cpp in Sources */,
+				5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */,
+				5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */,
+				5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */,
+				5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */,
+				5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */,
+				5954E19819177FFD00C0D7F0 /* Punktlokation.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5954E17319177FB100C0D7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5954E17419177FB100C0D7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5954E17619177FB100C0D7F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5954E17719177FB100C0D7F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5954E16719177FB100C0D7F0 /* Build configuration list for PBXProject "RoutenplanerX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5954E17319177FB100C0D7F0 /* Debug */,
+				5954E17419177FB100C0D7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5954E17519177FB100C0D7F0 /* Build configuration list for PBXNativeTarget "RoutenplanerX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5954E17619177FB100C0D7F0 /* Debug */,
+				5954E17719177FB100C0D7F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5954E16419177FB100C0D7F0 /* Project object */;
+}

@@ -40,3 +40,6 @@ Punktlokation::~Punktlokation() {
 	delete this->geoKoordinate;
 }
 
+string Punktlokation::toString() {
+	return (Linearlokation::toString());
+}

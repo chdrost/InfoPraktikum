@@ -11,6 +11,10 @@ Linearlokation::Linearlokation(vector<string> *zeile,
 		Gebietslokation *areaReference) :
 		Gebietslokation(zeile) {
 	this->areaReference = areaReference;
+	this->negativeOffset = NULL;
+	this->positiveOffset = NULL;
+	this->intersectioncode = NULL;
+	this->interruptsRoad = NULL;
 	leseWerteEin(zeile);
 
 }
@@ -101,6 +105,10 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
 //TODO Defaultwerte als Konstanten und cerr entfernen
+	this->positiveOffset = NULL;
+	this->negativeOffset = NULL;
+	this->intersectioncode = NULL;
+	this->intersectioncode = NULL;
 	this->roadNumer = zeile->at(ROADNUMBER);
 	this->roadName = zeile->at(ROADNAME);
 	this->secondName = zeile->at(SECOND_NAME);
@@ -163,14 +171,19 @@ void Linearlokation::speichereOffset(map<int, Gebietslokation*>* gebieteMap,
 		vector<string> *zeile) {
 	try {
 		int positiveOffset = stoi(zeile->at(POSITIVE_OFFSET));
-		this->positiveOffset = (Linearlokation*) gebieteMap->find(positiveOffset)->second;
+		this->positiveOffset = (Linearlokation*) gebieteMap->find(
+				positiveOffset)->second;
+		//TODO Ausgabe entfernen
+		cout
+				<< ((Linearlokation*) gebieteMap->find(positiveOffset)->second)->toString();
 	} catch (invalid_argument &e) {
 		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
 		//nichts eingelesen zu werden.
 	}
 	try {
 		int negativeOffset = stoi(zeile->at(NEGATIVE_OFFSET));
-		this->negativeOffset = (Linearlokation*)gebieteMap->find(negativeOffset)->second;
+		this->negativeOffset = (Linearlokation*) gebieteMap->find(
+				negativeOffset)->second;
 	} catch (invalid_argument &e) {
 		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
 		//nichts eingelesen zu werden.
@@ -180,28 +193,60 @@ void Linearlokation::speichereOffset(map<int, Gebietslokation*>* gebieteMap,
 void Linearlokation::speichereIntersectionCode(
 		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
 	try {
-			int interSectionCode = stoi(zeile->at(INTERSECTIONSCODE));
-			this->intersectioncode = (Linearlokation*) gebieteMap->find(interSectionCode)->second;
-		} catch (invalid_argument &e) {
-			//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
-			//nichts eingelesen zu werden.
-		}
+		int interSectionCode = stoi(zeile->at(INTERSECTIONSCODE));
+		this->intersectioncode = (Linearlokation*) gebieteMap->find(
+				interSectionCode)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
 }
 
 void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
 		vector<string>* zeile) {
-	speichereOffset(gebieteMap,zeile);
-	speichereInterruptsRoad(gebieteMap,zeile);
-	speichereIntersectionCode(gebieteMap,zeile);
+	speichereOffset(gebieteMap, zeile);
+	speichereInterruptsRoad(gebieteMap, zeile);
+	speichereIntersectionCode(gebieteMap, zeile);
+}
+
+string Linearlokation::toString() {
+	stringstream s;
+	s << "\nLinearlokation\nName:" << this->firstName;
+			s<< "\nDarin enthalten:\nNegative Offset: ";
+	if (this->negativeOffset != NULL) {
+		s << this->negativeOffset->toString();
+	} else {
+		s << " Es ist kein Negative Offset hinterlegt.";
+	}
+	s << "\nPositive Offset: ";
+	if (this->positiveOffset != NULL) {
+		s << this->positiveOffset->toString();
+	} else {
+		s << " Es ist kein positive Offset hinterlegt.";
+	}
+	s << "\nIntersection Code:";
+	if (this->intersectioncode != NULL) {
+		s << this->intersectioncode->toString();
+	} else {
+		s << " Es ist kein Intersectioncode hinterlegt.";
+	}
+	s << "\nInterrupts Road";
+	if (this->interruptsRoad != NULL) {
+		s << this->interruptsRoad->toString();
+	} else {
+		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
+	}
+	return (s.str());
 }
 
 void Linearlokation::speichereInterruptsRoad(
 		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
 	try {
-			int interruptsRoad = stoi(zeile->at(POSITIVE_OFFSET));
-			this->interruptsRoad = (Linearlokation*) gebieteMap->find(interruptsRoad)->second;
-		} catch (invalid_argument &e) {
-			//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
-			//nichts eingelesen zu werden.
-		}
+		int interruptsRoad = stoi(zeile->at(POSITIVE_OFFSET));
+		this->interruptsRoad = (Linearlokation*) gebieteMap->find(
+				interruptsRoad)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
 }

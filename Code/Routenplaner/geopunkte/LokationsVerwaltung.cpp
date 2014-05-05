@@ -19,6 +19,10 @@ LokationsVerwaltung::~LokationsVerwaltung() {
 			it != gebieteMap.end(); it++) {
 		delete it->second;
 	}
+	gebieteVector.clear();
+	gebieteMap.clear();
+	namenMap.clear();
+
 }
 
 void LokationsVerwaltung::objektErstellen(vector<string> *zeile,
