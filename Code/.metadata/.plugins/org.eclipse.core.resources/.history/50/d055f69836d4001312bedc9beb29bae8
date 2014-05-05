@@ -11,6 +11,10 @@ Linearlokation::Linearlokation(vector<string> *zeile,
 		Gebietslokation *areaReference) :
 		Gebietslokation(zeile) {
 	this->areaReference = areaReference;
+	this->negativeOffset = NULL;
+	this->positiveOffset = NULL;
+	this->intersectioncode = NULL;
+	this->interruptsRoad = NULL;
 	leseWerteEin(zeile);
 
 }

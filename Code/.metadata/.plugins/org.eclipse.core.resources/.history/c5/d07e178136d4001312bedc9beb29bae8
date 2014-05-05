@@ -11,6 +11,10 @@ Linearlokation::Linearlokation(vector<string> *zeile,
 		Gebietslokation *areaReference) :
 		Gebietslokation(zeile) {
 	this->areaReference = areaReference;
+	this->negativeOffset = NULL;
+	this->positiveOffset = NULL;
+	this->intersectioncode = NULL;
+	this->interruptsRoad = NULL;
 	leseWerteEin(zeile);
 
 }
@@ -100,6 +104,7 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 }
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
+//TODO Defaultwerte als Konstanten und cerr entfernen
 	this->positiveOffset = NULL;
 	this->negativeOffset = NULL;
 	this->intersectioncode = NULL;
@@ -208,7 +213,7 @@ string Linearlokation::toString() {
 	stringstream s;
 	//TODO Rekursion aus toString() entfernen
 	s << "\nLinearlokation\nName:" << this->firstName;
-	s << "\nDarin enthalten:\nNegative Offset: ";
+			s<< "\nDarin enthalten:\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
 		s << this->negativeOffset->getFirstName();
 	} else {
