@@ -19,15 +19,19 @@ LokationsVerwaltung::~LokationsVerwaltung() {
 			it != gebieteMap.end(); it++) {
 		delete it->second;
 	}
+	gebieteVector.clear();
+	gebieteMap.clear();
+	namenMap.clear();
+
 }
 
 void LokationsVerwaltung::objektErstellen(vector<string> *zeile,
 		string pattern) {
-	if (regex_match(zeile->at(TYPE), regex("\"A(.*)"))) {
+	if (checkGebietsLokation(zeile)) {
 		speichereGebietsLokation(new Gebietslokation(zeile));
-	} else if (regex_match(zeile->at(TYPE), regex("\"L(.*)"))) {
+	} else if (checkLineaLokation(zeile)) {
 		new Linearlokation(zeile, (Gebietslokation*) NULL);
-	} else if (regex_match(zeile->at(TYPE), regex("\"P(.*)"))) {
+	} else if (checkPunktlokation(zeile)) {
 		cout << "Spalte 32  " << zeile->at(31) << "\n";
 	}
 //TODO Nach dem gesamten Einlesen brauchen die LinLok noch einen Duchlauf um  die Referenzen zu verlinken
@@ -49,13 +53,21 @@ void LokationsVerwaltung::speichereLinearLokation(vector<string>* zeile) {
 
 void LokationsVerwaltung::speicherePunkLokation(vector<string>* zeile) {
 	Punktlokation *punkLokation;
+	Linearlokation *linearReference = NULL;
+	Gebietslokation *areaReference = NULL;
 	if (!zeile->at(LINEAR_REFERENCE).empty()) {
-		Linearlokation *linearReference = (Linearlokation*) gebieteMap.at(
+		linearReference = (Linearlokation*) gebieteMap.at(
 				stoi(zeile->at(LINEAR_REFERENCE)));
-		punkLokation = new Punktlokation(zeile, linearReference);
+	}
+	if (!zeile->at(AREA_REFERENCE).empty()) {
+		areaReference = gebieteMap.at(stoi(zeile->at(AREA_REFERENCE)));
+	}
+
+	//TODO Hier suchen, wenn seltsame Fehler auftreten.
+	//(Linearreference und Georeference sind NULL)
+	punkLokation = new Punktlokation(zeile, areaReference, linearReference);
+	if (linearReference != NULL) {
 		linearReference->addPktLokation(punkLokation);
-	} else {
-		punkLokation = new Punktlokation(zeile, NULL); //TODO Hier suchen wenn seltsame Fehler auftreten
 	}
 	insertMap(punkLokation);
 }
@@ -63,25 +75,35 @@ void LokationsVerwaltung::speicherePunkLokation(vector<string>* zeile) {
 void LokationsVerwaltung::objekteErstellen(vector<vector<string> >* datenSatz) {
 //Erster Durchlauf, Erstellen der Gebietslokationen
 	for (auto it = datenSatz->begin(); it != datenSatz->end(); it++) {
-		if (regex_match(it->at(TYPE), regex("\"A(.*)"))) {
+		if (checkGebietsLokation(&*it)) {
 			speichereGebietsLokation(new Gebietslokation(&*it));
 		}
 	}
 //Zeiter Durchlauf, Erstellen der Linearlokationen
 	for (auto it = datenSatz->begin(); it != datenSatz->end(); it++) {
-		if (regex_match(it->at(TYPE), regex("\"L(.*)"))) {
+		if (checkLineaLokation(&*it)) {
 			speichereLinearLokation(&*it);
 		}
 	}
 //Dritter Durchlauf, Erstellen der Punktlokationen
 	for (auto it = datenSatz->begin(); it != datenSatz->end(); it++) {
-		if (regex_match(it->at(TYPE), regex("\"P(.*)"))) {
+		if (checkPunktlokation(&*it)) {
 			speicherePunkLokation(&*it);
 		}
 	}
 
-//Vierter Durchlauf, Verknuepfung der Abhaengigleiten
-//TODO Abhaengigkeiten verlinken
+	/*Vierter Durchlauf, Verknuepfung der Abhaengigkeiten
+	 Abhaengigkeiten koennen nur zwischen Linear- und Punktlokationen
+	 aufgebaut werden.*/
+	for (auto it = datenSatz->begin(); it != datenSatz->end(); it++) {
+		if (checkLineaLokation(&*it)) {
+			((Linearlokation*) gebieteMap.find(stoi(it->at(LOCATIONCODE)))->second)->verweiseAufbauen(
+					&gebieteMap, &*it);
+		} else if (checkPunktlokation(&*it)) {
+			((Punktlokation*) gebieteMap.find(stoi(it->at(LOCATIONCODE)))->second)->verweiseAufbauen(
+					&gebieteMap, &*it);
+		}
+	}
 }
 
 void LokationsVerwaltung::insertMap(Gebietslokation* lok) {
@@ -89,10 +111,62 @@ void LokationsVerwaltung::insertMap(Gebietslokation* lok) {
 	namenMap.insert(pair<string, Gebietslokation*>(lok->getFirstName(), lok));
 }
 
-Gebietslokation* LokationsVerwaltung::suchName(string name) {
-	return ( namenMap.find(name)->second);
+Gebietslokation* LokationsVerwaltung::suchNaDme(string name) {
+	//TODO Suche Sinnvoll implementieren
+	return (namenMap.find(name)->second);
 }
 
 const multimap<string, Gebietslokation*>& LokationsVerwaltung::getNamenMap() const {
 	return (namenMap);
+}
+
+bool LokationsVerwaltung::checkGebietsLokation(vector<string>* zeile) {
+	return (regex_match(zeile->at(TYPE), regex("\"A(.*)")));
+}
+
+bool LokationsVerwaltung::checkLineaLokation(vector<string>* zeile) {
+	return (regex_match(zeile->at(TYPE), regex("\"L(.*)")));
+}
+
+vector<Gebietslokation*> LokationsVerwaltung::suchen(string name) {
+	return (suchen(name, false));
+}
+
+vector<Gebietslokation*> LokationsVerwaltung::suchen(int id) {
+	vector<Gebietslokation*> vec;
+	vec.push_back(gebieteMap.find(id)->second);
+	//TODO Das noch schreiben
+	if (1) {
+		return (vec);
+	} else {
+		return (vec);
+	}
+}
+
+vector<Gebietslokation*> LokationsVerwaltung::suchen(string name,
+		bool uebereinstimmung) {
+	//TODO suche fertig schreiben
+	vector<Gebietslokation*> vec;
+	if (uebereinstimmung) {
+		for (auto it = gebieteMap.begin(); it != gebieteMap.end(); it++) {
+			if (it->second->getFirstName() == name) {
+				vec.push_back(it->second);
+			}
+		}
+	} else {
+		//TODO Suche testen und ggf effizient gestalten
+		string regEx = "(.*)";
+		regEx += name;
+		regEx += "(.*)";
+		for (auto it = gebieteMap.begin(); it != gebieteMap.end(); it++) {
+			if (regex_match(it->second->getFirstName(), regex(regEx))) {
+				vec.push_back(it->second);
+			}
+		}
+	}
+	return (vec);
+}
+
+bool LokationsVerwaltung::checkPunktlokation(vector<string>* zeile) {
+	return (regex_match(zeile->at(TYPE), regex("\"P(.*)")));
 }

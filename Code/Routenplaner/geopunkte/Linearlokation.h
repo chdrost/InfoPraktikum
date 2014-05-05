@@ -25,6 +25,30 @@ public:
 	 */
 	void addPktLokation(Punktlokation *pktLocation);
 
+	/**
+	 * Diese Methode baut die Verweise zu anderen Linearlokationen auf,
+	 * die zum Zeitpunkt der Konstruktion des Objekts noch nicht feststanden.
+	 * Diese Verweise sind:<br>
+	 * <ul>
+	 * 	<li>Positive Offset</li>
+	 * 	<li>Negative Offset</li>
+	 * 	<li>Intersection Code</li>
+	 * 	<li>Interrupts Road</li>
+	 * </ul>
+	 * @param gebieteMap Ein Pointer auf die Map,
+	 * mit der anhand einer ID ein Obejekt gefunden werden kann.
+	 * @param zeile Ein Pointer auf den Vector, der die Zeile
+	 * repr&auml;sentiert.
+	 */
+	void verweiseAufbauen(map<int, Gebietslokation*> *gebieteMap,
+			vector<string> *zeile);
+
+	/**
+	 * Gibt einen String mit Optionen &uuml;ber das Obejket zur&uuml;ck.
+	 * @return Ein String mit den Informationen &uuml;ber das Objekt.
+	 */
+	virtual string toString();
+
 	const string& getAdminCounty() const;
 	Gebietslokation* getAreaReference();
 	bool isInNegative() const;
@@ -46,7 +70,7 @@ public:
 	int getVeraendert() const;
 	void setAreaReference(Gebietslokation* areaReference);
 
-private:
+protected:
 	/**
 	 * Die Stra&szlig;ennummer. Sie besteht aus dem Bezeichner der Stra&szlig;e
 	 * und der Nummer der Stra&szlig;e. <br>
@@ -169,6 +193,12 @@ private:
 	string adminCounty;
 
 	/**
+	 * Diese Methode initialisiert alle Werte mit 0, NULL oder "".<br>
+	 * Dadurch k&ouml;nnen Laufzeitfehler vermieden werden, falls eine Spalte
+	 * leer ist.
+	 */
+	void initialisiereWerte(void);
+	/**
 	 * Diese Mehode liest die Attributwerte der Klasse ein.<br>
 	 * Die Werte werden mit dem Zeilenvector &uuml;bergeben.
 	 * @param zeile Ein Vector mit den Werten, die aus einer Zeile der
@@ -181,6 +211,36 @@ private:
 	 * Linearlokation als Linear Reference angegeben haben.
 	 */
 	vector<Punktlokation*> punktLokations;
+
+	/**
+	 * Diese Methode sucht in der Map anhand der in der Zeile enthaltenden Id nach den
+	 * Objekten, die als positive und negative Offset angegeben sind und tr&auml;gt
+	 * sie in die entsprechenden Attribute ein.
+	 * @param gebieteMap Ein Pointer auf die Map, die alle Gebiete enth&auml;t.
+	 * @param zeile Die Zeile, die diese Linearlokation beschriebt.
+	 */
+	void speichereOffset(map<int, Gebietslokation*> *gebieteMap,
+			vector<string> *zeile);
+
+	/**
+	 * Diese Methode sucht in der Map anhand der in der Zeile enthaltenden Id nach den
+	 * Objekten, die als Intersection Code angegeben sind und tr&auml;gt
+	 * sie in die entsprechenden Attribute ein.
+	 * @param gebieteMap Ein Pointer auf die Map, die alle Gebiete enth&auml;t.
+	 * @param zeile Die Zeile, die diese Linearlokation beschriebt.
+	 */
+	void speichereIntersectionCode(map<int, Gebietslokation*> *gebieteMap,
+			vector<string> *zeile);
+
+	/**
+	 * Diese Methode sucht in der Map anhand der in der Zeile enthaltenden Id nach den
+	 * Objekten, die als Interrupts Road angegeben sind und tr&auml;gt
+	 * sie in die entsprechenden Attribute ein.
+	 * @param gebieteMap Ein Pointer auf die Map, die alle Gebiete enth&auml;t.
+	 * @param zeile Die Zeile, die diese Linearlokation beschriebt.
+	 */
+	void speichereInterruptsRoad(map<int, Gebietslokation*> *gebieteMap,
+			vector<string> *zeile);
 
 };
 

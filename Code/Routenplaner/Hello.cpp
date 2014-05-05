@@ -22,7 +22,7 @@ int main() {                                             // Hauptfunktion
 	//Jetzt mal die Datei auslesen
 	FileOpener *datei = new FileOpener();
 	datei->oeffneDatei(
-			"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/testdatei.csv");
+			"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/utf8.csv");
 	datei->leseDateiAus();
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
@@ -32,30 +32,31 @@ int main() {                                             // Hauptfunktion
 	cout << "\nGroesse Vector: " << lokVerwaltung->getGebieteVector().size();
 	cout << "\nGroesse Vector: " << lokVerwaltung->getNamenMap().size();
 
-	/*
-	for (auto it = lokVerwaltung->getNamenMap().begin();
-			it != lokVerwaltung->getNamenMap().end(); it++) {
-		cout << "\nName: " << it->first << "Value: " << it->second->toString();
-	}*/
+	/* (auto it = lokVerwaltung->getNamenMap().begin();
+	 it != lokVerwaltung->getNamenMap().end(); it++) {
+	 cout << "\nName: " << it->first << "Value: " << it->second->toString();
+	 }*/
 	/*
 	 * Suche
 	 * */
 
 	string eingabe = "";
-	Gebietslokation *gefundeneLokation = NULL;
+	vector<Gebietslokation*> gefundeneLokationen;
 	while (eingabe != "end") {
 		eingabe = "";
 		cout << "\nBitte den gesuchten Begriff eingeben: (end fuer ende)\n";
 		cin >> eingabe;
-		gefundeneLokation = lokVerwaltung->suchName(eingabe);
+		gefundeneLokationen = lokVerwaltung->suchen(eingabe);
 
-		if(gefundeneLokation == NULL){
+		if (gefundeneLokationen.empty()) {
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
-		}else{
-			cout<<"\nAdresse der gefunden Lokation: "<<gefundeneLokation<<"\n";
-			cout<< gefundeneLokation->toString();
+		} else {
+			for (auto it = gefundeneLokationen.begin();
+					it != gefundeneLokationen.end(); it++) {
+				cout<<((Gebietslokation*) *it)->toString();
+			}
 		}
-		gefundeneLokation = NULL;
+		gefundeneLokationen.clear();
 	}
 
 	delete datei;

@@ -100,7 +100,7 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 }
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
-//TODO Defaultwerte als Konstanten und cerr entfernen
+	initialisiereWerte();
 	this->roadNumer = zeile->at(ROADNUMBER);
 	this->roadName = zeile->at(ROADNAME);
 	this->secondName = zeile->at(SECOND_NAME);
@@ -155,4 +155,111 @@ void Linearlokation::leseWerteEin(vector<string>* zeile) {
 
 void Linearlokation::addPktLokation(Punktlokation* pktLocation) {
 	this->punktLokations.push_back(pktLocation);
+}
+
+//TODO Hier checken, ob stoi typensicher werden soll oder ob es Sinn macht, einfach den
+//Fehler zu unterdruecken
+void Linearlokation::speichereOffset(map<int, Gebietslokation*>* gebieteMap,
+		vector<string> *zeile) {
+	try {
+		int positiveOffset = stoi(zeile->at(POSITIVE_OFFSET));
+		this->positiveOffset = (Linearlokation*) gebieteMap->find(
+				positiveOffset)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
+	try {
+		int negativeOffset = stoi(zeile->at(NEGATIVE_OFFSET));
+		this->negativeOffset = (Linearlokation*) gebieteMap->find(
+				negativeOffset)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
+}
+
+void Linearlokation::speichereIntersectionCode(
+		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
+	try {
+		int interSectionCode = stoi(zeile->at(INTERSECTIONSCODE));
+		this->intersectioncode = (Linearlokation*) gebieteMap->find(
+				interSectionCode)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
+}
+
+void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
+		vector<string>* zeile) {
+	speichereOffset(gebieteMap, zeile);
+	speichereInterruptsRoad(gebieteMap, zeile);
+	speichereIntersectionCode(gebieteMap, zeile);
+}
+
+string Linearlokation::toString() {
+	stringstream s;
+	//TODO Rekursion aus toString() entfernen
+	s << "\nLinearlokation\nName:" << this->firstName;
+	s << "\nDarin enthalten:\nNegative Offset: ";
+	if (this->negativeOffset != NULL) {
+		s << this->negativeOffset->getFirstName();
+	} else {
+		s << " Es ist kein Negative Offset hinterlegt.";
+	}
+	s << "\nPositive Offset: ";
+	if (this->positiveOffset != NULL) {
+		s << this->positiveOffset->getFirstName();
+	} else {
+		s << " Es ist kein positive Offset hinterlegt.";
+	}
+	s << "\nIntersection Code:";
+	if (this->intersectioncode != NULL) {
+		s << this->intersectioncode->getFirstName();
+	} else {
+		s << " Es ist kein Intersectioncode hinterlegt.";
+	}
+	s << "\nInterrupts Road";
+	if (this->interruptsRoad != NULL) {
+		s << this->interruptsRoad->getFirstName();
+	} else {
+		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
+	}
+	return (s.str());
+}
+
+void Linearlokation::initialisiereWerte(void) {
+	this->roadName = "";
+	this->roadNumer = "";
+	this->secondName ="";
+	this->areaReference =NULL;
+	this->negativeOffset =NULL;
+	this->positiveOffset=NULL;
+	this->urban=false;
+	this->intersectioncode=NULL;
+	this->interruptsRoad=NULL;
+	this->inPositive=false;
+	this->outPositive=false;
+	this->inNegative=false;
+	this->outNegative=false;
+	this->presentPositive=false;
+	this->presentNegative=false;
+	this->veraendert=0;
+	this->tern=false;
+	this->poldir="";
+	this->adminCounty="";
+
+}
+
+void Linearlokation::speichereInterruptsRoad(
+		map<int, Gebietslokation*>* gebieteMap, vector<string> *zeile) {
+	try {
+		int interruptsRoad = stoi(zeile->at(POSITIVE_OFFSET));
+		this->interruptsRoad = (Linearlokation*) gebieteMap->find(
+				interruptsRoad)->second;
+	} catch (invalid_argument &e) {
+		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
+		//nichts eingelesen zu werden.
+	}
 }

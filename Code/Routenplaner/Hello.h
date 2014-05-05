@@ -11,6 +11,7 @@
 #include "./reader/FileOpener.h"
 #include "geopunkte/LokationsVerwaltung.h"
 #include <vector>
+#include <regex>
 
 class Hello {
 public:
