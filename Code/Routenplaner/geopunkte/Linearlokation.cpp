@@ -165,9 +165,6 @@ void Linearlokation::speichereOffset(map<int, Gebietslokation*>* gebieteMap,
 		int positiveOffset = stoi(zeile->at(POSITIVE_OFFSET));
 		this->positiveOffset = (Linearlokation*) gebieteMap->find(
 				positiveOffset)->second;
-		//TODO Ausgabe entfernen
-		cout
-				<< ((Linearlokation*) gebieteMap->find(positiveOffset)->second)->toString();
 	} catch (invalid_argument &e) {
 		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
 		//nichts eingelesen zu werden.

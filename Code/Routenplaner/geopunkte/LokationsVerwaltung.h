@@ -98,8 +98,42 @@ public:
 	 * suchen.
 	 * @param name Der Name der Lokation, die gesucht werden soll.
 	 * @return Der Inhalt der toString Methode des gefunden Objekts.
+	 *
+	 * @deprecated Diese Methode findet nur mit Gl&uuml;ck den richtigen
+	 * Eintrag. Sie wurde durch suchen(string) und suchen(int) ersetzt.
 	 */
-	Gebietslokation* suchName(string name);
+	Gebietslokation* suchNaDme(string name);
+
+	/**
+	 * Diese Methode sucht anhand des gegebenen Namen passende Datens&auml;tze.
+	 * @return Ein Vector mit den Treffern f&uuml;r die Suche. enth&auml;lt
+	 * Gebietslokationen.
+	 * @param Der Name, nach dem gesucht werden soll.
+	 */
+	vector<Gebietslokation*>* suchen(string name);
+
+	/**
+	 * Diese Methode sucht anhand der gegebenen Id passende Datens&auml;tze.
+	 * @return Ein Vector mit den Treffern f&uuml;r die Suche. enth&auml;lt
+	 * Gebietslokationen.
+	 * @param id Die Id, nach der gesucht werden soll.
+	 * @return Ein Vector, dessen erster Eintrag der gesuchte Datensatz ist.
+	 */
+	vector<Gebietslokation*>* suchen(int id);
+
+	/**
+	 * Diese Methode sucht anhand des gegebenen Namen passende Datens&auml;tze.
+	 * @return Ein Vector mit den Treffern f&uuml;r die Suche. enth&auml;lt
+	 * Gebietslokationen.
+	 * @param name Der Name, nach dem gesucht werden soll.<br>
+	 * Diese Suchfunktion sucht intern anhand eines RegEx.
+	 * @param uebereinstimmung Ein Flag, ob der &uuml;bergebene Suchstring genau dem
+	 * gesuchten Wort entsprechen muss.
+	 * @return Ein Vector mit den Treffern f&uuml;r die Suche. enth&auml;lt
+	 * Gebietslokationen.
+	 */
+	vector<Gebietslokation*>* suchen(string name, bool uebereinstimmung);
+
 	const multimap<string, Gebietslokation*>& getNamenMap() const;
 
 private:

@@ -41,19 +41,22 @@ int main() {                                             // Hauptfunktion
 	 * */
 
 	string eingabe = "";
-	Gebietslokation *gefundeneLokation = NULL;
+	vector<Gebietslokation*> gefundeneLokationen;
 	while (eingabe != "end") {
 		eingabe = "";
 		cout << "\nBitte den gesuchten Begriff eingeben: (end fuer ende)\n";
 		cin >> eingabe;
-		gefundeneLokation = lokVerwaltung->suchName(eingabe);
+		gefundeneLokationen = *lokVerwaltung->suchen(eingabe);
 
-		if (gefundeneLokation == NULL) {
+		if (gefundeneLokationen.empty()) {
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
 		} else {
-			cout << gefundeneLokation->toString();
+			for (auto it = gefundeneLokationen.begin();
+					it != gefundeneLokationen.end(); it++) {
+				((Gebietslokation*)*it)->toString();
+			}
 		}
-		gefundeneLokation = NULL;
+		gefundeneLokationen.clear();
 	}
 
 	delete datei;
