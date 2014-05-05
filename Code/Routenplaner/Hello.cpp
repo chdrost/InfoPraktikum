@@ -46,14 +46,14 @@ int main() {                                             // Hauptfunktion
 		eingabe = "";
 		cout << "\nBitte den gesuchten Begriff eingeben: (end fuer ende)\n";
 		cin >> eingabe;
-		gefundeneLokationen = *lokVerwaltung->suchen(eingabe);
+		gefundeneLokationen = lokVerwaltung->suchen(eingabe);
 
 		if (gefundeneLokationen.empty()) {
 			cout << "\nDer Datensatz konnte nicht gefunden werden.\n";
 		} else {
 			for (auto it = gefundeneLokationen.begin();
 					it != gefundeneLokationen.end(); it++) {
-				((Gebietslokation*)*it)->toString();
+				cout<<((Gebietslokation*) *it)->toString();
 			}
 		}
 		gefundeneLokationen.clear();

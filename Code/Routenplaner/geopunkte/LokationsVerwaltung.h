@@ -110,7 +110,7 @@ public:
 	 * Gebietslokationen.
 	 * @param Der Name, nach dem gesucht werden soll.
 	 */
-	vector<Gebietslokation*>* suchen(string name);
+	vector<Gebietslokation*> suchen(string name);
 
 	/**
 	 * Diese Methode sucht anhand der gegebenen Id passende Datens&auml;tze.
@@ -119,7 +119,7 @@ public:
 	 * @param id Die Id, nach der gesucht werden soll.
 	 * @return Ein Vector, dessen erster Eintrag der gesuchte Datensatz ist.
 	 */
-	vector<Gebietslokation*>* suchen(int id);
+	vector<Gebietslokation*> suchen(int id);
 
 	/**
 	 * Diese Methode sucht anhand des gegebenen Namen passende Datens&auml;tze.
@@ -132,7 +132,7 @@ public:
 	 * @return Ein Vector mit den Treffern f&uuml;r die Suche. enth&auml;lt
 	 * Gebietslokationen.
 	 */
-	vector<Gebietslokation*>* suchen(string name, bool uebereinstimmung);
+	vector<Gebietslokation*> suchen(string name, bool uebereinstimmung);
 
 	const multimap<string, Gebietslokation*>& getNamenMap() const;
 

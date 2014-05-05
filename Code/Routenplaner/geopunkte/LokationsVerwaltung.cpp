@@ -128,42 +128,43 @@ bool LokationsVerwaltung::checkLineaLokation(vector<string>* zeile) {
 	return (regex_match(zeile->at(TYPE), regex("\"L(.*)")));
 }
 
-vector<Gebietslokation*>* LokationsVerwaltung::suchen(string name) {
+vector<Gebietslokation*> LokationsVerwaltung::suchen(string name) {
 	return (suchen(name, false));
 }
 
-vector<Gebietslokation*>* LokationsVerwaltung::suchen(int id) {
+vector<Gebietslokation*> LokationsVerwaltung::suchen(int id) {
 	vector<Gebietslokation*> vec;
 	vec.push_back(gebieteMap.find(id)->second);
+	//TODO Das noch schreiben
 	if (1) {
-		return (NULL);
+		return (vec);
 	} else {
-		return (&vec);
+		return (vec);
 	}
 }
 
-vector<Gebietslokation*>* LokationsVerwaltung::suchen(string name,
+vector<Gebietslokation*> LokationsVerwaltung::suchen(string name,
 		bool uebereinstimmung) {
 	//TODO suche fertig schreiben
 	vector<Gebietslokation*> vec;
-	if(uebereinstimmung){
-		for(auto it = gebieteMap.begin(); it != gebieteMap.end(); it++){
-			if(it->second->getFirstName() == name){
+	if (uebereinstimmung) {
+		for (auto it = gebieteMap.begin(); it != gebieteMap.end(); it++) {
+			if (it->second->getFirstName() == name) {
 				vec.push_back(it->second);
 			}
 		}
-	}else{
+	} else {
 		//TODO Suche testen und ggf effizient gestalten
 		string regEx = "(.*)";
 		regEx += name;
-		regEx +="(.*)";
-		for(auto it = gebieteMap.begin(); it != gebieteMap.end(); it++){
-					if(regex_match(it->second->getFirstName(), regex(regEx))){
-						vec.push_back(it->second);
-					}
-				}
+		regEx += "(.*)";
+		for (auto it = gebieteMap.begin(); it != gebieteMap.end(); it++) {
+			if (regex_match(it->second->getFirstName(), regex(regEx))) {
+				vec.push_back(it->second);
+			}
+		}
 	}
-    return (&vec);
+	return (vec);
 }
 
 bool LokationsVerwaltung::checkPunktlokation(vector<string>* zeile) {
