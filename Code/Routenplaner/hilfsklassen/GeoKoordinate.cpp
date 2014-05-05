@@ -22,6 +22,12 @@ GeoKoordinate::~GeoKoordinate() {
 
 void GeoKoordinate::gradEinlesen(string zeichen, float* angabe) {
 	try {
+	unsigned long int lenght = zeichen.length();
+	string nachkommastellen = zeichen.substr(lenght-6, lenght-1);
+	string vorkommastellen = zeichen.substr(lenght-8, lenght-6);
+
+	*angabe=stoi(nachkommastellen)+(stoi(vorkommastellen)/100);
+
 		//angabe->grad = stoi(zeichen.substr(BEGIN_GRAD, LAENGE_ANGABE));
 		//angabe->minuten = stoi(zeichen.substr(BEGIN_MINUTE, LAENGE_ANGABE));
 		//angabe->sekunden = stoi(zeichen.substr(BEGIN_SEKUNDE, LAENGE_ANGABE));
