@@ -193,6 +193,12 @@ protected:
 	string adminCounty;
 
 	/**
+	 * Diese Methode initialisiert alle Werte mit 0, NULL oder "".<br>
+	 * Dadurch k&ouml;nnen Laufzeitfehler vermieden werden, falls eine Spalte
+	 * leer ist.
+	 */
+	void initialisiereWerte(void);
+	/**
 	 * Diese Mehode liest die Attributwerte der Klasse ein.<br>
 	 * Die Werte werden mit dem Zeilenvector &uuml;bergeben.
 	 * @param zeile Ein Vector mit den Werten, die aus einer Zeile der

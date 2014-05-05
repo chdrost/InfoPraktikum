@@ -100,10 +100,7 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 }
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
-	this->positiveOffset = NULL;
-	this->negativeOffset = NULL;
-	this->intersectioncode = NULL;
-	this->intersectioncode = NULL;
+	initialisiereWerte();
 	this->roadNumer = zeile->at(ROADNUMBER);
 	this->roadName = zeile->at(ROADNAME);
 	this->secondName = zeile->at(SECOND_NAME);
@@ -233,6 +230,29 @@ string Linearlokation::toString() {
 		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
 	}
 	return (s.str());
+}
+
+void Linearlokation::initialisiereWerte(void) {
+	this->roadName = "";
+	this->roadNumer = "";
+	this->secondName ="";
+	this->areaReference =NULL;
+	this->negativeOffset =NULL;
+	this->positiveOffset=NULL;
+	this->urban=false;
+	this->intersectioncode=NULL;
+	this->interruptsRoad=NULL;
+	this->inPositive=false;
+	this->outPositive=false;
+	this->inNegative=false;
+	this->outNegative=false;
+	this->presentPositive=false;
+	this->presentNegative=false;
+	this->veraendert=0;
+	this->tern=false;
+	this->poldir="";
+	this->adminCounty="";
+
 }
 
 void Linearlokation::speichereInterruptsRoad(
