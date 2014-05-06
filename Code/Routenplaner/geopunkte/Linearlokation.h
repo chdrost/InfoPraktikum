@@ -69,7 +69,7 @@ public:
 	bool isPresentNegative() const;
 	bool isPresentPositive() const;
 	const string& getRoadName() const;
-	const string& getRoadNumer() const;
+	const string& getRoadNumber() const;
 	const string& getSecondName() const;
 	bool isTern() const;
 	bool isUrban() const;
@@ -82,7 +82,7 @@ protected:
 	 * und der Nummer der Stra&szlig;e. <br>
 	 * Bsp.: A620
 	 */
-	string roadNumer;
+	string roadNumber;
 
 	/**
 	 * Der Stra&szlig;enname.<br>

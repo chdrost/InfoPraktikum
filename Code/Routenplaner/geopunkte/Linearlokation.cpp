@@ -75,8 +75,8 @@ const string& Linearlokation::getRoadName() const {
 	return (roadName);
 }
 
-const string& Linearlokation::getRoadNumer() const {
-	return (roadNumer);
+const string& Linearlokation::getRoadNumber() const {
+	return (roadNumber);
 }
 
 const string& Linearlokation::getSecondName() const {
@@ -101,7 +101,7 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
 	initialisiereWerte();
-	this->roadNumer = zeile->at(ROADNUMBER);
+	this->roadNumber = zeile->at(ROADNUMBER);
 	this->roadName = zeile->at(ROADNAME);
 	this->secondName = zeile->at(SECOND_NAME);
 	try {
@@ -200,29 +200,39 @@ void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
 
 string Linearlokation::toString() {
 	stringstream s;
-	s << "\nLinearlokation\nName:" << this->firstName;
-	s << "\nLinearlokation\nName:" << this->roadName;
-	s << "\nDarin enthalten:\nNegative Offset: ";
+	s << Gebietslokation::toString();
+	s << "\nRoad Number: " << this->roadNumber;
+	s << "\nRoad Name:" << this->roadName;
+	s << "\nSecond Name: " << this->secondName;
+	if (this->areaReference != NULL) {
+		s << "\nArea Reference: " << this->areaReference->getFirstName()
+				<< ", Id: " << this->areaReference->getId();
+	}
+	s << "\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
-		s << this->negativeOffset->getFirstName();
+		s << this->negativeOffset->getFirstName() << ", Id: "
+				<< this->negativeOffset->getId();
 	} else {
 		s << " Es ist kein Negative Offset hinterlegt.";
 	}
 	s << "\nPositive Offset: ";
 	if (this->positiveOffset != NULL) {
-		s << this->positiveOffset->getFirstName();
+		s << this->positiveOffset->getFirstName() << ", Id: "
+				<< this->positiveOffset->getId();
 	} else {
 		s << " Es ist kein positive Offset hinterlegt.";
 	}
 	s << "\nIntersection Code:";
 	if (this->intersectioncode != NULL) {
-		s << this->intersectioncode->getFirstName();
+		s << this->intersectioncode->getFirstName() << ", Id: "
+				<< this->intersectioncode->getId();
 	} else {
 		s << " Es ist kein Intersectioncode hinterlegt.";
 	}
 	s << "\nInterrupts Road";
 	if (this->interruptsRoad != NULL) {
-		s << this->interruptsRoad->getFirstName();
+		s << this->interruptsRoad->getFirstName() << ", Id: "
+				<< this->interruptsRoad->getId();
 	} else {
 		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
 	}
@@ -231,7 +241,7 @@ string Linearlokation::toString() {
 
 void Linearlokation::initialisiereWerte(void) {
 	this->roadName = "";
-	this->roadNumer = "";
+	this->roadNumber = "";
 	this->secondName = "";
 	this->areaReference = NULL;
 	this->negativeOffset = NULL;

@@ -1,5 +1,10 @@
-13:56:40 **** Incremental Build of configuration Release for project Routenplaner ****
+17:59:42 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
+Building file: ../hilfsklassen/BenutzerInterface.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/BenutzerInterface.d" -MT"hilfsklassen/BenutzerInterface.d" -o "hilfsklassen/BenutzerInterface.o" "../hilfsklassen/BenutzerInterface.cpp"
+Finished building: ../hilfsklassen/BenutzerInterface.cpp
+ 
 Building file: ../geopunkte/Gebietslokation.cpp
 Invoking: Cross G++ Compiler
 g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
@@ -15,16 +20,11 @@ Invoking: Cross G++ Compiler
 g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Punktlokation.d" -MT"geopunkte/Punktlokation.d" -o "geopunkte/Punktlokation.o" "../geopunkte/Punktlokation.cpp"
 Finished building: ../geopunkte/Punktlokation.cpp
  
-Building file: ../Hello.cpp
-Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
-Finished building: ../Hello.cpp
- 
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-13:56:42 Build Finished (took 2s.347ms)
+17:59:44 Build Finished (took 2s.394ms)
 

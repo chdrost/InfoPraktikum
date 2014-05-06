@@ -25,6 +25,7 @@ void BenutzerInterface::zeigeHauptMenue() {
 		cout << "\n" << ID_SUCHEN << " - oeffnet die Suche nach einer Id";
 		cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus\nAuswahl: ";
 		cin >> auswahl;
+		cin.clear();
 		switch (auswahl) {
 		case NAMEN_SUCHEN:
 			zeigeSuche();
@@ -46,6 +47,7 @@ void BenutzerInterface::zeigeSuche() {
 	cout << "Geben Sie den Namen der gesuchten Lokation ein: ";
 	string suchString = "";
 	cin >> suchString;
+	cin.clear();
 	vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
 	for (int i = 0; i < treffer.size(); i++) {
 		cout << "\n\n Stelle: " << i;
@@ -66,6 +68,27 @@ void BenutzerInterface::zeigeSuche() {
 }
 
 void BenutzerInterface::zeigeIdSuche() {
+	cout << "Geben Sie die Id der gesuchten Lokation ein: ";
+		int suchString = ENDE;
+		cin >> suchString;
+		cin.clear();
+		vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
+		for (int i = 0; i < treffer.size(); i++) {
+			cout << "\n\n Stelle: " << i;
+			cout << treffer.at(i)->toString();
+		}
+		if (treffer.empty()) {
+			return;
+		}
+		cout << "\nWelche Lokation moechten Sie sich weiter betrachten?"
+				<< " Waehlen Sie bitte die entsprechende Nummer:";
+		unsigned int nummer = 0;
+		cin >> nummer;
+		if (nummer < treffer.size()) {
+			zeigeFeinMenue(treffer.at(nummer));
+		}else{
+			cout<<"So gross ist der Vector gar nicht.";
+		}
 }
 
 void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {

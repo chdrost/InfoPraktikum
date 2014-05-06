@@ -28,4 +28,5 @@ hilfsklassen \
 geopunkte \
 exceptions \
 . \
+.metadata/.plugins/org.eclipse.cdt.make.core \
 

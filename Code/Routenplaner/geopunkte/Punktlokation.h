@@ -51,6 +51,7 @@ private:
 	 * Netzknotennummer der Lokation oder Netzknotennummer des vor der Lokation
 	 * liegenden Netzknoten.
 	 */
+	//TODO Netzknotennummer evtl. als Referenz
 	int netzKontenNummerVor;
 
 	/**

@@ -44,9 +44,22 @@ void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 
 string Gebietslokation::toString() {
 	stringstream s;
-	s << "\nGebietslokation\nName:" << this->firstName;
+	s<<"\n";
+	switch (this->getType()) {
 
-	s << "Id = " << this->id << "\nTyp= " << typBuchstabe << typZahl
-			<< "\nName= " << this->firstName << "\n\n";
-return (s.str());
+	case GEBIET:
+		s << "-------Gebietslokation-------";
+		break;
+	case LINEAR:
+		s << "-------Linearlokation-------";
+		break;
+	case PUNKT:
+		s << "-------Punktlokation-------";
+		break;
+	}
+	s<<"\n";
+	s << "\nId: " << this->id;
+	s << "\nFirst Name: " << this->firstName;
+	s << "\nGebietsinformationen";
+	return (s.str());
 }
