@@ -42,6 +42,7 @@ Punktlokation::~Punktlokation() {
 
 string Punktlokation::toString() {
 	stringstream s;
+
 	s << "\nPunktlokation\nName:" << this->firstName;
 	s << "\nUebergeordnete Strasse: ";
 	if (this->linearReference != NULL) {
@@ -49,7 +50,7 @@ string Punktlokation::toString() {
 	} else {
 		s << "Keine Strasse uebergeordnet";
 	}
-	s<<"\nKoordninate: "<<this->geoKoordinate->toString();
+	s << "\nKoordninate: " << this->geoKoordinate->toString();
 	s << "\nDarin enthalten:\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
 		s << this->negativeOffset->getFirstName();
@@ -85,7 +86,7 @@ GeoKoordinate * Punktlokation::getGeoKoordinate() const {
 	return (geoKoordinate);
 }
 
- Linearlokation* Punktlokation::getLinearReference() const {
+Linearlokation* Punktlokation::getLinearReference() const {
 	return (linearReference);
 }
 

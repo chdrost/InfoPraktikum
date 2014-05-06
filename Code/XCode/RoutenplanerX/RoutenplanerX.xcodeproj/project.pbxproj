@@ -17,6 +17,7 @@
 		5954E19A19177FFD00C0D7F0 /* Aktualitaet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */; };
 		5954E19B19177FFD00C0D7F0 /* GeoKoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */; };
 		5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */; };
+		597769B5191902A8004091DD /* BenutzerInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597769B3191902A8004091DD /* BenutzerInterface.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,8 @@
 		5954E19019177FFD00C0D7F0 /* FileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOpener.h; sourceTree = "<group>"; };
 		5954E19119177FFD00C0D7F0 /* testdatei.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testdatei.csv; path = ../../../Routenplaner/testdatei.csv; sourceTree = "<group>"; };
 		5954E19219177FFD00C0D7F0 /* utf8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = utf8.csv; path = ../../../Routenplaner/utf8.csv; sourceTree = "<group>"; };
+		597769B3191902A8004091DD /* BenutzerInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BenutzerInterface.cpp; sourceTree = "<group>"; };
+		597769B4191902A8004091DD /* BenutzerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenutzerInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */,
+				597769B3191902A8004091DD /* BenutzerInterface.cpp */,
+				597769B4191902A8004091DD /* BenutzerInterface.h */,
 				5954E18B19177FFD00C0D7F0 /* Aktualitaet.h */,
 				5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */,
 				5954E18D19177FFD00C0D7F0 /* GeoKoordinate.h */,
@@ -209,6 +214,7 @@
 				5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */,
 				5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */,
 				5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */,
+				597769B5191902A8004091DD /* BenutzerInterface.cpp in Sources */,
 				5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */,
 				5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */,
 				5954E19819177FFD00C0D7F0 /* Punktlokation.cpp in Sources */,
@@ -321,6 +327,7 @@
 				5954E17719177FB100C0D7F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
