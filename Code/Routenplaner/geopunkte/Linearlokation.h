@@ -49,6 +49,12 @@ public:
 	 */
 	virtual string toString();
 
+	/**
+	 * M&ouml;glichkeit um den Typ der Klasse zu pr&uuml;fen.
+	 * @return Gibt das define LINEAR zurueck.
+	 */
+	virtual int getType();
+
 	const string& getAdminCounty() const;
 	Gebietslokation* getAreaReference();
 	bool isInNegative() const;

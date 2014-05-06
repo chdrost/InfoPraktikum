@@ -1,0 +1,26 @@
+/*
+ * BenutzerInterface.cpp
+ *
+ *  Created on: 06.05.2014
+ *      Author: christoph
+ */
+
+#include "BenutzerInterface.h"
+
+BenutzerInterface::BenutzerInterface(LokationsVerwaltung* lokVerwaltung) {
+	this->lokVerwaltung = lokVerwaltung;
+
+}
+
+BenutzerInterface::~BenutzerInterface() {
+	delete lokVerwaltung;
+}
+
+void BenutzerInterface::zeigeHauptMenue() {
+}
+
+void BenutzerInterface::zeigeSuche() {
+}
+
+void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
+}

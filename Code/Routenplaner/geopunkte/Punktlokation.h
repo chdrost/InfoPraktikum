@@ -19,11 +19,21 @@ public:
 
 	/**
 	 * To String Methode der Klasse Punktlokation.
-	 * @return
+	 * @return Einige Attribute der Klasse als String.
 	 */
 	virtual string toString();
 
-	 GeoKoordinate* getGeoKoordinate() const;
+	/**
+	 * M&ouml;glichkeit um den Typ der Klasse zu pr&uuml;fen.
+	 * @return Gibt das define LINEAR zurueck.
+	 */
+	virtual int getType();
+
+	GeoKoordinate* getGeoKoordinate() const;
+	 Linearlokation* getLinearReference() const;
+	int getNetzKontenNummerNach() const;
+	int getNetzKontenNummerVor() const;
+	int getStation() const;
 
 private:
 	/**

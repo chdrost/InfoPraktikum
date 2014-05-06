@@ -30,6 +30,13 @@ const string& Gebietslokation::getFirstName() const {
 	return (firstName);
 }
 
+int Gebietslokation::getType() {
+	return(GEBIET);
+}
+
+Gebietslokation::Gebietslokation() {
+}
+
 int Gebietslokation::getId() const {
 	return (id);
 }

@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../hilfsklassen/Aktualitaet.cpp \
+../hilfsklassen/BenutzerInterface.cpp \
 ../hilfsklassen/GeoKoordinate.cpp 
 
 OBJS += \
 ./hilfsklassen/Aktualitaet.o \
+./hilfsklassen/BenutzerInterface.o \
 ./hilfsklassen/GeoKoordinate.o 
 
 CPP_DEPS += \
 ./hilfsklassen/Aktualitaet.d \
+./hilfsklassen/BenutzerInterface.d \
 ./hilfsklassen/GeoKoordinate.d 
 
 

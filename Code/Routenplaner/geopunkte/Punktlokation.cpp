@@ -41,9 +41,62 @@ Punktlokation::~Punktlokation() {
 }
 
 string Punktlokation::toString() {
-	return (Linearlokation::toString());
+	stringstream s;
+	s << "\nPunktlokation\nName:" << this->firstName;
+	s << "\nUebergeordnete Strasse: ";
+	if (this->linearReference != NULL) {
+		s << this->linearReference->getRoadName();
+	} else {
+		s << "Keine Strasse uebergeordnet";
+	}
+	s<<"\nKoordninate: "<<this->geoKoordinate->toString();
+	s << "\nDarin enthalten:\nNegative Offset: ";
+	if (this->negativeOffset != NULL) {
+		s << this->negativeOffset->getFirstName();
+	} else {
+		s << " Es ist kein Negative Offset hinterlegt.";
+	}
+	s << "\nPositive Offset: ";
+	if (this->positiveOffset != NULL) {
+		s << this->positiveOffset->getFirstName();
+	} else {
+		s << " Es ist kein positive Offset hinterlegt.";
+	}
+	s << "\nIntersection Code:";
+	if (this->intersectioncode != NULL) {
+		s << this->intersectioncode->getFirstName();
+	} else {
+		s << " Es ist kein Intersectioncode hinterlegt.";
+	}
+	s << "\nInterrupts Road";
+	if (this->interruptsRoad != NULL) {
+		s << this->interruptsRoad->getFirstName();
+	} else {
+		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
+	}
+	return (s.str());
 }
 
- GeoKoordinate * Punktlokation::getGeoKoordinate() const {
+int Punktlokation::getType() {
+	return (PUNKT);
+}
+
+GeoKoordinate * Punktlokation::getGeoKoordinate() const {
 	return (geoKoordinate);
+}
+
+ Linearlokation* Punktlokation::getLinearReference() const {
+	return (linearReference);
+}
+
+int Punktlokation::getNetzKontenNummerNach() const {
+	return (netzKontenNummerNach);
+}
+
+int Punktlokation::getNetzKontenNummerVor() const {
+	return (netzKontenNummerVor);
+}
+
+int Punktlokation::getStation() const {
+	return (station);
 }

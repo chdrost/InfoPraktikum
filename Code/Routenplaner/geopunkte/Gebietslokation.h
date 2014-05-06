@@ -8,6 +8,12 @@
 #ifndef GEBIETSLOKATION_H_
 #define GEBIETSLOKATION_H_
 
+//Klassenwerte definieren. Diese werden durch die Methode getType() zur&uuml;ck
+//gegeben. So kann geprueft werden, um welchen Typ es sich handelt.
+#define GEBIET 0
+#define LINEAR 1
+#define PUNKT 2
+
 #include <string>
 #include <vector>
 #include <map>
@@ -50,6 +56,11 @@ public:
 	 */
 	virtual string toString();
 
+	/**
+	 * M&ouml;glichkeit um den Typ der Klasse zu pr&uuml;fen.
+	 * @return Gibt das define LINEAR zurueck.
+	 */
+	virtual int getType();
 
 	const string& getFirstName() const;
 	int getId() const;
@@ -60,7 +71,6 @@ protected:
 	 * Die ID entspricht dem "LOCATIONCODE" der Dokumentation.
 	 */
 	int id;
-
 	/**
 	 * Der Grob Typ einer Lokation gibt an, um weche Lokation es sich handelt.
 	 * Er ist nur mit einem Buchstaben gekennzeichnet. Dieser Buchstabe ist im Fall
@@ -125,6 +135,7 @@ protected:
 	 * In diesem Vector sind die Linearlocations enthalten, die zu diesem Gebiet ge&ouml;ren.
 	 */
 	vector<Linearlokation*> linLocations;
+
 };
 
 #endif /* GEBIETSLOKATION_H_ */

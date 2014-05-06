@@ -5,7 +5,8 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
   ../geopunkte/../hilfsklassen/./../exceptions/ZeitException.h \
   ../geopunkte/AttributDefines.h ../geopunkte/Linearlokation.h \
   ../geopunkte/Punktlokation.h \
-  ../geopunkte/../hilfsklassen/GeoKoordinate.h
+  ../geopunkte/../hilfsklassen/GeoKoordinate.h \
+  ../hilfsklassen/BenutzerInterface.h
 
 ../Hello.h:
 
@@ -28,3 +29,5 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
 ../geopunkte/Punktlokation.h:
 
 ../geopunkte/../hilfsklassen/GeoKoordinate.h:
+
+../hilfsklassen/BenutzerInterface.h:

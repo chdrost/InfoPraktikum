@@ -200,7 +200,6 @@ void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
 
 string Linearlokation::toString() {
 	stringstream s;
-	//TODO Rekursion aus toString() entfernen
 	s << "\nLinearlokation\nName:" << this->firstName;
 	s << "\nDarin enthalten:\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
@@ -250,6 +249,10 @@ void Linearlokation::initialisiereWerte(void) {
 	this->poldir="";
 	this->adminCounty="";
 
+}
+
+int Linearlokation::getType() {
+	return (LINEAR);
 }
 
 void Linearlokation::speichereInterruptsRoad(
