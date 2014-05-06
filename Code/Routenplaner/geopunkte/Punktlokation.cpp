@@ -43,3 +43,7 @@ Punktlokation::~Punktlokation() {
 string Punktlokation::toString() {
 	return (Linearlokation::toString());
 }
+
+ GeoKoordinate * Punktlokation::getGeoKoordinate() const {
+	return (geoKoordinate);
+}

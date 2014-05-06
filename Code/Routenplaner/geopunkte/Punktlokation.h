@@ -23,6 +23,8 @@ public:
 	 */
 	virtual string toString();
 
+	 GeoKoordinate* getGeoKoordinate() const;
+
 private:
 	/**
 	 * Pointer auf die &uuml;bergeordnete Linearlokation.

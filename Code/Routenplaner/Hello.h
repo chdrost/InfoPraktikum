@@ -12,6 +12,7 @@
 #include "geopunkte/LokationsVerwaltung.h"
 #include <vector>
 #include <regex>
+#include <cmath>
 
 class Hello {
 public:
