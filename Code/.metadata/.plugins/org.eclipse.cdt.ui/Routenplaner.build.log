@@ -1,4 +1,4 @@
-20:40:31 **** Incremental Build of configuration Release for project Routenplaner ****
+21:14:12 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
 Building file: ../geopunkte/Linearlokation.cpp
 Invoking: Cross G++ Compiler
@@ -11,5 +11,5 @@ g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hi
 Finished building target: Routenplaner
  
 
-20:40:32 Build Finished (took 717ms)
+21:14:13 Build Finished (took 719ms)
 

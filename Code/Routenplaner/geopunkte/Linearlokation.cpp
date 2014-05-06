@@ -13,7 +13,6 @@ Linearlokation::Linearlokation(vector<string> *zeile,
 	initialisieren();
 	this->areaReference = areaReference;
 	leseWerteEin(zeile);
-
 }
 
 Linearlokation::~Linearlokation() {
