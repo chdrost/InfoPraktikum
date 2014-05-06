@@ -75,6 +75,7 @@ public:
 	bool isUrban() const;
 	int getVeraendert() const;
 	void setAreaReference(Gebietslokation* areaReference);
+	const vector<Punktlokation*>& getPunktLokations() const;
 
 protected:
 	/**
@@ -199,12 +200,6 @@ protected:
 	string adminCounty;
 
 	/**
-	 * Diese Methode initialisiert alle Werte mit 0, NULL oder "".<br>
-	 * Dadurch k&ouml;nnen Laufzeitfehler vermieden werden, falls eine Spalte
-	 * leer ist.
-	 */
-	void initialisiereWerte(void);
-	/**
 	 * Diese Mehode liest die Attributwerte der Klasse ein.<br>
 	 * Die Werte werden mit dem Zeilenvector &uuml;bergeben.
 	 * @param zeile Ein Vector mit den Werten, die aus einer Zeile der
@@ -247,6 +242,12 @@ protected:
 	 */
 	void speichereInterruptsRoad(map<int, Gebietslokation*> *gebieteMap,
 			vector<string> *zeile);
+
+	/**
+	 * Diese Methode initialisiert alle Werte der Klasse mit
+	 * 0, false, NULL.
+	 */
+	virtual void initialisieren();
 
 };
 

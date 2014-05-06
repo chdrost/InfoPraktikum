@@ -118,6 +118,9 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		if (klassenTyp > 1) {
 			cout << "\nKoordinaten anzegen - " << KOORDINATE_ANZEIGEN;
 		}
+		if(klassenTyp==LINEAR){
+			cout<<"\nPunktlokationen ausgeben - "<<LINEAR_AUSGEBEN;
+		}
 		cout << "\nJetzt waehlen: ";
 		cin >> eingabe;
 
@@ -172,6 +175,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 				cout << "Keine Geo Koordinate gefunden";
 			}
 			break;
+		case LINEAR_AUSGEBEN:
+			linearAusgeben((Linearlokation*)lok);
 		default:
 			cout << "\nDu kannst gar nichts.";
 		}
@@ -182,5 +187,11 @@ void BenutzerInterface::zeigeAlle() {
 	for (auto it = lokVerwaltung->getGebieteMap().begin();
 			it != lokVerwaltung->getGebieteMap().end(); it++) {
 		cout << "\nName: " << it->first << "Value: " << it->second->toString();
+	}
+}
+
+void BenutzerInterface::linearAusgeben(Linearlokation* linLok) {
+	for(int i = 0; i<linLok->getPunktLokations().size(); i++){
+		cout<<"\nStelle: "<<i<<"\n"<<linLok->getPunktLokations().at(i)->toString();
 	}
 }

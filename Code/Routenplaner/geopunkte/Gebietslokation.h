@@ -69,7 +69,7 @@ protected:
 	 * In der Hierarchie folgende Lokationen verweisen auf diese Id.<br>
 	 * Die ID entspricht dem "LOCATIONCODE" der Dokumentation.
 	 */
-	int id;
+	unsigned int id;
 	/**
 	 * Der Grob Typ einer Lokation gibt an, um weche Lokation es sich handelt.
 	 * Er ist nur mit einem Buchstaben gekennzeichnet. Dieser Buchstabe ist im Fall
@@ -135,6 +135,11 @@ protected:
 	 */
 	vector<Linearlokation*> linLocations;
 
+	/**
+	 * Diese Methode initialisiert alle Werte der Klasse mit
+	 * 0, false, NULL.
+	 */
+	virtual void initialisieren();
 };
 
 #endif /* GEBIETSLOKATION_H_ */

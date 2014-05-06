@@ -10,6 +10,7 @@
 Punktlokation::Punktlokation(vector<string> *zeile,
 		Gebietslokation *areaReference, Linearlokation *linearReference) :
 		Linearlokation(zeile, areaReference) {
+	initialisieren();
 	this->linearReference = linearReference;
 	if (!zeile->at(NETZKNOTEN1_NR).empty()) {
 		try {
@@ -43,17 +44,18 @@ Punktlokation::~Punktlokation() {
 string Punktlokation::toString() {
 	stringstream s;
 	s << Linearlokation::toString();
-	s<<"\nLinear Reference: ";
-	if(this->linearReference != NULL){
-		s<<this->linearReference->getFirstName()<< ", Id: "<<this->linearReference->getId();
-	}else{
-		s<<"Keine Linear Reference hinterlegt.";
+	s << "\nLinear Reference: ";
+	if (this->linearReference != NULL) {
+		s << this->linearReference->getFirstName() << ", Id: "
+				<< this->linearReference->getId();
+	} else {
+		s << "Keine Linear Reference hinterlegt.";
 	}
-	s<<"\nNetzknotennummer vor der Lokation: "<<this->netzKontenNummerVor;
-	s<<"\nNetzknotennummer nach der Lokation: "<<this->netzKontenNummerNach;
-	s<<"\nGeokoordinate: ";
-	if(this->geoKoordinate != NULL){
-		s<<this->geoKoordinate->toString();
+	s << "\nNetzknotennummer vor der Lokation: " << this->netzKontenNummerVor;
+	s << "\nNetzknotennummer nach der Lokation: " << this->netzKontenNummerNach;
+	s << "\nGeokoordinate: ";
+	if (this->geoKoordinate != NULL) {
+		s << this->geoKoordinate->toString();
 	}
 	return (s.str());
 }
@@ -82,3 +84,12 @@ int Punktlokation::getStation() const {
 	return (station);
 }
 ;
+
+void Punktlokation::initialisieren() {
+	this->linearReference = NULL;
+	this->netzKontenNummerVor=0;
+	this->netzKontenNummerNach=0;
+	this->station=0;
+	this->geoKoordinate=NULL;
+
+}

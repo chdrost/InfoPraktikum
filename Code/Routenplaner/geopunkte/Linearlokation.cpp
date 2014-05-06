@@ -10,6 +10,7 @@
 Linearlokation::Linearlokation(vector<string> *zeile,
 		Gebietslokation *areaReference) :
 		Gebietslokation(zeile) {
+	initialisieren();
 	this->areaReference = areaReference;
 	leseWerteEin(zeile);
 
@@ -100,7 +101,6 @@ void Linearlokation::setAreaReference(Gebietslokation* areaReference) {
 }
 
 void Linearlokation::leseWerteEin(vector<string>* zeile) {
-	initialisiereWerte();
 	this->roadNumber = zeile->at(ROADNUMBER);
 	this->roadName = zeile->at(ROADNAME);
 	this->secondName = zeile->at(SECOND_NAME);
@@ -239,31 +239,14 @@ string Linearlokation::toString() {
 	return (s.str());
 }
 
-void Linearlokation::initialisiereWerte(void) {
-	this->roadName = "";
-	this->roadNumber = "";
-	this->secondName = "";
-	this->areaReference = NULL;
-	this->negativeOffset = NULL;
-	this->positiveOffset = NULL;
-	this->urban = false;
-	this->intersectioncode = NULL;
-	this->interruptsRoad = NULL;
-	this->inPositive = false;
-	this->outPositive = false;
-	this->inNegative = false;
-	this->outNegative = false;
-	this->presentPositive = false;
-	this->presentNegative = false;
-	this->veraendert = 0;
-	this->tern = false;
-	this->poldir = "";
-	this->adminCounty = "";
 
-}
 
 int Linearlokation::getType() {
 	return (LINEAR);
+}
+
+const vector<Punktlokation*>& Linearlokation::getPunktLokations() const {
+	return (punktLokations);
 }
 
 void Linearlokation::speichereInterruptsRoad(
@@ -276,4 +259,26 @@ void Linearlokation::speichereInterruptsRoad(
 		//braucht nicht behandelt zu werden, wenn nicht vorhanden braucht auch
 		//nichts eingelesen zu werden.
 	}
+}
+
+void Linearlokation::initialisieren() {
+	this->roadName = "";
+		this->roadNumber = "";
+		this->secondName = "";
+		this->areaReference = NULL;
+		this->negativeOffset = NULL;
+		this->positiveOffset = NULL;
+		this->urban = false;
+		this->intersectioncode = NULL;
+		this->interruptsRoad = NULL;
+		this->inPositive = false;
+		this->outPositive = false;
+		this->inNegative = false;
+		this->outNegative = false;
+		this->presentPositive = false;
+		this->presentNegative = false;
+		this->veraendert = 0;
+		this->tern = false;
+		this->poldir = "";
+		this->adminCounty = "";
 }

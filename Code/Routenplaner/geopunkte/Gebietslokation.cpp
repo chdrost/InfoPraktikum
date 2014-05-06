@@ -8,6 +8,7 @@
 #include "Gebietslokation.h"
 
 Gebietslokation::Gebietslokation(vector<string> *zeile) {
+	initialisieren();
 	this->id = stoi(zeile->at(LOCATIONCODE));
 	this->typBuchstabe = zeile->at(TYPE).at(1);
 	this->typZahl = (int) (zeile->at(TYPE).at(2));
@@ -60,6 +61,15 @@ string Gebietslokation::toString() {
 	s<<"\n";
 	s << "\nId: " << this->id;
 	s << "\nFirst Name: " << this->firstName;
-	s << "\nGebietsinformationen";
 	return (s.str());
+}
+
+void Gebietslokation::initialisieren() {
+	this->id=0;
+	this->typBuchstabe=0;
+	this->typZahl=0;
+	this->feinTyp=0;
+	this->firstName="";
+	this->adminBundesLand="";
+	this->aktualitaet=NULL;
 }
