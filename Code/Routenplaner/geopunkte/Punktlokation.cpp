@@ -10,6 +10,7 @@
 Punktlokation::Punktlokation(vector<string> *zeile,
 		Gebietslokation *areaReference, Linearlokation *linearReference) :
 		Linearlokation(zeile, areaReference) {
+	initialisieren();
 	this->linearReference = linearReference;
 	if (!zeile->at(NETZKNOTEN1_NR).empty()) {
 		try {
@@ -42,38 +43,19 @@ Punktlokation::~Punktlokation() {
 
 string Punktlokation::toString() {
 	stringstream s;
-
-	s << "\nPunktlokation\nName:" << this->firstName;
-	s << "\nUebergeordnete Strasse: ";
+	s << Linearlokation::toString();
+	s << "\nLinear Reference: ";
 	if (this->linearReference != NULL) {
-		s << this->linearReference->getRoadName();
+		s << this->linearReference->getFirstName() << ", Id: "
+				<< this->linearReference->getId();
 	} else {
-		s << "Keine Strasse uebergeordnet";
+		s << "Keine Linear Reference hinterlegt.";
 	}
-	s << "\nKoordninate: " << this->geoKoordinate->toString();
-	s << "\nDarin enthalten:\nNegative Offset: ";
-	if (this->negativeOffset != NULL) {
-		s << this->negativeOffset->getFirstName();
-	} else {
-		s << " Es ist kein Negative Offset hinterlegt.";
-	}
-	s << "\nPositive Offset: ";
-	if (this->positiveOffset != NULL) {
-		s << this->positiveOffset->getFirstName();
-	} else {
-		s << " Es ist kein positive Offset hinterlegt.";
-	}
-	s << "\nIntersection Code:";
-	if (this->intersectioncode != NULL) {
-		s << this->intersectioncode->getFirstName();
-	} else {
-		s << " Es ist kein Intersectioncode hinterlegt.";
-	}
-	s << "\nInterrupts Road";
-	if (this->interruptsRoad != NULL) {
-		s << this->interruptsRoad->getFirstName();
-	} else {
-		s << " Es ist kein Interrupts Road hinterlegt hinterlegt.";
+	s << "\nNetzknotennummer vor der Lokation: " << this->netzKontenNummerVor;
+	s << "\nNetzknotennummer nach der Lokation: " << this->netzKontenNummerNach;
+	s << "\nGeokoordinate: ";
+	if (this->geoKoordinate != NULL) {
+		s << this->geoKoordinate->toString();
 	}
 	return (s.str());
 }
@@ -100,4 +82,14 @@ int Punktlokation::getNetzKontenNummerVor() const {
 
 int Punktlokation::getStation() const {
 	return (station);
+}
+;
+
+void Punktlokation::initialisieren() {
+	this->linearReference = NULL;
+	this->netzKontenNummerVor=0;
+	this->netzKontenNummerNach=0;
+	this->station=0;
+	this->geoKoordinate=NULL;
+
 }

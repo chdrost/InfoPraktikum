@@ -19,6 +19,7 @@
 #define NOFFSET_ANZEIGEN 5
 #define ID_ANZEIGEN 6
 #define KOORDINATE_ANZEIGEN 7
+#define LINEAR_AUSGEBEN 8 //Gibt die Punktlokationen einer Linear Reference aus
 
 #include "../geopunkte/LokationsVerwaltung.h"
 #include  <iostream>
@@ -60,6 +61,13 @@ public:
 	 * Diese Methode gibt alle Lokationen aus.
 	 */
 	void zeigeAlle();
+
+	/**
+	 * Diese Methode gibt alle Punktlokationen aus, die in einer Linearlokation
+	 * enthalten sind.
+	 * @param linLok Die Linear Lokation, die ausgegeben werden soll.
+	 */
+	void linearAusgeben(Linearlokation * linLok);
 
 private:
 	LokationsVerwaltung* lokVerwaltung;

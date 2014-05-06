@@ -29,8 +29,9 @@ int main() {                                             // Hauptfunktion
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
 
-	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
+	LokationsVerwaltung *lokVerwaltung =  new LokationsVerwaltung();
 	lokVerwaltung->objekteErstellen(&erg);
+	delete datei;
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);
 	interface.zeigeHauptMenue();
 	/* (auto it = lokVerwaltung->getNamenMap().begin();
@@ -76,7 +77,7 @@ int main() {                                             // Hauptfunktion
 	 delete datei;
 	 delete lokVerwaltung;*/
 
-	//Sleep(100000);
+	//sleep(30); //Um zu sehen, was der Speicher macht
 	return (EXIT_SUCCESS);           // Optionale Rückgabe an das Betriebssystem
 }
 

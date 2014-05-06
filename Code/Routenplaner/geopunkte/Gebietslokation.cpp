@@ -8,6 +8,7 @@
 #include "Gebietslokation.h"
 
 Gebietslokation::Gebietslokation(vector<string> *zeile) {
+	initialisieren();
 	this->id = stoi(zeile->at(LOCATIONCODE));
 	this->typBuchstabe = zeile->at(TYPE).at(1);
 	this->typZahl = (int) (zeile->at(TYPE).at(2));
@@ -44,9 +45,31 @@ void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 
 string Gebietslokation::toString() {
 	stringstream s;
-	s << "\nGebietslokation\nName:" << this->firstName;
+	s<<"\n";
+	switch (this->getType()) {
 
-	s << "Id = " << this->id << "\nTyp= " << typBuchstabe << typZahl
-			<< "\nName= " << this->firstName << "\n\n";
-return (s.str());
+	case GEBIET:
+		s << "-------Gebietslokation-------";
+		break;
+	case LINEAR:
+		s << "-------Linearlokation-------";
+		break;
+	case PUNKT:
+		s << "-------Punktlokation-------";
+		break;
+	}
+	s<<"\n";
+	s << "\nId: " << this->id;
+	s << "\nFirst Name: " << this->firstName;
+	return (s.str());
+}
+
+void Gebietslokation::initialisieren() {
+	this->id=0;
+	this->typBuchstabe=0;
+	this->typZahl=0;
+	this->feinTyp=0;
+	this->firstName="";
+	this->adminBundesLand="";
+	this->aktualitaet=NULL;
 }

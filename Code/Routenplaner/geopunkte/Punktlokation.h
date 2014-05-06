@@ -51,12 +51,13 @@ private:
 	 * Netzknotennummer der Lokation oder Netzknotennummer des vor der Lokation
 	 * liegenden Netzknoten.
 	 */
-	int netzKontenNummerVor;
+	//TODO Netzknotennummer evtl. als Referenz
+	unsigned int netzKontenNummerVor;
 
 	/**
 	 * Netzknotennummer des nach der Lokation liegenden Netzknoten.
 	 */
-	int netzKontenNummerNach;
+	unsigned int netzKontenNummerNach;
 
 	/**
 	 * Entfernung der Lokation vor dem Netzknoten 1 in Richtung Netzknoten 2.<br>
@@ -70,6 +71,12 @@ private:
 	 * den L&auml;ngen- und den Breitengrad.
 	 */
 	GeoKoordinate *geoKoordinate;
+
+	/**
+	 * Diese Methode initialisiert alle Werte der Klasse mit
+	 * 0, false, NULL.
+	 */
+	virtual void initialisieren();
 };
 
 #endif /* PUNKTLOKATION_H_ */
