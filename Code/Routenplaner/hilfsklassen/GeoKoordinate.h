@@ -8,12 +8,13 @@
 #ifndef GEOKOORDINATE_H_
 #define GEOKOORDINATE_H_
 
-#define BEGIN_GRAD 1
-#define BEGIN_MINUTE 3
-#define BEGIN_SEKUNDE 5
-#define LAENGE_ANGABE 2
+#define NACHKOMMA_STELLEN 5
+#define BEGIN_GRADANGABE 1
+#define VORKOMMA_STELLEN 2
 
 #include <string>
+#include <cmath>
+#include <sstream>
 #include <cmath>
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
@@ -69,9 +70,12 @@ public:
 	 * Gibt den Wert der entfernung in Km als Float zurueck
 	 * @param ziel die entfernte Geokoordinate zu der der Weg berechnet wrden soll
 	 */
-	float entfernungBerechnen(GeoKoordinate ziel);
+	float entfernungBerechnen(GeoKoordinate *ziel);
 
 	string toString();
+	float getBreitenGrad() const;
+	float getLaengenGrad() const;
+
 private:
 
 	/**

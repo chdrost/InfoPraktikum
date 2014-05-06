@@ -34,43 +34,43 @@ Aktualitaet::~Aktualitaet() {
 
 int Aktualitaet::checkSekunde(int sekunde) {
 	if (sekunde < 0 || sekunde > 59) {
-		return 1;
+		return (1);
 	} else {
-		return 0;
+		return (0);
 	}
 }
 
 int Aktualitaet::checkMinute(int minute) {
-	return checkSekunde(minute);
+	return (checkSekunde(minute));
 }
 
 int Aktualitaet::checkStunde(int stunde) {
 	if (stunde < 0 || stunde > 23) {
-		return 1;
+		return (1);
 	} else {
-		return 0;
+		return (0);
 	}
 }
 
 int Aktualitaet::checkTag(int tag) {
 	if (tag < 0 || tag > 31) {
-		return 1;
+		return (1);
 	} else {
-		return 0;
+		return (0);
 	}
 }
 
 int Aktualitaet::checkMonat(int monat) {
 	if (monat < 0 || monat > 12) {
-		return 1;
+		return (1);
 	} else {
-		return 0;
+		return (0);
 	}
 }
 
 int Aktualitaet::checkJahr(int jahr) {
 	// Wird nicht benoetigt
-	return 0;
+	return (0);
 }
 
 void Aktualitaet::datumEinlesen(int* sekunde, int* minute, int* stunde,
@@ -155,5 +155,5 @@ string Aktualitaet::toString(void) {
 //TODO Hierfuer noch ne schoene Fkt. finden
 	erg << zeit->tm_mday << "." << zeit->tm_mon << "." << zeit->tm_year << " "
 			<< zeit->tm_hour << ":" << zeit->tm_min << ":" << zeit->tm_sec;
-	return erg.str();
+	return (erg.str());
 }
