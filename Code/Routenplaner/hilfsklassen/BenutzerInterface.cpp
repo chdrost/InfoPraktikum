@@ -58,7 +58,11 @@ void BenutzerInterface::zeigeSuche() {
 			<< " Waehlen Sie bitte die entsprechende Nummer:";
 	unsigned int nummer = 0;
 	cin >> nummer;
-	zeigeFeinMenue(treffer.at(nummer));
+	if (nummer < treffer.size()) {
+		zeigeFeinMenue(treffer.at(nummer));
+	}else{
+		cout<<"So gross ist der Vector gar nicht.";
+	}
 }
 
 void BenutzerInterface::zeigeIdSuche() {
@@ -102,7 +106,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		case UEBERGEORDNETE_LOKATION_ANZEIGEN:
 			cout << "\n";
 			if (((Linearlokation*) lok)->getAreaReference() != NULL) {
-				cout << ((Linearlokation*) lok)->getAreaReference()->toString()<<"\n";
+				cout << ((Linearlokation*) lok)->getAreaReference()->toString()
+						<< "\n";
 			} else {
 				cout << "Keine Area Reference gefunden";
 			}
@@ -110,8 +115,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		case UEBERGEORDNETE_STRASSE_ANZEIGEN:
 			cout << "\n";
 			if (((Punktlokation*) lok)->getLinearReference() != NULL) {
-				cout
-						<< ((Punktlokation*) lok)->getLinearReference()->toString()<<"\n";
+				cout << ((Punktlokation*) lok)->getLinearReference()->toString()
+						<< "\n";
 			} else {
 				cout << "Keine Linear Reference gefunden";
 			}
@@ -119,8 +124,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		case POFFSET_ANZEIGEN:
 			cout << "\n";
 			if (((Linearlokation*) lok)->getPositiveOffset() != NULL) {
-				cout
-						<< ((Linearlokation*) lok)->getPositiveOffset()->toString()<<"\n";
+				cout << ((Linearlokation*) lok)->getPositiveOffset()->toString()
+						<< "\n";
 			} else {
 				cout << "Kein Positive Offeset gefunden";
 			}
@@ -129,8 +134,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		case NOFFSET_ANZEIGEN:
 			cout << "\n";
 			if (((Linearlokation*) lok)->getNegativeOffset() != NULL) {
-				cout
-						<< ((Linearlokation*) lok)->getNegativeOffset()->toString()<<"\n";
+				cout << ((Linearlokation*) lok)->getNegativeOffset()->toString()
+						<< "\n";
 			} else {
 				cout << "Kein Negative Offeset gefunden";
 			}
@@ -138,7 +143,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		case KOORDINATE_ANZEIGEN:
 			cout << "\n";
 			if (((Punktlokation*) lok)->getGeoKoordinate() != NULL) {
-				cout << ((Punktlokation*) lok)->getGeoKoordinate()->toString()<<"\n";
+				cout << ((Punktlokation*) lok)->getGeoKoordinate()->toString()
+						<< "\n";
 			} else {
 				cout << "Keine Geo Koordinate gefunden";
 			}
@@ -150,8 +156,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 }
 
 void BenutzerInterface::zeigeAlle() {
-	for (auto it = lokVerwaltung->getNamenMap().begin();
-			it != lokVerwaltung->getNamenMap().end(); it++) {
+	for (auto it = lokVerwaltung->getGebieteMap().begin();
+			it != lokVerwaltung->getGebieteMap().end(); it++) {
 		cout << "\nName: " << it->first << "Value: " << it->second->toString();
 	}
 }

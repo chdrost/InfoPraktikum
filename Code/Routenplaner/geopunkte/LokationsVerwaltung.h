@@ -102,7 +102,7 @@ public:
 	 * @deprecated Diese Methode findet nur mit Gl&uuml;ck den richtigen
 	 * Eintrag. Sie wurde durch suchen(string) und suchen(int) ersetzt.
 	 */
-	Gebietslokation* suchNaDme(string name);
+	Gebietslokation* suchName(string name);
 
 	/**
 	 * Diese Methode sucht anhand des gegebenen Namen passende Datens&auml;tze.
@@ -135,6 +135,7 @@ public:
 	vector<Gebietslokation*> suchen(string name, bool uebereinstimmung);
 
 	const multimap<string, Gebietslokation*>& getNamenMap() const;
+	const map<int, Gebietslokation*>& getGebieteMap() const;
 
 private:
 	/**

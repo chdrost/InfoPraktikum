@@ -1,9 +1,24 @@
-13:19:05 **** Incremental Build of configuration Release for project Routenplaner ****
+13:56:40 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../hilfsklassen/BenutzerInterface.cpp
+Building file: ../geopunkte/Gebietslokation.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/BenutzerInterface.d" -MT"hilfsklassen/BenutzerInterface.d" -o "hilfsklassen/BenutzerInterface.o" "../hilfsklassen/BenutzerInterface.cpp"
-Finished building: ../hilfsklassen/BenutzerInterface.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
+Finished building: ../geopunkte/Gebietslokation.cpp
+ 
+Building file: ../geopunkte/Linearlokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Linearlokation.d" -MT"geopunkte/Linearlokation.d" -o "geopunkte/Linearlokation.o" "../geopunkte/Linearlokation.cpp"
+Finished building: ../geopunkte/Linearlokation.cpp
+ 
+Building file: ../geopunkte/Punktlokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Punktlokation.d" -MT"geopunkte/Punktlokation.d" -o "geopunkte/Punktlokation.o" "../geopunkte/Punktlokation.cpp"
+Finished building: ../geopunkte/Punktlokation.cpp
+ 
+Building file: ../Hello.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
@@ -11,5 +26,5 @@ g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hi
 Finished building target: Routenplaner
  
 
-13:19:06 Build Finished (took 720ms)
+13:56:42 Build Finished (took 2s.347ms)
 

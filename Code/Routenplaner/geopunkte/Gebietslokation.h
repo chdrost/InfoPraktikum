@@ -34,7 +34,6 @@ using namespace std;
 class Linearlokation;
 class Gebietslokation {
 public:
-	Gebietslokation();
 	/**
 	 * Dieser Konstruktor soll als Standardkonstruktor genutzt werden. <br>
 	 * Aus dem Vector werden die entsprechenden Attribute der Zeile ausgelesen.

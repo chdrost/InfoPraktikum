@@ -14,6 +14,7 @@
 #include <vector>
 #include <regex>
 #include <cmath>
+#include <cstdlib>
 
 class Hello {
 public:

@@ -201,6 +201,7 @@ void Linearlokation::verweiseAufbauen(map<int, Gebietslokation*>* gebieteMap,
 string Linearlokation::toString() {
 	stringstream s;
 	s << "\nLinearlokation\nName:" << this->firstName;
+	s << "\nLinearlokation\nName:" << this->roadName;
 	s << "\nDarin enthalten:\nNegative Offset: ";
 	if (this->negativeOffset != NULL) {
 		s << this->negativeOffset->getFirstName();
@@ -231,23 +232,23 @@ string Linearlokation::toString() {
 void Linearlokation::initialisiereWerte(void) {
 	this->roadName = "";
 	this->roadNumer = "";
-	this->secondName ="";
-	this->areaReference =NULL;
-	this->negativeOffset =NULL;
-	this->positiveOffset=NULL;
-	this->urban=false;
-	this->intersectioncode=NULL;
-	this->interruptsRoad=NULL;
-	this->inPositive=false;
-	this->outPositive=false;
-	this->inNegative=false;
-	this->outNegative=false;
-	this->presentPositive=false;
-	this->presentNegative=false;
-	this->veraendert=0;
-	this->tern=false;
-	this->poldir="";
-	this->adminCounty="";
+	this->secondName = "";
+	this->areaReference = NULL;
+	this->negativeOffset = NULL;
+	this->positiveOffset = NULL;
+	this->urban = false;
+	this->intersectioncode = NULL;
+	this->interruptsRoad = NULL;
+	this->inPositive = false;
+	this->outPositive = false;
+	this->inNegative = false;
+	this->outNegative = false;
+	this->presentPositive = false;
+	this->presentNegative = false;
+	this->veraendert = 0;
+	this->tern = false;
+	this->poldir = "";
+	this->adminCounty = "";
 
 }
 

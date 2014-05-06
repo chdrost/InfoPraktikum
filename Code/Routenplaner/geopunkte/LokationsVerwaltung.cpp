@@ -110,7 +110,7 @@ void LokationsVerwaltung::insertMap(Gebietslokation* lok) {
 	namenMap.insert(pair<string, Gebietslokation*>(lok->getFirstName(), lok));
 }
 
-Gebietslokation* LokationsVerwaltung::suchNaDme(string name) {
+Gebietslokation* LokationsVerwaltung::suchName(string name) {
 	//TODO Suche Sinnvoll implementieren
 	return (namenMap.find(name)->second);
 }
@@ -159,6 +159,10 @@ vector<Gebietslokation*> LokationsVerwaltung::suchen(string name,
 		}
 	}
 	return (vec);
+}
+
+const map<int, Gebietslokation*>& LokationsVerwaltung::getGebieteMap() const {
+	return (gebieteMap);
 }
 
 bool LokationsVerwaltung::checkPunktlokation(vector<string>* zeile) {
