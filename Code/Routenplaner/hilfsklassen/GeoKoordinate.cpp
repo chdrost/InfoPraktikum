@@ -45,7 +45,7 @@ float GeoKoordinate::entfernungBerechnen(GeoKoordinate* ziel) {
 
 	lat = (this->breitenGrad + ziel->breitenGrad) / 2 * 0.01745;
 	dx = 111.3 * cos(lat) * (this->laengenGrad - ziel->laengenGrad);
-	dy = 111.3 * (this->breitenGrad - ziel->getBreitenGrad() - breitenGrad);
+	dy = 111.3 * (this->breitenGrad - ziel->getBreitenGrad());
 
 	return (distance = sqrt(dx * dx + dy * dy));
 }

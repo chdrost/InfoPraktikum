@@ -1,0 +1,68 @@
+/*
+ * BenutzerInterface.cpp
+ *
+ *  Created on: 06.05.2014
+ *      Author: christoph
+ */
+
+#include "BenutzerInterface.h"
+
+BenutzerInterface::BenutzerInterface(LokationsVerwaltung* lokVerwaltung) {
+	this->lokVerwaltung = lokVerwaltung;
+
+}
+
+BenutzerInterface::~BenutzerInterface() {
+	delete lokVerwaltung;
+}
+//TODO Eingaben Typsicher machen
+void BenutzerInterface::zeigeHauptMenue() {
+	cout << "\nWas wollen Sie tun?";
+	cout << "\n" << NAMEN_SUCHEN << " - oeffnet die Suche nach einem Namen";
+	cout << "\n" << ID_SUCHEN << " - oeffnet die Suche nach einer Id";
+	cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus";
+	unsigned int auswahl = 0;
+	cin >> auswahl;
+	switch (auswahl) {
+	case NAMEN_SUCHEN:
+		zeigeSuche();
+		break;
+	case ID_SUCHEN:
+		zeigeIdSuche();
+		break;
+	case ALLE_LOKS:
+		zeigeAlle();
+		break;
+	default:
+		cout << "\nFalsche Auswahl!\n";
+
+	}
+}
+
+void BenutzerInterface::zeigeSuche() {
+	cout << "Geben Sie den Namen der gesuchten Lokation ein: ";
+	string suchString = "";
+	cin >> suchString;
+	vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
+	for (int i = 0; i < treffer.size(); i++) {
+		cout << "\n Stelle: " << i << "\n";
+		cout << treffer.at(i)->toString();
+	}
+	cout << "\nWelche Lokation moechten Sie sich weiter betrachten?"
+			<< " Waehlen Sie bitte die entsprechende Nummer:";
+	unsigned int nummer = 0;
+	cin >> nummer;
+	zeigeFeinMenue(treffer.at(nummer));
+}
+
+void BenutzerInterface::zeigeIdSuche() {
+}
+
+void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
+	cout<<"\nWas moechten Sie mit der Lokation tuen?";
+	int klassenTyp = lok->getType();
+	cout<<"";
+}
+
+void BenutzerInterface::zeigeAlle() {
+}

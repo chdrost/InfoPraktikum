@@ -10,6 +10,7 @@
 
 #include "./reader/FileOpener.h"
 #include "geopunkte/LokationsVerwaltung.h"
+#include "hilfsklassen/BenutzerInterface.h"
 #include <vector>
 #include <regex>
 #include <cmath>
