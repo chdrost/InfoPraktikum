@@ -1,4 +1,4 @@
-10:16:14 **** Incremental Build of configuration Release for project Routenplaner ****
+10:17:34 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
 Building file: ../Hello.cpp
 Invoking: Cross G++ Compiler
@@ -11,5 +11,5 @@ g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hi
 Finished building target: Routenplaner
  
 
-10:16:15 Build Finished (took 666ms)
+10:17:35 Build Finished (took 667ms)
 

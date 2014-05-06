@@ -22,7 +22,7 @@ int main() {                                             // Hauptfunktion
 	//Jetzt mal die Datei auslesen
 	FileOpener *datei = new FileOpener();
 	datei->oeffneDatei(
-			"../utf8.csv");
+			"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/utf8.csv");
 	datei->leseDateiAus();
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
