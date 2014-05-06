@@ -11,12 +11,10 @@
 #include <vector>
 #include <string>
 
-
 #include <iostream>
 #include <fstream>
 
 #include <sstream>
-
 
 #include "./../exceptions/FileNotFoundException.h"
 using namespace std;
@@ -38,7 +36,6 @@ public:
 	/**
 	 * Diese Methode liest die Datei zeilenweise aus. Die Zeilen werden als ein String
 	 * im Vector abgelegt.<br>
-	 * Das Einlesen geschieht in einem eigenen Thread. //TODO Thread implementieren
 	 */
 	void leseDateiAus(void);
 
@@ -58,7 +55,7 @@ private:
 	 * Vectoren enth&auml;lt. Die Untervectoren enthalten die einzelnen Spalten der
 	 * eingelesenen Zeilen.
 	 */
-	vector< vector<string> > datenSatz;
+	vector<vector<string> > datenSatz;
 
 	/**
 	 * Die ge&ouml;ffnete Datei.

@@ -34,7 +34,6 @@ void LokationsVerwaltung::objektErstellen(vector<string> *zeile,
 	} else if (checkPunktlokation(zeile)) {
 		cout << "Spalte 32  " << zeile->at(31) << "\n";
 	}
-//TODO Nach dem gesamten Einlesen brauchen die LinLok noch einen Duchlauf um  die Referenzen zu verlinken
 }
 
 void LokationsVerwaltung::speichereGebietsLokation(Gebietslokation* lokation) {
@@ -135,17 +134,12 @@ vector<Gebietslokation*> LokationsVerwaltung::suchen(string name) {
 vector<Gebietslokation*> LokationsVerwaltung::suchen(int id) {
 	vector<Gebietslokation*> vec;
 	vec.push_back(gebieteMap.find(id)->second);
-	//TODO Das noch schreiben
-	if (1) {
-		return (vec);
-	} else {
-		return (vec);
-	}
+	return (vec);
 }
 
 vector<Gebietslokation*> LokationsVerwaltung::suchen(string name,
 		bool uebereinstimmung) {
-	//TODO suche fertig schreiben
+	//TODO Suche testen
 	vector<Gebietslokation*> vec;
 	if (uebereinstimmung) {
 		for (auto it = gebieteMap.begin(); it != gebieteMap.end(); it++) {
