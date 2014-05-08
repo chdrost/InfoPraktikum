@@ -29,14 +29,10 @@ int main() {                                             // Hauptfunktion
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
 
-	LokationsVerwaltung *lokVerwaltung =  new LokationsVerwaltung();
+	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
 	lokVerwaltung->objekteErstellen(&erg);
 	delete datei;
-/*
-	SuchenKlasse suche = SuchenKlasse(lokVerwaltung);
-	vector<Gebietslokation*> vec = suche.suchId(1111);
-	cout<<"\n\n"<<vec.at(0)<<"\n\n";
-*/
+
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);
 	interface.zeigeHauptMenue();
 	/* (auto it = lokVerwaltung->getNamenMap().begin();

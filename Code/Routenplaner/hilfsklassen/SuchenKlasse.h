@@ -21,11 +21,6 @@ public:
 	SuchenKlasse(LokationsVerwaltung const *lokV);
 	virtual ~SuchenKlasse();
 
-	//Benennen der Funktionspointer um den Code lesbar zu halten
-	using intSuche = vector<Gebietslokation*> (int nummer);
-	using stringSuche = vector<Gebietslokation*> (string zeichen);
-	using referenzSuche = vector<Gebietslokation*>(Gebietslokation *lok);
-
 	/**
 	 * Diese Methode sucht Lokationen anhand ihrer Id.
 	 * @param id Die Id, die gesucht werden soll.
@@ -261,16 +256,16 @@ private:
 	 * Dort sind die Datens&auml;tze enthalten, die durchsucht werden
 	 * sollen.
 	 */
-	LokationsVerwaltung *lokalitaetsVerwaltung;
+	const LokationsVerwaltung *lokalitaetsVerwaltung;
 };
 
 template<class Funktion, typename suchWert>
 inline vector<Gebietslokation*> SuchenKlasse::suche(Funktion f, suchWert wert) {
 	auto first = lokalitaetsVerwaltung->getGebieteMap().begin();
-	auto last = lokalitaetsVerwaltung->getGebieteMap().begin();
+	auto last = lokalitaetsVerwaltung->getGebieteMap().end();
 	vector<Gebietslokation*> vec;
 	while (first != last) {
-		if (f((Gebietslokation*) &*first, wert)) {
+		if (f(first->second, wert)) {
 			vec.push_back((Gebietslokation*) &*first);
 		}
 		++first;
