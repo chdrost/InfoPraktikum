@@ -1,0 +1,42 @@
+/*
+ * SuchenKlasse.h
+ *
+ *  Created on: 07.05.2014
+ *      Author: christoph
+ */
+
+#ifndef SUCHENKLASSE_H_
+#define SUCHENKLASSE_H_
+
+#include "../geopunkte/LokationsVerwaltung.h";
+
+/**
+ * Diese Klasse ist ein Container f&uuml;r alle m&ouml;glichen
+ * Suchen, die man auf die Lokationsobjekte ansetzen kann.<br>
+ */
+class SuchenKlasse {
+public:
+	SuchenKlasse(LokationsVerwaltung &lokV);
+	virtual ~SuchenKlasse();
+
+	vector<Gebietslokation*> suchId(int id);
+	vector<Gebietslokation*> suchTypBuchstabe(char buchstabe);
+	vector<Gebietslokation*> suchTypZahl(int zahl);
+	vector<Gebietslokation*> suchFeinTyp(int feinTyp);
+	vector<Gebietslokation*> suchFirstName(string firstName);
+	vector<Gebietslokation*> suchAdminBundesland(string adminBundesLand);
+	vector<Gebietslokation*> suchAktualitaet(Aktualitaet &aktualitaet);
+	vector<Gebietslokation*> suchRoadNumber(string roadNumber);
+	vector<Gebietslokation*> suchRoadName(string RoadName);
+	vector<Gebietslokation*> suchSecondName(string secondName);
+	vector<Gebietslokation*> suchAreaReference(Gebietslokation &areaReference);
+private:
+	/**
+	 * Ein Pointer auf ein Lokalit&auml;tsverwaltungsobjekt.<b>
+	 * Dort sind die Datens&auml;tze enthalten, die durchsucht werden
+	 * sollen.
+	 */
+	LokationsVerwaltung *lokalitaetsVerwaltung;
+};
+
+#endif /* SUCHENKLASSE_H_ */

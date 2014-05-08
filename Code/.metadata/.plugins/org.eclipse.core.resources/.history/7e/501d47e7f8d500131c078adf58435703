@@ -1,0 +1,30 @@
+/*
+ * SuchenKlasse.h
+ *
+ *  Created on: 07.05.2014
+ *      Author: christoph
+ */
+
+#ifndef SUCHENKLASSE_H_
+#define SUCHENKLASSE_H_
+
+/**
+ * Diese Klasse ist ein Container f&uuml;r alle m&ouml;glichen
+ * Suchen, die man auf die Lokationsobjekte ansetzen kann.<br>
+ */
+class SuchenKlasse {
+public:
+	SuchenKlasse(LokationsVerwaltung &lokV);
+	virtual ~SuchenKlasse();
+
+	vector<Gebietslokation*> suchId(int id);
+private:
+	/**
+	 * Ein Pointer auf ein Lokalit&auml;tsverwaltungsobjekt.<b>
+	 * Dort sind die Datens&auml;tze enthalten, die durchsucht werden
+	 * sollen.
+	 */
+	LokationsVerwaltung *lokalitaetsVerwaltung;
+};
+
+#endif /* SUCHENKLASSE_H_ */

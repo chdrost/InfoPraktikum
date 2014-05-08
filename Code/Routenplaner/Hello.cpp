@@ -32,6 +32,11 @@ int main() {                                             // Hauptfunktion
 	LokationsVerwaltung *lokVerwaltung =  new LokationsVerwaltung();
 	lokVerwaltung->objekteErstellen(&erg);
 	delete datei;
+/*
+	SuchenKlasse suche = SuchenKlasse(lokVerwaltung);
+	vector<Gebietslokation*> vec = suche.suchId(1111);
+	cout<<"\n\n"<<vec.at(0)<<"\n\n";
+*/
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);
 	interface.zeigeHauptMenue();
 	/* (auto it = lokVerwaltung->getNamenMap().begin();
