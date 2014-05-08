@@ -9,11 +9,13 @@
 
 BenutzerInterface::BenutzerInterface(LokationsVerwaltung* lokVerwaltung) {
 	this->lokVerwaltung = lokVerwaltung;
+	this->suchKlasse = new SuchenKlasse(lokVerwaltung);
 
 }
 
 BenutzerInterface::~BenutzerInterface() {
 	delete lokVerwaltung;
+	delete suchKlasse;
 }
 //TODO Eingaben Typsicher machen
 void BenutzerInterface::zeigeHauptMenue() {
@@ -24,6 +26,8 @@ void BenutzerInterface::zeigeHauptMenue() {
 		cout << "\n" << NAMEN_SUCHEN << " - oeffnet die Suche nach einem Namen";
 		cout << "\n" << ID_SUCHEN << " - oeffnet die Suche nach einer Id";
 		cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus\nAuswahl: ";
+		cout << "\n" << GEMEINSAMKEITEN
+				<< " - startet die Suche nach Gemeinsamkeiten";
 		cin >> auswahl;
 		cin.clear();
 		switch (auswahl) {
@@ -35,6 +39,9 @@ void BenutzerInterface::zeigeHauptMenue() {
 			break;
 		case ALLE_LOKS:
 			zeigeAlle();
+			break;
+		case GEMEINSAMKEITEN:
+			gemeinsamkeitenSuchen();
 			break;
 		default:
 			cout << "\nFalsche Auswahl!\n";
@@ -62,33 +69,33 @@ void BenutzerInterface::zeigeSuche() {
 	cin >> nummer;
 	if (nummer < treffer.size()) {
 		zeigeFeinMenue(treffer.at(nummer));
-	}else{
-		cout<<"So gross ist der Vector gar nicht.";
+	} else {
+		cout << "So gross ist der Vector gar nicht.";
 	}
 }
 
 void BenutzerInterface::zeigeIdSuche() {
 	cout << "Geben Sie die Id der gesuchten Lokation ein: ";
-		int suchString = ENDE;
-		cin >> suchString;
-		cin.clear();
-		vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
-		for (int i = 0; i < treffer.size(); i++) {
-			cout << "\n\n Stelle: " << i;
-			cout << treffer.at(i)->toString();
-		}
-		if (treffer.empty()) {
-			return;
-		}
-		cout << "\nWelche Lokation moechten Sie sich weiter betrachten?"
-				<< " Waehlen Sie bitte die entsprechende Nummer:";
-		unsigned int nummer = 0;
-		cin >> nummer;
-		if (nummer < treffer.size()) {
-			zeigeFeinMenue(treffer.at(nummer));
-		}else{
-			cout<<"So gross ist der Vector gar nicht.";
-		}
+	int suchString = ENDE;
+	cin >> suchString;
+	cin.clear();
+	vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
+	for (int i = 0; i < treffer.size(); i++) {
+		cout << "\n\n Stelle: " << i;
+		cout << treffer.at(i)->toString();
+	}
+	if (treffer.empty()) {
+		return;
+	}
+	cout << "\nWelche Lokation moechten Sie sich weiter betrachten?"
+			<< " Waehlen Sie bitte die entsprechende Nummer:";
+	unsigned int nummer = 0;
+	cin >> nummer;
+	if (nummer < treffer.size()) {
+		zeigeFeinMenue(treffer.at(nummer));
+	} else {
+		cout << "So gross ist der Vector gar nicht.";
+	}
 }
 
 void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
@@ -118,8 +125,8 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 		if (klassenTyp > 1) {
 			cout << "\nKoordinaten anzegen - " << KOORDINATE_ANZEIGEN;
 		}
-		if(klassenTyp==LINEAR){
-			cout<<"\nPunktlokationen ausgeben - "<<LINEAR_AUSGEBEN;
+		if (klassenTyp == LINEAR) {
+			cout << "\nPunktlokationen ausgeben - " << LINEAR_AUSGEBEN;
 		}
 		cout << "\nJetzt waehlen: ";
 		cin >> eingabe;
@@ -176,7 +183,7 @@ void BenutzerInterface::zeigeFeinMenue(Gebietslokation* lok) {
 			}
 			break;
 		case LINEAR_AUSGEBEN:
-			linearAusgeben((Linearlokation*)lok);
+			linearAusgeben((Linearlokation*) lok);
 		default:
 			cout << "\nDu kannst gar nichts.";
 		}
@@ -191,7 +198,45 @@ void BenutzerInterface::zeigeAlle() {
 }
 
 void BenutzerInterface::linearAusgeben(Linearlokation* linLok) {
-	for(int i = 0; i<linLok->getPunktLokations().size(); i++){
-		cout<<"\nStelle: "<<i<<"\n"<<linLok->getPunktLokations().at(i)->toString();
+	for (int i = 0; i < linLok->getPunktLokations().size(); i++) {
+		cout << "\nStelle: " << i << "\n"
+				<< linLok->getPunktLokations().at(i)->toString();
 	}
+}
+
+void BenutzerInterface::gemeinsamkeitenSuchen() {
+	int steuerEingabe = ENDE;
+	vector<Gebietslokation*> treffer;
+	do {
+		cout << suchKlasse->zeigeSuchOptionen() << "\nJetzt waehlen: ";
+		cin >> steuerEingabe;
+		cout << "\nBitte den gesuchten Wert eingeben";
+		switch (steuerEingabe) {
+		case INT:
+			treffer=suchKlasse->suchen(steuerEingabe, sicherIntLesen());
+			break;
+		case BOOL:
+			treffer=suchKlasse->suchen(steuerEingabe, (bool) sicherIntLesen());
+			break;
+		case CHAR:
+			treffer=suchKlasse->suchen(steuerEingabe, *(sicherStringLesen().begin()));
+			break;
+		case STRING:
+		treffer=	suchKlasse->suchen(steuerEingabe, sicherStringLesen());
+			break;
+		case POINTER:
+			cout << "\nFunktion hier nicht verfuegbar.\n";
+			break;
+		case UNSIGNED:
+			treffer =suchKlasse->suchen(steuerEingabe,
+					(unsigned int) sicherDoubleLesen());
+			break;
+		case ENDE:
+			//MAch nichts
+			break;
+		default:
+			cout << "\nFalsche Eingabe\n";
+		}
+		//TODO MEnnuefuehrung weiter schreiben
+	} while (steuerEingabe != ENDE);
 }

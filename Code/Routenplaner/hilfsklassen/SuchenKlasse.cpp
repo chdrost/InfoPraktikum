@@ -13,7 +13,7 @@ SuchenKlasse::SuchenKlasse(LokationsVerwaltung const *lokV) {
 }
 
 SuchenKlasse::~SuchenKlasse() {
-	// TODO Auto-generated destructor stub
+	//Nichts allokiert
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchId(int id) {
@@ -551,8 +551,9 @@ vector<Gebietslokation*> SuchenKlasse::suchen(int modus, bool vergleich)
 	case SUCH_TERN:
 		return (suchTern(vergleich));
 		break;
-        default:
-            throw TypProblemEcxeption("Falscher Modus, oder kein Bool Wert uebergeben");
+	default:
+		throw TypProblemEcxeption(
+				"Falscher Modus, oder kein Bool Wert uebergeben");
 	}
 	vector<Gebietslokation*> vec;
 	return (vec);
@@ -669,8 +670,8 @@ vector<Gebietslokation*> SuchenKlasse::suchen(int modus, char vergleich)
 	return (vec);
 }
 
-vector<Gebietslokation*> SuchenKlasse::suchen(int modus,
-		unsigned int vergleich)throw(TypProblemEcxeption) {
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus, unsigned int vergleich)
+		throw (TypProblemEcxeption) {
 	switch (modus) {
 	case SUCH_NETZKNOTEN_VOR:
 		return (suchNetzKnotenVor(vergleich));
@@ -683,6 +684,91 @@ vector<Gebietslokation*> SuchenKlasse::suchen(int modus,
 	}
 	vector<Gebietslokation*> vec;
 	return (vec);
+}
+
+int SuchenKlasse::getDatenTyp(int eingabe) {
+	switch (eingabe) {
+	case SUCH_URBAN:
+		return (BOOL);
+		break;
+	case SUCH_TERN:
+		return (BOOL);
+		break;
+	case SUCH_ID:
+		return (INT);
+		break;
+	case SUCH_TYP_ZAHL:
+		return (INT);
+		break;
+	case SUCH_FEIN_TYP:
+		return (INT);
+		break;
+	case SUCH_AREA_REFERENCE_BYID:
+		return (INT);
+		break;
+	case SUCH_POFFSET_BYID:
+		return (INT);
+		break;
+	case SUCH_NOFFSET_BYID:
+		return (INT);
+		break;
+	case SUCH_INTERSECTION_CODE_BYID:
+		return (INT);
+		break;
+	case SUCH_INTERRUPTS_ROAD_BYID:
+		return (INT);
+		break;
+	case SUCH_FIRST_NAME:
+		return (STRING);
+		break;
+	case SUCH_ADMIN_BL:
+		return (STRING);
+		break;
+	case SUCH_ROAD_NUMBER:
+		return (STRING);
+		break;
+	case SUCH_ROAD_NAME:
+		return (STRING);
+		break;
+	case SUCH_SECOND_NAME:
+		return (STRING);
+		break;
+	case SUCH_POL_DIR:
+		return (STRING);
+		break;
+	case SUCH_ADMIN_COUNTY:
+		return (STRING);
+		break;
+	case SUCH_AKTUALITAET:
+		return (STRING);
+		break;
+	case SUCH_AREA_REFERENCE_BYREF:
+		return (POINTER);
+		break;
+	case SUCH_POFFSET_BYREF:
+		return (POINTER);
+		break;
+	case SUCH_NOFFSET_BYREF:
+		return (POINTER);
+		break;
+	case SUCH_INTERSECTION_CODE_BYREF:
+		return (POINTER);
+		break;
+	case SUCH_INTERRUPTS_ROAD_BYREF:
+		return (POINTER);
+		break;
+	case SUCH_TYP_BUCHSTABE:
+		return (CHAR);
+		break;
+	case SUCH_NETZKNOTEN_VOR:
+		return (UNSIGNED);
+		break;
+	case SUCH_NETZKNOTEN_NACH:
+		return (UNSIGNED);
+		break;
+	}
+	return (ENDE);
+
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchGeokoordinate(

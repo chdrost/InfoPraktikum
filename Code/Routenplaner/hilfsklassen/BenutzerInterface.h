@@ -11,6 +11,7 @@
 #define NAMEN_SUCHEN 1
 #define ID_SUCHEN 2
 #define ALLE_LOKS 3
+#define GEMEINSAMKEITEN 4
 
 #define NAME_ANZEIGEN 1
 #define UEBERGEORDNETE_LOKATION_ANZEIGEN 2
@@ -22,7 +23,9 @@
 #define LINEAR_AUSGEBEN 8 //Gibt die Punktlokationen einer Linear Reference aus
 
 #include "../geopunkte/LokationsVerwaltung.h"
+#include  "SuchenKlasse.h"
 #include  <iostream>
+#include  "sicherLesen.h"
 
 /**
  * Erste Klasse f&uuml;r ein Benutzerinterface.<br>
@@ -69,8 +72,16 @@ public:
 	 */
 	void linearAusgeben(Linearlokation * linLok);
 
+	/**
+	 * Diese Methode aktiviert die Suche der Suchklasse.<br>
+	 * Hier&uuml;ber kann der gesamte Datenbestand nach den
+	 * gegebenen Kriterien durchsucht werden.
+	 */
+	void gemeinsamkeitenSuchen();
+
 private:
 	LokationsVerwaltung* lokVerwaltung;
+	SuchenKlasse *suchKlasse;
 };
 
 #endif /* BENUTZERINTERFACE_H_ */

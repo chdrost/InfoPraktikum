@@ -36,6 +36,13 @@
 #define SUCH_NETZKNOTEN_VOR 25
 #define SUCH_NETZKNOTEN_NACH 26
 
+#define BOOL 1
+#define INT 2
+#define CHAR 3
+#define STRING 4
+#define POINTER 5
+#define UNSIGNED 6
+
 #include "../geopunkte/LokationsVerwaltung.h"
 #include "../exceptions/TypProblemEcxeption.h"
 
@@ -48,6 +55,14 @@ public:
 	SuchenKlasse(LokationsVerwaltung const *lokV);
 	virtual ~SuchenKlasse();
 
+	/**
+	 * Diese Methode ermittelt aus dem eingegebenen int Wert
+	 * den entsprechenden Datentyp.<br>
+	 * Diese Abfrage bezieht sich auf die defines.
+	 * @param eingabe Der Wert eines der Defines
+	 * @return Ein weiteres Define, was den Datentyp angibt.
+	 */
+	int getDatenTyp(int eingabe);
 	/**
 	 * Diese Methode zeigt an, welche Suchfunktionen verf&uuml;gbar sind.<br>
 	 * @return Ein String mit den verf&uuml;gbaren Suchfunktionen und einer

@@ -8,12 +8,12 @@
 #include "Hello.h"
 using namespace std;
 Hello::Hello() {
-	// TODO Auto-generated constructor stub
+	// Das Ding kann eh nichts
 
 }
 
 Hello::~Hello() {
-
+	//delete von Hand in der Main
 }
 
 #include <iostream>                                     // Ein- und Ausgabebibliothek
@@ -29,8 +29,7 @@ int main() {                                             // Hauptfunktion
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
 
-	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung();
-	lokVerwaltung->objekteErstellen(&erg);
+	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung(&erg);
 	delete datei;
 
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);

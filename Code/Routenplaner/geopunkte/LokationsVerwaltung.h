@@ -33,7 +33,7 @@ using namespace std;
  */
 class LokationsVerwaltung {
 public:
-	LokationsVerwaltung();
+	LokationsVerwaltung(vector<vector<string> > *datenSatz);
 	virtual ~LokationsVerwaltung();
 	/**
 	 * Diese Methode entscheidet anhand des Types der Zeile, welches Objekt erstellt werden

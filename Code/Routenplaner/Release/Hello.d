@@ -6,7 +6,9 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
   ../geopunkte/AttributDefines.h ../geopunkte/Linearlokation.h \
   ../geopunkte/Punktlokation.h \
   ../geopunkte/../hilfsklassen/GeoKoordinate.h \
-  ../hilfsklassen/BenutzerInterface.h
+  ../hilfsklassen/BenutzerInterface.h \
+  ../geopunkte/../hilfsklassen/SuchenKlasse.h \
+  ../geopunkte/../hilfsklassen/../exceptions/TypProblemEcxeption.h
 
 ../Hello.h:
 
@@ -31,3 +33,7 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
 ../geopunkte/../hilfsklassen/GeoKoordinate.h:
 
 ../hilfsklassen/BenutzerInterface.h:
+
+../geopunkte/../hilfsklassen/SuchenKlasse.h:
+
+../geopunkte/../hilfsklassen/../exceptions/TypProblemEcxeption.h:
