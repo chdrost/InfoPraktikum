@@ -7321,3 +7321,13 @@ java.io.FileNotFoundException: /Users/christoph/Documents/HTW/SEM6/InfoPraktikum
 	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2376)
 	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SESSION 2014-05-08 16:50:13.058 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -keyring /Users/christoph/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.cpp.product -keyring /Users/christoph/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2014-05-08 16:50:18.139
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
