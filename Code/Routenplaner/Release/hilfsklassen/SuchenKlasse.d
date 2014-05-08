@@ -7,7 +7,8 @@ hilfsklassen/SuchenKlasse.d: ../hilfsklassen/SuchenKlasse.cpp \
   ../hilfsklassen/../geopunkte/AttributDefines.h \
   ../hilfsklassen/../geopunkte/Linearlokation.h \
   ../hilfsklassen/../geopunkte/Punktlokation.h \
-  ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h
+  ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h \
+  ../hilfsklassen/../exceptions/TypProblemEcxeption.h
 
 ../hilfsklassen/SuchenKlasse.h:
 
@@ -26,3 +27,5 @@ hilfsklassen/SuchenKlasse.d: ../hilfsklassen/SuchenKlasse.cpp \
 ../hilfsklassen/../geopunkte/Punktlokation.h:
 
 ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h:
+
+../hilfsklassen/../exceptions/TypProblemEcxeption.h:

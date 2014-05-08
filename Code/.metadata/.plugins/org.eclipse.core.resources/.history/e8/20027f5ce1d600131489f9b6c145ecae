@@ -1,0 +1,26 @@
+/*
+ * TypProblemEcxeption.h
+ *
+ *  Created on: 08.05.2014
+ *      Author: christoph
+ */
+
+#ifndef TYPPROBLEMECXEPTION_H_
+#define TYPPROBLEMECXEPTION_H_
+#include <exception>
+#include <string>
+class TypProblemEcxeption {
+public:
+	TypProblemEcxeption(string fehler);
+	virtual ~TypProblemEcxeption();
+
+public:
+    meaCulpa(string s) {this->s = s;}
+    virtual ~meaCulpa() throw() {}
+    virtual const char * what() const throw()
+        {return s.c_str();}
+private:
+    string s;
+};
+
+#endif /* TYPPROBLEMECXEPTION_H_ */

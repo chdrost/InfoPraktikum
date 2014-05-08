@@ -1,0 +1,17 @@
+/*
+ * TypProblemEcxeption.h
+ *
+ *  Created on: 08.05.2014
+ *      Author: christoph
+ */
+
+#ifndef TYPPROBLEMECXEPTION_H_
+#define TYPPROBLEMECXEPTION_H_
+
+class TypProblemEcxeption {
+public:
+	TypProblemEcxeption();
+	virtual ~TypProblemEcxeption();
+};
+
+#endif /* TYPPROBLEMECXEPTION_H_ */

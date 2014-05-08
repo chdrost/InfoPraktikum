@@ -200,11 +200,12 @@ vector<Gebietslokation*> SuchenKlasse::suchAreaReference(int id) {
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(
-		Linearlokation* positiveOffset) {
+		Gebietslokation* positiveOffset) {
 	struct Equals {
-		bool operator()(Gebietslokation* lok, Linearlokation *vergleich) {
-			if (lok->getType() > GEBIET) {
-				if (((Linearlokation*) lok)->getPositiveOffset() == vergleich) {
+		bool operator()(Gebietslokation* lok, Gebietslokation *vergleich) {
+			if (lok->getType() > GEBIET && vergleich->getType() > GEBIET) {
+				if (((Linearlokation*) lok)->getPositiveOffset()
+						== (Linearlokation*) vergleich) {
 					return (true);
 				} else {
 					return (false);
@@ -236,11 +237,12 @@ vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(int id) {
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchNegativeOffset(
-		Linearlokation* negativeOffset) {
+		Gebietslokation* negativeOffset) {
 	struct Equals {
-		bool operator()(Gebietslokation* lok, Linearlokation *vergleich) {
-			if (lok->getType() > GEBIET) {
-				if (((Linearlokation*) lok)->getNegativeOffset() == vergleich) {
+		bool operator()(Gebietslokation* lok, Gebietslokation *vergleich) {
+			if (lok->getType() > GEBIET && vergleich->getType() > GEBIET) {
+				if (((Linearlokation*) lok)->getNegativeOffset()
+						== (Linearlokation*) vergleich) {
 					return (true);
 				} else {
 					return (false);
@@ -288,12 +290,12 @@ vector<Gebietslokation*> SuchenKlasse::suchUrban(bool urban) {
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(
-		Linearlokation* intersectionCode) {
+		Gebietslokation* intersectionCode) {
 	struct Equals {
-		bool operator()(Gebietslokation* lok, Linearlokation *vergleich) {
-			if (lok->getType() > GEBIET) {
+		bool operator()(Gebietslokation* lok, Gebietslokation *vergleich) {
+			if (lok->getType() > GEBIET && vergleich->getType() > GEBIET) {
 				if (((Linearlokation*) lok)->getIntersectioncode()
-						== vergleich) {
+						== (Linearlokation*) vergleich) {
 					return (true);
 				} else {
 					return (false);
@@ -325,10 +327,10 @@ vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(int id) {
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchInterruptsRoad(
-		Linearlokation* interruptsroad) {
+		Gebietslokation* interruptsroad) {
 	struct Equals {
-		bool operator()(Gebietslokation* lok, Linearlokation *vergleich) {
-			if (lok->getType() > GEBIET) {
+		bool operator()(Gebietslokation* lok, Gebietslokation *vergleich) {
+			if (lok->getType() > GEBIET && vergleich->getType() > GEBIET) {
 				if (((Linearlokation*) lok)->getInterruptsRoad() == vergleich) {
 					return (true);
 				} else {
@@ -540,6 +542,149 @@ string SuchenKlasse::getSuchZeile(int Kommando, string beschreibung) {
 	return (ausgabe.str());
 }
 
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus, bool vergleich)
+		throw (TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_URBAN:
+		return (suchUrban(vergleich));
+		break;
+	case SUCH_TERN:
+		return (suchTern(vergleich));
+		break;
+        default:
+            throw TypProblemEcxeption("Falscher Modus, oder kein Bool Wert uebergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus, int vergleich)
+		throw (TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_ID:
+		return (suchId(vergleich));
+		break;
+	case SUCH_TYP_ZAHL:
+		return (suchTypZahl(vergleich));
+		break;
+	case SUCH_FEIN_TYP:
+		return (suchFeinTyp(vergleich));
+		break;
+	case SUCH_AREA_REFERENCE_BYID:
+		return (suchAreaReference(vergleich));
+		break;
+	case SUCH_POFFSET_BYID:
+		return (suchPositiveOffset(vergleich));
+		break;
+	case SUCH_NOFFSET_BYID:
+		return (suchNegativeOffset(vergleich));
+		break;
+	case SUCH_INTERSECTION_CODE_BYID:
+		return (suchIntersectionCode(vergleich));
+		break;
+	case SUCH_INTERRUPTS_ROAD_BYID:
+		return (suchInterruptsRoad(vergleich));
+		break;
+	default:
+		throw TypProblemEcxeption(
+				"Falscher Modus oder kein Zahlenwert uebgergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus, string vergleich)
+		throw (TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_FIRST_NAME:
+		return (suchFirstName(vergleich));
+		break;
+	case SUCH_ADMIN_BL:
+		return (suchAdminBundesland(vergleich));
+		break;
+	case SUCH_ROAD_NUMBER:
+		return (suchRoadNumber(vergleich));
+		break;
+	case SUCH_ROAD_NAME:
+		return (suchRoadName(vergleich));
+		break;
+	case SUCH_SECOND_NAME:
+		return (suchSecondName(vergleich));
+		break;
+	case SUCH_POL_DIR:
+		return (suchPolDir(vergleich));
+		break;
+	case SUCH_ADMIN_COUNTY:
+		return (suchAdminCounty(vergleich));
+		break;
+	case SUCH_AKTUALITAET:
+		return (suchAktualitaet(vergleich));
+		break;
+	default:
+		throw TypProblemEcxeption(
+				"Falscher Modus oder keine Zeichenkette uebergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus,
+		Gebietslokation* vergleich) throw (TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_AREA_REFERENCE_BYREF:
+		return (suchAreaReference(vergleich));
+		break;
+	case SUCH_POFFSET_BYREF:
+		return (suchPositiveOffset(vergleich));
+		break;
+	case SUCH_NOFFSET_BYREF:
+		return (suchNegativeOffset(vergleich));
+		break;
+	case SUCH_INTERSECTION_CODE_BYREF:
+		return (suchIntersectionCode(vergleich));
+		break;
+	case SUCH_INTERRUPTS_ROAD_BYREF:
+		return (suchInterruptsRoad(vergleich));
+		break;
+	default:
+		throw TypProblemEcxeption(
+				"Falscher Modus oder kein Gebietslokation Pointer uebergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus, char vergleich)
+		throw (TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_TYP_BUCHSTABE:
+		return (suchTypBuchstabe(vergleich));
+		break;
+	default:
+		throw TypProblemEcxeption(
+				"Falscher Modus oder kein Buchstabe uebergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchen(int modus,
+		unsigned int vergleich)throw(TypProblemEcxeption) {
+	switch (modus) {
+	case SUCH_NETZKNOTEN_VOR:
+		return (suchNetzKnotenVor(vergleich));
+		break;
+	case SUCH_NETZKNOTEN_NACH:
+		return (suchNetzknotenNach(vergleich));
+		break;
+		throw TypProblemEcxeption(
+				"Falscher Modus oder kein Zahlenwert uebergeben");
+	}
+	vector<Gebietslokation*> vec;
+	return (vec);
+}
+
 vector<Gebietslokation*> SuchenKlasse::suchGeokoordinate(
 		GeoKoordinate* geoKoordinate) {
 	struct Equals {
@@ -561,3 +706,15 @@ vector<Gebietslokation*> SuchenKlasse::suchGeokoordinate(
 	return (suche(vergleichsOperator, geoKoordinate));
 }
 
+vector<Gebietslokation*> SuchenKlasse::suchAktualitaet(string aktualitaet) {
+	struct Equals {
+		bool operator()(Gebietslokation* lok, string vergleich) {
+			if (lok->getAktualitaet()->toString() == vergleich) {
+				return (true);
+			} else {
+				return (false);
+			}
+		}
+	} vergleichsOperator;
+	return (suche(vergleichsOperator, aktualitaet));
+}

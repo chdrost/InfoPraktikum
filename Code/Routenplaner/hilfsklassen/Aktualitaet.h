@@ -69,7 +69,7 @@ public:
 	 * Diese Methode gibt das Datum wieder in der Form aus, in der es in der Datei steht.
 	 * @return Das Datum in der Form, wie es in die Datei geh&ouml;rt.
 	 */
-	string toString(void);
+	string toString();
 	struct tm getZeit() const;
 
 private:

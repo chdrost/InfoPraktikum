@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592ED7CF191C0BCE005DAA56 /* TypProblemEcxeption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */; };
 		5954E19319177FFD00C0D7F0 /* FileNotFoundException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */; };
 		5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */; };
 		5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TypProblemEcxeption.cpp; path = ../exceptions/TypProblemEcxeption.cpp; sourceTree = "<group>"; };
+		592ED7CE191C0BCE005DAA56 /* TypProblemEcxeption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypProblemEcxeption.h; path = ../exceptions/TypProblemEcxeption.h; sourceTree = "<group>"; };
 		5954E16C19177FB100C0D7F0 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RoutenplanerX; sourceTree = BUILT_PRODUCTS_DIR; };
 		5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileNotFoundException.cpp; sourceTree = "<group>"; };
 		5954E17A19177FFD00C0D7F0 /* FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileNotFoundException.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */,
 				5954E18419177FFD00C0D7F0 /* LokationsVerwaltung.h */,
 				5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */,
+				592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */,
+				592ED7CE191C0BCE005DAA56 /* TypProblemEcxeption.h */,
 				5954E18619177FFD00C0D7F0 /* Punktlokation.h */,
 			);
 			name = geopunkte;
@@ -220,6 +225,7 @@
 				5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */,
 				59BFFAB6191B7CAD007546EA /* SuchenKlasse.cpp in Sources */,
 				5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */,
+				592ED7CF191C0BCE005DAA56 /* TypProblemEcxeption.cpp in Sources */,
 				597769B5191902A8004091DD /* BenutzerInterface.cpp in Sources */,
 				5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */,
 				5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */,

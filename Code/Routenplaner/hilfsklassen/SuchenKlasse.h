@@ -37,6 +37,7 @@
 #define SUCH_NETZKNOTEN_NACH 26
 
 #include "../geopunkte/LokationsVerwaltung.h"
+#include "../exceptions/TypProblemEcxeption.h"
 
 /**
  * Diese Klasse ist ein Container f&uuml;r alle m&ouml;glichen
@@ -62,6 +63,19 @@ public:
 	 * @return EIne Zeile f&uuml;r die Methode zeigeSuchOptionen.
 	 */
 	string getSuchZeile(int Kommando, string beschreibung);
+
+	vector<Gebietslokation*> suchen(int modus, bool vergleich)
+			throw (TypProblemEcxeption);
+	vector<Gebietslokation*> suchen(int modus, int vergleich)
+			throw (TypProblemEcxeption);
+	vector<Gebietslokation*> suchen(int modus, char vergleich)
+			throw (TypProblemEcxeption);
+	vector<Gebietslokation*> suchen(int modus, string vergleich)
+			throw (TypProblemEcxeption);
+	vector<Gebietslokation*> suchen(int modus, Gebietslokation* vergleich)
+			throw (TypProblemEcxeption);
+	vector<Gebietslokation*> suchen(int modus, unsigned int vergleich)
+			throw (TypProblemEcxeption);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihrer Id.
@@ -111,7 +125,7 @@ public:
 	 * @param aktualitart Die Aktualit&auml;t, anhand der gesucht werden soll.
 	 * @return Einen Vector mit den gefundenen Lokationen.
 	 */
-	vector<Gebietslokation*> suchAktualitaet(Aktualitaet *aktualitaet);
+	vector<Gebietslokation*> suchAktualitaet(string aktualitaet);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihrer Road Number.
@@ -158,7 +172,8 @@ public:
 	 * bzw. ein Pointer darauf.
 	 * @return Einen Vector mit den gefundenen Lokationen.
 	 */
-	vector<Gebietslokation*> suchPositiveOffset(Linearlokation *positiveOffset);
+	vector<Gebietslokation*> suchPositiveOffset(
+			Gebietslokation *positiveOffset);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihres Positive Offset.<br>
@@ -176,7 +191,8 @@ public:
 	 * bzw. ein Pointer darauf.
 	 * @return Einen Vector mit den gefundenen Lokationen.
 	 */
-	vector<Gebietslokation*> suchNegativeOffset(Linearlokation *negativeOffset);
+	vector<Gebietslokation*> suchNegativeOffset(
+			Gebietslokation *negativeOffset);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihres Negative Offset.<br>
@@ -205,7 +221,7 @@ public:
 	 * @return Einen Vector mit den gefundenen Lokationen.
 	 */
 	vector<Gebietslokation*> suchIntersectionCode(
-			Linearlokation *intersectionCode);
+			Gebietslokation *intersectionCode);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihres Intersection Codes.<br>
@@ -224,7 +240,8 @@ public:
 	 * bzw. ein Pointer darauf.
 	 * @return Einen Vector mit den gefundenen Lokationen.
 	 */
-	vector<Gebietslokation*> suchInterruptsRoad(Linearlokation *interruptsroad);
+	vector<Gebietslokation*> suchInterruptsRoad(
+			Gebietslokation *interruptsroad);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihres Interrupts Road.<br>

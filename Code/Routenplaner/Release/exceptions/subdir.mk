@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../exceptions/FileNotFoundException.cpp \
+../exceptions/TypProblemEcxeption.cpp \
 ../exceptions/ZeitException.cpp 
 
 OBJS += \
 ./exceptions/FileNotFoundException.o \
+./exceptions/TypProblemEcxeption.o \
 ./exceptions/ZeitException.o 
 
 CPP_DEPS += \
 ./exceptions/FileNotFoundException.d \
+./exceptions/TypProblemEcxeption.d \
 ./exceptions/ZeitException.d 
 
 
