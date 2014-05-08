@@ -1,4 +1,4 @@
-16:21:57 **** Incremental Build of configuration Release for project Routenplaner ****
+17:37:55 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
 Building file: ../hilfsklassen/SuchenKlasse.cpp
 Invoking: Cross G++ Compiler

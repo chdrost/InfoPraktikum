@@ -8,6 +8,34 @@
 #ifndef SUCHENKLASSE_H_
 #define SUCHENKLASSE_H_
 
+#define ENDE 0
+#define SUCH_ID 1
+#define SUCH_TYP_BUCHSTABE 2
+#define SUCH_TYP_ZAHL 3
+#define SUCH_FEIN_TYP 4
+#define SUCH_FIRST_NAME 5
+#define SUCH_ADMIN_BL 6
+#define SUCH_AKTUALITAET 7
+#define SUCH_ROAD_NUMBER 8
+#define SUCH_ROAD_NAME 9
+#define SUCH_SECOND_NAME 10
+#define SUCH_AREA_REFERENCE_BYREF 11
+#define SUCH_AREA_REFERENCE_BYID 12
+#define SUCH_POFFSET_BYREF 13
+#define SUCH_POFFSET_BYID 14
+#define SUCH_NOFFSET_BYREF 15
+#define SUCH_NOFFSET_BYID 16
+#define SUCH_URBAN 17
+#define SUCH_INTERSECTION_CODE_BYREF 18
+#define SUCH_INTERSECTION_CODE_BYID 19
+#define SUCH_INTERRUPTS_ROAD_BYREF 20
+#define SUCH_INTERRUPTS_ROAD_BYID 21
+#define SUCH_TERN 22
+#define SUCH_POL_DIR 23
+#define SUCH_ADMIN_COUNTY 24
+#define SUCH_NETZKNOTEN_VOR 25
+#define SUCH_NETZKNOTEN_NACH 26
+
 #include "../geopunkte/LokationsVerwaltung.h"
 
 /**
@@ -18,6 +46,22 @@ class SuchenKlasse {
 public:
 	SuchenKlasse(LokationsVerwaltung const *lokV);
 	virtual ~SuchenKlasse();
+
+	/**
+	 * Diese Methode zeigt an, welche Suchfunktionen verf&uuml;gbar sind.<br>
+	 * @return Ein String mit den verf&uuml;gbaren Suchfunktionen und einer
+	 * kleinen Men&uuml;f&uuml;hrung.
+	 */
+	string zeigeSuchOptionen();
+
+	/**
+	 * Diese Methode schreibt eine Zeile f&uuml;r die Methode zeigeSuchOptionen.
+	 * @param Kommando Die Zahl, die sp&auml;ter f&uuml;r die Men&uuml;f&uuml;hrung
+	 * angezeigt werden soll.
+	 * @param beschreibung Was das Kommando machen soll.
+	 * @return EIne Zeile f&uuml;r die Methode zeigeSuchOptionen.
+	 */
+	string getSuchZeile(int Kommando, string beschreibung);
 
 	/**
 	 * Diese Methode sucht Lokationen anhand ihrer Id.

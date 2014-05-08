@@ -467,6 +467,79 @@ vector<Gebietslokation*> SuchenKlasse::suchStation(int station) {
 	return (suche(vergleichsOperator, station));
 }
 
+string SuchenKlasse::zeigeSuchOptionen() {
+	ostringstream ausgabe;
+	ausgabe << "\nWas wollen Sie suchen?\n";
+	ausgabe << getSuchZeile(SUCH_ID, "die die gleiche Id haben");
+	ausgabe
+			<< getSuchZeile(SUCH_TYP_BUCHSTABE,
+					"die den gleichen Typ Buchstaben haben");
+	ausgabe << getSuchZeile(SUCH_TYP_ZAHL, "die den gleichen Zahlentyp haben");
+	ausgabe << getSuchZeile(SUCH_FEIN_TYP, "die den gleichen Feintyp haben");
+	ausgabe << getSuchZeile(SUCH_FEIN_TYP, "die den gleichen First Name haben");
+	ausgabe
+			<< getSuchZeile(SUCH_ADMIN_BL,
+					"die das gleiche Administrative Bundesland haben");
+	ausgabe << getSuchZeile(SUCH_AKTUALITAET, "die gleiche Aktualitaet haben");
+	ausgabe << getSuchZeile(SUCH_ROAD_NUMBER, "die gleiche Road Number haben");
+	ausgabe << getSuchZeile(SUCH_ROAD_NAME, "den gleichen Road Name haben");
+	ausgabe
+			<< getSuchZeile(SUCH_SECOND_NAME,
+					"den gleichen Section Name haben");
+	ausgabe
+			<< getSuchZeile(SUCH_AREA_REFERENCE_BYREF,
+					"die gleiche Area Reference haben, anhand Pointer");
+	ausgabe
+			<< getSuchZeile(SUCH_AREA_REFERENCE_BYID,
+					"die gleiche Area Reference haben, anhand ihrer ID");
+	ausgabe
+			<< getSuchZeile(SUCH_POFFSET_BYREF,
+					"den gleichen Positive Offset haben, anhand Pointer");
+	ausgabe
+			<< getSuchZeile(SUCH_POFFSET_BYID,
+					"den gleichen Positive Offset haben, anhand ID");
+	ausgabe
+			<< getSuchZeile(SUCH_NOFFSET_BYREF,
+					"den gleichen Negative Offset haben, anhand Pointer");
+	ausgabe
+			<< getSuchZeile(SUCH_NOFFSET_BYID,
+					"den gleichen Negative Offset haben, anhand ID");
+	ausgabe << getSuchZeile(SUCH_URBAN, "die das gleiche Urban Flag haben");
+	ausgabe
+			<< getSuchZeile(SUCH_INTERSECTION_CODE_BYREF,
+					"den gleichen Intersection Code haben, anhand Pointer");
+	ausgabe
+			<< getSuchZeile(SUCH_INTERSECTION_CODE_BYID,
+					"den gleichen Intersection Code haben, anhand ID");
+	ausgabe
+			<< getSuchZeile(SUCH_INTERRUPTS_ROAD_BYREF,
+					"den gleichen Interrupts Road haben, anhand Pointer");
+	ausgabe
+			<< getSuchZeile(SUCH_INTERRUPTS_ROAD_BYID,
+					"den gleichen Interrupts Road haben, anhand ID");
+	ausgabe << getSuchZeile(SUCH_TERN, "das gleiche Tern Flag haben");
+	ausgabe
+			<< getSuchZeile(SUCH_POL_DIR,
+					"die gleiche zustaendige Polizeidienstelle haben");
+	ausgabe
+			<< getSuchZeile(ADMIN_County,
+					"das gleiche administrative Bundesland haben");
+	ausgabe
+			<< getSuchZeile(SUCH_NETZKNOTEN_VOR,
+					"den gleichen Netzknoten Vor haben");
+	ausgabe
+			<< getSuchZeile(SUCH_NETZKNOTEN_NACH,
+					"den gleichen Netzknoten Nach haben");
+	return (ausgabe.str());
+}
+
+string SuchenKlasse::getSuchZeile(int Kommando, string beschreibung) {
+	ostringstream ausgabe;
+	ausgabe << "\n " << Kommando << " - Alle Lokationen suchen, die "
+			<< beschreibung << ".";
+	return (ausgabe.str());
+}
+
 vector<Gebietslokation*> SuchenKlasse::suchGeokoordinate(
 		GeoKoordinate* geoKoordinate) {
 	struct Equals {
