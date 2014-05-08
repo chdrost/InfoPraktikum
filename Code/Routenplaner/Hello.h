@@ -15,7 +15,7 @@
 #include <regex>
 #include <cmath>
 #include <unistd.h>
-#include "hilfsklassen/SuchenKlasse.h"
+//#include "hilfsklassen/SuchenKlasse.h"
 
 class Hello {
 public:

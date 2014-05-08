@@ -157,3 +157,7 @@ string Aktualitaet::toString(void) {
 			<< zeit->tm_hour << ":" << zeit->tm_min << ":" << zeit->tm_sec;
 	return (erg.str());
 }
+
+ struct tm Aktualitaet::getZeit() const {
+	return (*zeit);
+}
