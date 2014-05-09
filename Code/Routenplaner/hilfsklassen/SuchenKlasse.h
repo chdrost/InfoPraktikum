@@ -332,7 +332,7 @@ public:
 	 * @return Ein Vector mit den gesuchten Datens&auml;tzen.
 	 */
 	template<class Funktion, typename suchWert>
-	inline vector<Gebietslokation*> suche(Funktion f, suchWert wert);
+	inline vector<Gebietslokation*> sucheTemplate(Funktion f, suchWert wert);
 
 private:
 	/**
@@ -344,13 +344,13 @@ private:
 };
 
 template<class Funktion, typename suchWert>
-inline vector<Gebietslokation*> SuchenKlasse::suche(Funktion f, suchWert wert) {
-	auto first = lokalitaetsVerwaltung->getGebieteMap().begin();
+inline vector<Gebietslokation*> SuchenKlasse::sucheTemplate(Funktion f, suchWert wert) {
+	auto first = (lokalitaetsVerwaltung->getGebieteMap()).begin();
 	auto last = lokalitaetsVerwaltung->getGebieteMap().end();
 	vector<Gebietslokation*> vec;
 	while (first != last) {
 		if (f(first->second, wert)) {
-			vec.push_back((Gebietslokation*) &*first);
+			vec.push_back(first->second);
 		}
 		++first;
 	}

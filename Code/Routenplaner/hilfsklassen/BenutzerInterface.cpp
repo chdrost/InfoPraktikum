@@ -25,9 +25,10 @@ void BenutzerInterface::zeigeHauptMenue() {
 		cout << "\nEnde durch - " << ENDE;
 		cout << "\n" << NAMEN_SUCHEN << " - oeffnet die Suche nach einem Namen";
 		cout << "\n" << ID_SUCHEN << " - oeffnet die Suche nach einer Id";
-		cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus\nAuswahl: ";
+		cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus";
 		cout << "\n" << GEMEINSAMKEITEN
 				<< " - startet die Suche nach Gemeinsamkeiten";
+		cout << "\nAuswahl: ";
 		cin >> auswahl;
 		cin.clear();
 		switch (auswahl) {
@@ -56,10 +57,7 @@ void BenutzerInterface::zeigeSuche() {
 	cin >> suchString;
 	cin.clear();
 	vector<Gebietslokation*> treffer = lokVerwaltung->suchen(suchString);
-	for (int i = 0; i < treffer.size(); i++) {
-		cout << "\n\n Stelle: " << i;
-		cout << treffer.at(i)->toString();
-	}
+	cout << vectorAusgeben(&treffer);
 	if (treffer.empty()) {
 		return;
 	}
@@ -198,45 +196,95 @@ void BenutzerInterface::zeigeAlle() {
 }
 
 void BenutzerInterface::linearAusgeben(Linearlokation* linLok) {
-	for (int i = 0; i < linLok->getPunktLokations().size(); i++) {
-		cout << "\nStelle: " << i << "\n"
-				<< linLok->getPunktLokations().at(i)->toString();
-	}
+	//cout << vectorAusgeben(&(linLok->getPunktLokations()));
 }
 
 void BenutzerInterface::gemeinsamkeitenSuchen() {
 	int steuerEingabe = ENDE;
 	vector<Gebietslokation*> treffer;
 	do {
+		steuerEingabe = ENDE;
 		cout << suchKlasse->zeigeSuchOptionen() << "\nJetzt waehlen: ";
 		cin >> steuerEingabe;
-		cout << "\nBitte den gesuchten Wert eingeben";
-		switch (steuerEingabe) {
-		case INT:
-			treffer=suchKlasse->suchen(steuerEingabe, sicherIntLesen());
-			break;
-		case BOOL:
-			treffer=suchKlasse->suchen(steuerEingabe, (bool) sicherIntLesen());
-			break;
-		case CHAR:
-			treffer=suchKlasse->suchen(steuerEingabe, *(sicherStringLesen().begin()));
-			break;
-		case STRING:
-		treffer=	suchKlasse->suchen(steuerEingabe, sicherStringLesen());
-			break;
-		case POINTER:
-			cout << "\nFunktion hier nicht verfuegbar.\n";
-			break;
-		case UNSIGNED:
-			treffer =suchKlasse->suchen(steuerEingabe,
-					(unsigned int) sicherDoubleLesen());
-			break;
-		case ENDE:
-			//MAch nichts
-			break;
-		default:
-			cout << "\nFalsche Eingabe\n";
+		cout << "\nBitte den gesuchten Wert eingeben: ";
+		try {
+			switch (suchKlasse->getDatenTyp(steuerEingabe)) {
+			case INT: {
+				int auswahl = sicherIntLesen();
+				treffer = suchKlasse->suchen(steuerEingabe, auswahl);
+				break;
+			}
+			case BOOL: {
+				bool auswahl = (bool) sicherIntLesen();
+				treffer = suchKlasse->suchen(steuerEingabe, auswahl);
+				break;
+			}
+			case CHAR: {
+				char auswahl = *(sicherStringLesen().begin());
+				treffer = suchKlasse->suchen(steuerEingabe, auswahl);
+				break;
+			}
+			case STRING: {
+				string auswahl = sicherStringLesen();
+				treffer = suchKlasse->suchen(steuerEingabe, auswahl);
+				break;
+			}
+			case POINTER:
+				cout << "\nFunktion hier nicht verfuegbar.\n";
+				break;
+			case UNSIGNED: {
+				unsigned int auswahl = (unsigned int) sicherDoubleLesen();
+				treffer = suchKlasse->suchen(steuerEingabe, auswahl);
+				break;
+			}
+			case ENDE:
+				//MAch nichts
+				break;
+			default:
+				cout << "\nFalsche Eingabe\n";
+			}
+			cout << vectorAusgeben(&treffer);
+		} catch (TypProblemEcxeption &e) {
+			cerr << e.what();
 		}
-		//TODO MEnnuefuehrung weiter schreiben
 	} while (steuerEingabe != ENDE);
 }
+
+string BenutzerInterface::vectorAusgeben(
+		const vector<Gebietslokation*>* treffer) {
+	ostringstream ausgabe;
+	if (treffer->empty()) {
+		ausgabe << "\nKeine Treffer enthalten.";
+	}
+	for (int i = 0; i < treffer->size(); i++) {
+		ausgabe << "\n\n Stelle: --------------- " << i;
+		ausgabe << (treffer->at(i))->toString();
+	}
+	return (ausgabe.str());
+}
+
+ string BenutzerInterface::vectorAusgeben(
+ const vector<Linearlokation*>* treffer) {
+ ostringstream ausgabe;
+ for (int i = 0; i < treffer->size(); i++) {
+ ausgabe << "\n\n Stelle: --------------- " << i;
+ ausgabe << treffer->at(i)->toString();
+ }
+ if (treffer->empty()) {
+ ausgabe << "\nKeine Treffer enthalten.";
+ }
+ return (ausgabe.str());
+ }
+
+ string BenutzerInterface::vectorAusgeben(
+ const vector<Punktlokation*>* treffer) {
+ ostringstream ausgabe;
+ for (int i = 0; i < treffer->size(); i++) {
+ ausgabe << "\n\n Stelle: --------------- " << i;
+ ausgabe << treffer->at(i)->toString();
+ }
+ if (treffer->empty()) {
+ ausgabe << "\nKeine Treffer enthalten.";
+ }
+ return (ausgabe.str());
+ }

@@ -19,7 +19,7 @@ using namespace std;
  *Prueft auf Fehleingaben beim int-Lesen
  *@return eingelesener Wert
  */
-static int sicherIntLesen() {
+static inline int sicherIntLesen() {
 	int wert;
 	cin >> wert;
 	if (cin.fail()) {
@@ -36,7 +36,7 @@ static int sicherIntLesen() {
  *Prueft auf Fehleingaben beim float-Lesen
  *@return eingelesener Wert
  */
-static double sicherDoubleLesen() {
+static inline double sicherDoubleLesen() {
 	double wert;
 	std::cin >> wert;
 	if (cin.fail()) {
@@ -77,7 +77,7 @@ static double sicherDoubleLesen() {
  }
  return out;
  }*/ // TODO Bei Abhname fragen warum das Einlesen beim 1. Wert ubersprungen wird
-static string sicherStringLesen() {
+static inline string sicherStringLesen() {
 	string in;
 	cin >> in;
 	if (cin.fail()) {

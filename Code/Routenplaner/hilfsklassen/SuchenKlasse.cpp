@@ -26,7 +26,7 @@ vector<Gebietslokation*> SuchenKlasse::suchId(int id) {
 			}
 		}
 	} vergleichsOperator;
-	vector<Gebietslokation*> vec = suche(vergleichsOperator, id);
+	vector<Gebietslokation*> vec = sucheTemplate(vergleichsOperator, id);
 	return (vec);
 }
 
@@ -40,7 +40,7 @@ vector<Gebietslokation*> SuchenKlasse::suchTypBuchstabe(char buchstabe) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, buchstabe));
+	return (sucheTemplate(vergleichsOperator, buchstabe));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchTypZahl(int zahl) {
@@ -53,7 +53,7 @@ vector<Gebietslokation*> SuchenKlasse::suchTypZahl(int zahl) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, zahl));
+	return (sucheTemplate(vergleichsOperator, zahl));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchFeinTyp(int id) {
@@ -66,7 +66,7 @@ vector<Gebietslokation*> SuchenKlasse::suchFeinTyp(int id) {
 			}
 		}
 	} vergleichsOperator;
-	vector<Gebietslokation*> vec = suche(vergleichsOperator, id);
+	vector<Gebietslokation*> vec = sucheTemplate(vergleichsOperator, id);
 	return (vec);
 }
 
@@ -80,7 +80,7 @@ vector<Gebietslokation*> SuchenKlasse::suchFirstName(string firstName) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, firstName));
+	return (sucheTemplate(vergleichsOperator, firstName));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchAdminBundesland(
@@ -94,7 +94,7 @@ vector<Gebietslokation*> SuchenKlasse::suchAdminBundesland(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, adminBundesLand));
+	return (sucheTemplate(vergleichsOperator, adminBundesLand));
 }
 /*
  vector<Gebietslokation*> SuchenKlasse::suchAktualitaet(
@@ -126,7 +126,7 @@ vector<Gebietslokation*> SuchenKlasse::suchRoadNumber(string roadNumber) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, roadNumber));
+	return (sucheTemplate(vergleichsOperator, roadNumber));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchRoadName(string roadName) {
@@ -143,7 +143,7 @@ vector<Gebietslokation*> SuchenKlasse::suchRoadName(string roadName) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, roadName));
+	return (sucheTemplate(vergleichsOperator, roadName));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchSecondName(string secondName) {
@@ -160,7 +160,7 @@ vector<Gebietslokation*> SuchenKlasse::suchSecondName(string secondName) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, secondName));
+	return (sucheTemplate(vergleichsOperator, secondName));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchAreaReference(
@@ -178,7 +178,7 @@ vector<Gebietslokation*> SuchenKlasse::suchAreaReference(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, areaReference));
+	return (sucheTemplate(vergleichsOperator, areaReference));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchAreaReference(int id) {
@@ -196,7 +196,7 @@ vector<Gebietslokation*> SuchenKlasse::suchAreaReference(int id) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, id));
+	return (sucheTemplate(vergleichsOperator, id));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(
@@ -215,7 +215,7 @@ vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, positiveOffset));
+	return (sucheTemplate(vergleichsOperator, positiveOffset));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(int id) {
@@ -233,7 +233,7 @@ vector<Gebietslokation*> SuchenKlasse::suchPositiveOffset(int id) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, id));
+	return (sucheTemplate(vergleichsOperator, id));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchNegativeOffset(
@@ -252,7 +252,7 @@ vector<Gebietslokation*> SuchenKlasse::suchNegativeOffset(
 			}
 		}
 	} vergleichsOperator;
-	return (SuchenKlasse::suche(vergleichsOperator, negativeOffset));
+	return (SuchenKlasse::sucheTemplate(vergleichsOperator, negativeOffset));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchNegativeOffset(int id) {
@@ -270,7 +270,7 @@ vector<Gebietslokation*> SuchenKlasse::suchNegativeOffset(int id) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, id));
+	return (sucheTemplate(vergleichsOperator, id));
 }
 vector<Gebietslokation*> SuchenKlasse::suchUrban(bool urban) {
 	struct Equals {
@@ -286,7 +286,7 @@ vector<Gebietslokation*> SuchenKlasse::suchUrban(bool urban) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, urban));
+	return (sucheTemplate(vergleichsOperator, urban));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(
@@ -305,7 +305,7 @@ vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(
 			}
 		}
 	} vergleichsOperator;
-	return (SuchenKlasse::suche(vergleichsOperator, intersectionCode));
+	return (SuchenKlasse::sucheTemplate(vergleichsOperator, intersectionCode));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(int id) {
@@ -323,7 +323,7 @@ vector<Gebietslokation*> SuchenKlasse::suchIntersectionCode(int id) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, id));
+	return (sucheTemplate(vergleichsOperator, id));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchInterruptsRoad(
@@ -341,7 +341,7 @@ vector<Gebietslokation*> SuchenKlasse::suchInterruptsRoad(
 			}
 		}
 	} vergleichsOperator;
-	return (SuchenKlasse::suche(vergleichsOperator, interruptsroad));
+	return (SuchenKlasse::sucheTemplate(vergleichsOperator, interruptsroad));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchInterruptsRoad(int id) {
@@ -359,7 +359,7 @@ vector<Gebietslokation*> SuchenKlasse::suchInterruptsRoad(int id) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, id));
+	return (sucheTemplate(vergleichsOperator, id));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchTern(bool tern) {
@@ -376,7 +376,7 @@ vector<Gebietslokation*> SuchenKlasse::suchTern(bool tern) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, tern));
+	return (sucheTemplate(vergleichsOperator, tern));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchPolDir(string polDir) {
@@ -394,7 +394,7 @@ vector<Gebietslokation*> SuchenKlasse::suchPolDir(string polDir) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, polDir));
+	return (sucheTemplate(vergleichsOperator, polDir));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchAdminCounty(string adminCounty) {
@@ -411,7 +411,7 @@ vector<Gebietslokation*> SuchenKlasse::suchAdminCounty(string adminCounty) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, adminCounty));
+	return (sucheTemplate(vergleichsOperator, adminCounty));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchNetzKnotenVor(
@@ -430,7 +430,7 @@ vector<Gebietslokation*> SuchenKlasse::suchNetzKnotenVor(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, netzKnotenVor));
+	return (sucheTemplate(vergleichsOperator, netzKnotenVor));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchNetzknotenNach(
@@ -449,7 +449,7 @@ vector<Gebietslokation*> SuchenKlasse::suchNetzknotenNach(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, netzKnotenNach));
+	return (sucheTemplate(vergleichsOperator, netzKnotenNach));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchStation(int station) {
@@ -466,7 +466,7 @@ vector<Gebietslokation*> SuchenKlasse::suchStation(int station) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, station));
+	return (sucheTemplate(vergleichsOperator, station));
 }
 
 string SuchenKlasse::zeigeSuchOptionen() {
@@ -789,7 +789,7 @@ vector<Gebietslokation*> SuchenKlasse::suchGeokoordinate(
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, geoKoordinate));
+	return (sucheTemplate(vergleichsOperator, geoKoordinate));
 }
 
 vector<Gebietslokation*> SuchenKlasse::suchAktualitaet(string aktualitaet) {
@@ -802,5 +802,5 @@ vector<Gebietslokation*> SuchenKlasse::suchAktualitaet(string aktualitaet) {
 			}
 		}
 	} vergleichsOperator;
-	return (suche(vergleichsOperator, aktualitaet));
+	return (sucheTemplate(vergleichsOperator, aktualitaet));
 }
