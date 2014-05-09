@@ -6,11 +6,9 @@
  */
 
 #include "LokationsVerwaltung.h"
-
-LokationsVerwaltung::LokationsVerwaltung() {
-	// TODO Auto-generated constructor stub
+LokationsVerwaltung::LokationsVerwaltung(vector<vector<string> > *datenSatz) {
+	objekteErstellen(datenSatz);
 }
-
 LokationsVerwaltung::~LokationsVerwaltung() {
 	/**
 	 * Alle Daten l&ouml;schen.
@@ -111,7 +109,7 @@ void LokationsVerwaltung::insertMap(Gebietslokation* lok) {
 }
 
 Gebietslokation* LokationsVerwaltung::suchName(string name) {
-	//TODO Suche Sinnvoll implementieren
+	//deprecated
 	return (namenMap.find(name)->second);
 }
 
@@ -168,3 +166,5 @@ const map<int, Gebietslokation*>& LokationsVerwaltung::getGebieteMap() const {
 bool LokationsVerwaltung::checkPunktlokation(vector<string>* zeile) {
 	return (regex_match(zeile->at(TYPE), regex("\"P(.*)")));
 }
+
+

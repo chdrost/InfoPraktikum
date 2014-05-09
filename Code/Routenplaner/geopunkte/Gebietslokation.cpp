@@ -44,8 +44,10 @@ void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 }
 
 string Gebietslokation::toString() {
+
+	cout<<"\n\n\nToString()\n\n\n";
 	stringstream s;
-	s<<"\n";
+	s << "\n";
 	switch (this->getType()) {
 
 	case GEBIET:
@@ -58,18 +60,42 @@ string Gebietslokation::toString() {
 		s << "-------Punktlokation-------";
 		break;
 	}
-	s<<"\n";
+	s << "\n";
 	s << "\nId: " << this->id;
 	s << "\nFirst Name: " << this->firstName;
 	return (s.str());
 }
 
 void Gebietslokation::initialisieren() {
-	this->id=0;
-	this->typBuchstabe=0;
-	this->typZahl=0;
-	this->feinTyp=0;
-	this->firstName="";
-	this->adminBundesLand="";
-	this->aktualitaet=NULL;
+	this->id = 0;
+	this->typBuchstabe = 0;
+	this->typZahl = 0;
+	this->feinTyp = 0;
+	this->firstName = "";
+	this->adminBundesLand = "";
+	this->aktualitaet = NULL;
+}
+
+const string& Gebietslokation::getAdminBundesLand() const {
+	return (adminBundesLand);
+}
+
+ Aktualitaet* Gebietslokation::getAktualitaet() const {
+	return (aktualitaet);
+}
+
+int Gebietslokation::getFeinTyp() const {
+	return (feinTyp);
+}
+
+const vector<Linearlokation*>& Gebietslokation::getLinLocations() const {
+	return (linLocations);
+}
+
+char Gebietslokation::getTypBuchstabe() const {
+	return (typBuchstabe);
+}
+
+int Gebietslokation::getTypZahl() const {
+	return (typZahl);
 }

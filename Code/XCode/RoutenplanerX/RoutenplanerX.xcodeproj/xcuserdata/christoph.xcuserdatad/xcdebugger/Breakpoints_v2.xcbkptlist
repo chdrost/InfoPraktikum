@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Routenplaner/geopunkte/Punktlokation.cpp"
@@ -32,6 +32,36 @@
             startingLineNumber = "14"
             endingLineNumber = "14"
             landmarkName = "Punktlokation::Punktlokation(vector&lt;string&gt; *zeile, Gebietslokation *areaReference, Linearlokation *linearReference)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Routenplaner/hilfsklassen/SuchenKlasse.cpp"
+            timestampString = "421233019.099709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Routenplaner/hilfsklassen/SuchenKlasse.cpp"
+            timestampString = "421323719.030408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "SuchenKlasse::suchId(int id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

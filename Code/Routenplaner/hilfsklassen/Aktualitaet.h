@@ -51,6 +51,27 @@ public:
 	 */
 	Aktualitaet(std::string zeit);
 	virtual ~Aktualitaet();
+
+	/**
+	 * Diese Methode pr&uuml;ft die &uuml;bergebenen Werte auf ihre Plausibilit&auml;t.
+	 * Hierzu werden die einzelnen "check" Methoden aufgerufen.
+	 * @param tag Der Tag des Monats.
+	 * @param monat Der Monat des Jahres.
+	 * @param jahr Das Jahr.
+	 * @param stunde Die Stunde.
+	 * @param minute Die Minute.
+	 * @param sekunde Die Sekunde.
+	 */
+	void ckeckDatum(int tag, int monat, int jahr, int stunde, int minute,
+			int sekunde) throw (ZeitException);
+
+	/**
+	 * Diese Methode gibt das Datum wieder in der Form aus, in der es in der Datei steht.
+	 * @return Das Datum in der Form, wie es in die Datei geh&ouml;rt.
+	 */
+	string toString();
+	struct tm getZeit() const;
+
 private:
 	struct tm *zeit;
 	/**
@@ -126,26 +147,28 @@ private:
 	 * @return 0, immer 0.
 	 */
 	int checkJahr(int jahr);
-
-public:
-	/**
-	 * Diese Methode pr&uuml;ft die &uuml;bergebenen Werte auf ihre Plausibilit&auml;t.
-	 * Hierzu werden die einzelnen "check" Methoden aufgerufen.
-	 * @param tag Der Tag des Monats.
-	 * @param monat Der Monat des Jahres.
-	 * @param jahr Das Jahr.
-	 * @param stunde Die Stunde.
-	 * @param minute Die Minute.
-	 * @param sekunde Die Sekunde.
-	 */
-	void ckeckDatum(int tag, int monat, int jahr, int stunde, int minute,
-			int sekunde) throw (ZeitException);
-
-	/**
-	 * Diese Methode gibt das Datum wieder in der Form aus, in der es in der Datei steht.
-	 * @return Das Datum in der Form, wie es in die Datei geh&ouml;rt.
-	 */
-	string toString(void);
 };
+/*
+bool operator==(Aktualitaet & lhs, Aktualitaet & rhs) {
+	if (lhs.getZeit().tm_sec != rhs.getZeit().tm_sec) {
+		return (false);
+	}
+	if (lhs.getZeit().tm_min != rhs.getZeit().tm_min) {
+		return (false);
+	}
+	if (lhs.getZeit().tm_hour != rhs.getZeit().tm_hour) {
+		return (false);
+	}
+	if (lhs.getZeit().tm_year != rhs.getZeit().tm_year) {
+		return (false);
+	}
+	if (lhs.getZeit().tm_mon != rhs.getZeit().tm_mon) {
+		return (false);
+	}
+	if (lhs.getZeit().tm_mday != rhs.getZeit().tm_mday) {
+		return (false);
+	}
+	return (true);
+}*/
 
 #endif /* AKTUALITAET_H_ */

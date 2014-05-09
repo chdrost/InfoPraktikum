@@ -1,0 +1,17 @@
+/*
+ * SuchenKlasse.h
+ *
+ *  Created on: 07.05.2014
+ *      Author: christoph
+ */
+
+#ifndef SUCHENKLASSE_H_
+#define SUCHENKLASSE_H_
+
+class SuchenKlasse {
+public:
+	SuchenKlasse(LokationsVerwaltung &lokV);
+	virtual ~SuchenKlasse();
+};
+
+#endif /* SUCHENKLASSE_H_ */

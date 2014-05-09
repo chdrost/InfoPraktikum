@@ -13,6 +13,6 @@ FileNotFoundException::FileNotFoundException(const char* message) {
 }
 
 FileNotFoundException::~FileNotFoundException() throw() {
-	// TODO Auto-generated destructor stub
+	//nichts allokiert
 }
 

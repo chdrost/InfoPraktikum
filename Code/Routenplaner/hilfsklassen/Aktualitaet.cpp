@@ -150,10 +150,14 @@ void Aktualitaet::ckeckDatum(int tag, int monat, int jahr, int stunde,
 	}
 }
 
-string Aktualitaet::toString(void) {
+string Aktualitaet::toString() {
 	stringstream erg;
 //TODO Hierfuer noch ne schoene Fkt. finden
 	erg << zeit->tm_mday << "." << zeit->tm_mon << "." << zeit->tm_year << " "
 			<< zeit->tm_hour << ":" << zeit->tm_min << ":" << zeit->tm_sec;
 	return (erg.str());
+}
+
+ struct tm Aktualitaet::getZeit() const {
+	return (*zeit);
 }

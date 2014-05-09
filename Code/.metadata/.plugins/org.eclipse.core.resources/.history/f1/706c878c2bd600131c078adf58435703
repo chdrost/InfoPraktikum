@@ -1,0 +1,30 @@
+/*
+ * SuchenKlasse.cpp
+ *
+ *  Created on: 07.05.2014
+ *      Author: christoph
+ */
+
+#include "SuchenKlasse.h"
+
+SuchenKlasse::SuchenKlasse(LokationsVerwaltung &lokV) {
+	// TODO Auto-generated constructor stub
+
+}
+
+SuchenKlasse::~SuchenKlasse() {
+	// TODO Auto-generated destructor stub
+}
+
+vector<Gebietslokation*> SuchenKlasse::suchId(int id) {
+	struct {  //unnamed local struct
+		Gebietslokation* operator()(Gebietslokation *lok,int id) {
+			if(lok->getId() == id){
+				return(lok);
+			}else{
+				return (NULL);
+			}
+		}
+	} vergleich;
+	suchen(vergleich((Gebietslokation*)NULL,0));
+}

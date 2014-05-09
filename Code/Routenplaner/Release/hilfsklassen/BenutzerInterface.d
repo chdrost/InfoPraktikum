@@ -7,7 +7,10 @@ hilfsklassen/BenutzerInterface.d: ../hilfsklassen/BenutzerInterface.cpp \
   ../hilfsklassen/../geopunkte/AttributDefines.h \
   ../hilfsklassen/../geopunkte/Linearlokation.h \
   ../hilfsklassen/../geopunkte/Punktlokation.h \
-  ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h
+  ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h \
+  ../hilfsklassen/SuchenKlasse.h \
+  ../hilfsklassen/../exceptions/TypProblemEcxeption.h \
+  ../hilfsklassen/sicherLesen.h
 
 ../hilfsklassen/BenutzerInterface.h:
 
@@ -26,3 +29,9 @@ hilfsklassen/BenutzerInterface.d: ../hilfsklassen/BenutzerInterface.cpp \
 ../hilfsklassen/../geopunkte/Punktlokation.h:
 
 ../hilfsklassen/../geopunkte/../hilfsklassen/GeoKoordinate.h:
+
+../hilfsklassen/SuchenKlasse.h:
+
+../hilfsklassen/../exceptions/TypProblemEcxeption.h:
+
+../hilfsklassen/sicherLesen.h:

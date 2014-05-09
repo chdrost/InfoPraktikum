@@ -16,7 +16,7 @@ Linearlokation::Linearlokation(vector<string> *zeile,
 }
 
 Linearlokation::~Linearlokation() {
-	// TODO Auto-generated destructor stub
+	punktLokations.clear();
 }
 
 const string& Linearlokation::getAdminCounty() const {
