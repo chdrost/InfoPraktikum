@@ -28,6 +28,8 @@ void BenutzerInterface::zeigeHauptMenue() {
 		cout << "\n" << ALLE_LOKS << " - gibt alle Lokationen aus";
 		cout << "\n" << GEMEINSAMKEITEN
 				<< " - startet die Suche nach Gemeinsamkeiten";
+		cout << "\n" << STRECKE_SUCHEN
+				<< " - anhand von 2 Id die Strecke berechnen";
 		cout << "\nAuswahl: ";
 		cin >> auswahl;
 		cin.clear();
@@ -44,6 +46,8 @@ void BenutzerInterface::zeigeHauptMenue() {
 		case GEMEINSAMKEITEN:
 			gemeinsamkeitenSuchen();
 			break;
+		case STRECKE_SUCHEN:
+			entfernungBerechnen();
 		default:
 			cout << "\nFalsche Auswahl!\n";
 
@@ -263,28 +267,60 @@ string BenutzerInterface::vectorAusgeben(
 	return (ausgabe.str());
 }
 
- string BenutzerInterface::vectorAusgeben(
- const vector<Linearlokation*>* treffer) {
- ostringstream ausgabe;
- for (int i = 0; i < treffer->size(); i++) {
- ausgabe << "\n\n Stelle: --------------- " << i;
- ausgabe << treffer->at(i)->toString();
- }
- if (treffer->empty()) {
- ausgabe << "\nKeine Treffer enthalten.";
- }
- return (ausgabe.str());
- }
+string BenutzerInterface::vectorAusgeben(
+		const vector<Linearlokation*>* treffer) {
+	ostringstream ausgabe;
+	for (int i = 0; i < treffer->size(); i++) {
+		ausgabe << "\n\n Stelle: --------------- " << i;
+		ausgabe << treffer->at(i)->toString();
+	}
+	if (treffer->empty()) {
+		ausgabe << "\nKeine Treffer enthalten.";
+	}
+	return (ausgabe.str());
+}
 
- string BenutzerInterface::vectorAusgeben(
- const vector<Punktlokation*>* treffer) {
- ostringstream ausgabe;
- for (int i = 0; i < treffer->size(); i++) {
- ausgabe << "\n\n Stelle: --------------- " << i;
- ausgabe << treffer->at(i)->toString();
- }
- if (treffer->empty()) {
- ausgabe << "\nKeine Treffer enthalten.";
- }
- return (ausgabe.str());
- }
+string BenutzerInterface::vectorAusgeben(
+		const vector<Punktlokation*>* treffer) {
+	ostringstream ausgabe;
+	for (int i = 0; i < treffer->size(); i++) {
+		ausgabe << "\n\n Stelle: --------------- " << i;
+		ausgabe << treffer->at(i)->toString();
+	}
+	if (treffer->empty()) {
+		ausgabe << "\nKeine Treffer enthalten.";
+	}
+	return (ausgabe.str());
+}
+
+void BenutzerInterface::entfernungBerechnen() {
+	int start, ziel = 0;
+	cout << "\nBerechnung der Entfernung zwischen 2 Koordinaten\n";
+	cout << "\nBitte Id des Startpunkts eingeben: ";
+	start = sicherIntLesen();
+	cout << "\nBitte Id des Zielpunkts eingeben: ";
+	ziel = sicherIntLesen();
+	vector<Gebietslokation*> startLoks = lokVerwaltung->suchen(start);
+	if(startLoks.size()==0){
+		cout<<"\nDie Id der Startlokation konnte nicht gefnden werden\n";
+		return;
+	}
+	Punktlokation *startLok = (Punktlokation*)startLoks.at(0);
+	if (startLok->getType() < PUNKT) {
+		cout << "\nDer Startpunkt war keine Punktlokation\n";
+		return;
+	}
+	vector<Gebietslokation*> zielLoks = lokVerwaltung->suchen(ziel);
+	if(zielLoks.size()==0){
+			cout<<"\nDie Id der Ziellokation konnte nicht gefnden werden\n";
+			return;
+		}
+		Punktlokation *zielLok = (Punktlokation*)startLoks.at(0);
+	if (zielLok->getType() < PUNKT) {
+		cout << "\nDer Zielpunkt war keine Punktlokation\n";
+		return;
+	}
+	cout << "\nDie Strecke zwischen den Punkten betraegt "
+			<< (startLok->getGeoKoordinate()->entfernungBerechnen(
+					zielLok->getGeoKoordinate())) << " Kilometer\n";
+}

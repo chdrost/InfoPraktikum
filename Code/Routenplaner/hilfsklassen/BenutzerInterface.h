@@ -12,6 +12,7 @@
 #define ID_SUCHEN 2
 #define ALLE_LOKS 3
 #define GEMEINSAMKEITEN 4
+#define STRECKE_SUCHEN 5
 
 #define NAME_ANZEIGEN 1
 #define UEBERGEORDNETE_LOKATION_ANZEIGEN 2
@@ -88,6 +89,12 @@ public:
 	string vectorAusgeben(const vector<Gebietslokation*> *treffer);
 	string vectorAusgeben(const vector<Linearlokation*> *treffer);
 	string vectorAusgeben(const vector<Punktlokation*> *treffer);
+
+	/**
+	 * Diese Methode liest die Id zweier Punktlokationen ein, berechnet die
+	 * Luftlinie zwischen beiden und gibt diese aus.
+	 */
+	void entfernungBerechnen();
 
 private:
 	LokationsVerwaltung* lokVerwaltung;
