@@ -29,6 +29,12 @@ private:
 	Punktlokation *start;
 	Punktlokation *ziel;
 	float laenge;
+
+	//evtl. Kante *nachfolger1;
+	//evtl. Kante *nachfolger2;
+	//evtl. Kante *nachfolger3;
+	//Die Wertung ob Vorgaenger, Nachfolger oder sonstiges macht der Dijkstra
+
 };
 
 #endif /* KANTE_H_ */
