@@ -1,15 +1,15 @@
-12:12:10 **** Incremental Build of configuration Release for project Routenplaner ****
+16:02:40 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../hilfsklassen/BenutzerInterface.cpp
+Building file: ../hilfsklassen/Kante.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/BenutzerInterface.d" -MT"hilfsklassen/BenutzerInterface.d" -o "hilfsklassen/BenutzerInterface.o" "../hilfsklassen/BenutzerInterface.cpp"
-Finished building: ../hilfsklassen/BenutzerInterface.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/Kante.d" -MT"hilfsklassen/Kante.d" -o "hilfsklassen/Kante.o" "../hilfsklassen/Kante.cpp"
+Finished building: ../hilfsklassen/Kante.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/SuchenKlasse.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Adjazenzliste.o ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/Kante.o ./hilfsklassen/SuchenKlasse.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-12:12:11 Build Finished (took 817ms)
+16:02:41 Build Finished (took 567ms)
 
