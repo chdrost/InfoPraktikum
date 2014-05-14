@@ -1,15 +1,80 @@
-16:02:40 **** Incremental Build of configuration Release for project Routenplaner ****
+12:23:35 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../hilfsklassen/Kante.cpp
+Building file: ../reader/FileOpener.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/Kante.d" -MT"hilfsklassen/Kante.d" -o "hilfsklassen/Kante.o" "../hilfsklassen/Kante.cpp"
-Finished building: ../hilfsklassen/Kante.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"reader/FileOpener.d" -MT"reader/FileOpener.d" -o "reader/FileOpener.o" "../reader/FileOpener.cpp"
+Finished building: ../reader/FileOpener.cpp
+ 
+Building file: ../hilfsklassen/Aktualitaet.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/Aktualitaet.d" -MT"hilfsklassen/Aktualitaet.d" -o "hilfsklassen/Aktualitaet.o" "../hilfsklassen/Aktualitaet.cpp"
+Finished building: ../hilfsklassen/Aktualitaet.cpp
+ 
+Building file: ../hilfsklassen/BenutzerInterface.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/BenutzerInterface.d" -MT"hilfsklassen/BenutzerInterface.d" -o "hilfsklassen/BenutzerInterface.o" "../hilfsklassen/BenutzerInterface.cpp"
+Finished building: ../hilfsklassen/BenutzerInterface.cpp
+ 
+Building file: ../hilfsklassen/GeoKoordinate.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/GeoKoordinate.d" -MT"hilfsklassen/GeoKoordinate.d" -o "hilfsklassen/GeoKoordinate.o" "../hilfsklassen/GeoKoordinate.cpp"
+Finished building: ../hilfsklassen/GeoKoordinate.cpp
+ 
+Building file: ../hilfsklassen/SuchenKlasse.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"hilfsklassen/SuchenKlasse.d" -MT"hilfsklassen/SuchenKlasse.d" -o "hilfsklassen/SuchenKlasse.o" "../hilfsklassen/SuchenKlasse.cpp"
+Finished building: ../hilfsklassen/SuchenKlasse.cpp
+ 
+Building file: ../geopunkte/Gebietslokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Gebietslokation.d" -MT"geopunkte/Gebietslokation.d" -o "geopunkte/Gebietslokation.o" "../geopunkte/Gebietslokation.cpp"
+Finished building: ../geopunkte/Gebietslokation.cpp
+ 
+Building file: ../geopunkte/Linearlokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Linearlokation.d" -MT"geopunkte/Linearlokation.d" -o "geopunkte/Linearlokation.o" "../geopunkte/Linearlokation.cpp"
+Finished building: ../geopunkte/Linearlokation.cpp
+ 
+Building file: ../geopunkte/LokationsVerwaltung.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/LokationsVerwaltung.d" -MT"geopunkte/LokationsVerwaltung.d" -o "geopunkte/LokationsVerwaltung.o" "../geopunkte/LokationsVerwaltung.cpp"
+Finished building: ../geopunkte/LokationsVerwaltung.cpp
+ 
+Building file: ../geopunkte/Punktlokation.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"geopunkte/Punktlokation.d" -MT"geopunkte/Punktlokation.d" -o "geopunkte/Punktlokation.o" "../geopunkte/Punktlokation.cpp"
+Finished building: ../geopunkte/Punktlokation.cpp
+ 
+Building file: ../exceptions/FileNotFoundException.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"exceptions/FileNotFoundException.d" -MT"exceptions/FileNotFoundException.d" -o "exceptions/FileNotFoundException.o" "../exceptions/FileNotFoundException.cpp"
+Finished building: ../exceptions/FileNotFoundException.cpp
+ 
+Building file: ../exceptions/TypProblemEcxeption.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"exceptions/TypProblemEcxeption.d" -MT"exceptions/TypProblemEcxeption.d" -o "exceptions/TypProblemEcxeption.o" "../exceptions/TypProblemEcxeption.cpp"
+Finished building: ../exceptions/TypProblemEcxeption.cpp
+ 
+Building file: ../exceptions/ZeitException.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"exceptions/ZeitException.d" -MT"exceptions/ZeitException.d" -o "exceptions/ZeitException.o" "../exceptions/ZeitException.cpp"
+Finished building: ../exceptions/ZeitException.cpp
+ 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building file: ../Hello.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"Hello.d" -MT"Hello.d" -o "Hello.o" "../Hello.cpp"
+Finished building: ../Hello.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Adjazenzliste.o ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/Kante.o ./hilfsklassen/SuchenKlasse.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/SuchenKlasse.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
 Finished building target: Routenplaner
  
 
-16:02:41 Build Finished (took 567ms)
+12:23:44 Build Finished (took 9s.192ms)
 

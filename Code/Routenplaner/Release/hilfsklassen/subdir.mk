@@ -4,27 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../hilfsklassen/Adjazenzliste.cpp \
 ../hilfsklassen/Aktualitaet.cpp \
 ../hilfsklassen/BenutzerInterface.cpp \
 ../hilfsklassen/GeoKoordinate.cpp \
-../hilfsklassen/Kante.cpp \
 ../hilfsklassen/SuchenKlasse.cpp 
 
 OBJS += \
-./hilfsklassen/Adjazenzliste.o \
 ./hilfsklassen/Aktualitaet.o \
 ./hilfsklassen/BenutzerInterface.o \
 ./hilfsklassen/GeoKoordinate.o \
-./hilfsklassen/Kante.o \
 ./hilfsklassen/SuchenKlasse.o 
 
 CPP_DEPS += \
-./hilfsklassen/Adjazenzliste.d \
 ./hilfsklassen/Aktualitaet.d \
 ./hilfsklassen/BenutzerInterface.d \
 ./hilfsklassen/GeoKoordinate.d \
-./hilfsklassen/Kante.d \
 ./hilfsklassen/SuchenKlasse.d 
 
 

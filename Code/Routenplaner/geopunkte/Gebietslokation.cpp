@@ -44,6 +44,8 @@ void Gebietslokation::addLinLokation(Linearlokation* lokation) {
 }
 
 string Gebietslokation::toString() {
+
+	cout<<"\n\n\nToString()\n\n\n";
 	stringstream s;
 	s << "\n";
 	switch (this->getType()) {
