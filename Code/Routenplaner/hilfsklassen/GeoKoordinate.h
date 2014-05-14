@@ -14,8 +14,11 @@
 
 #include <string>
 #include <cmath>
+<<<<<<< HEAD
 #include <sstream>
 #include <cmath>
+=======
+>>>>>>> dkadio
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
 using namespace std;
@@ -70,12 +73,18 @@ public:
 	 * Gibt den Wert der entfernung in Km als Float zurueck
 	 * @param ziel die entfernte Geokoordinate zu der der Weg berechnet wrden soll
 	 */
+<<<<<<< HEAD
 	float entfernungBerechnen(GeoKoordinate *ziel);
 
 	string toString();
 	float getBreitenGrad() const;
 	float getLaengenGrad() const;
 
+=======
+	float entfernungBerechnen(GeoKoordinate ziel);
+
+	string toString();
+>>>>>>> dkadio
 private:
 
 	/**
