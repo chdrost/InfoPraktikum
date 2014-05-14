@@ -8,20 +8,25 @@
 #ifndef GEOKOORDINATE_H_
 #define GEOKOORDINATE_H_
 
-#define NACHKOMMA_STELLEN 5
-#define BEGIN_GRADANGABE 1
-#define VORKOMMA_STELLEN 2
+#define BEGIN_GRAD 1
+#define BEGIN_MINUTE 3
+#define BEGIN_SEKUNDE 5
+#define LAENGE_ANGABE 2
 
 #include <string>
-#include <cmath>
-<<<<<<< HEAD
-#include <sstream>
-#include <cmath>
-=======
->>>>>>> dkadio
+
 #include  <iostream> //TODO nachdem cout raus, dann das auch raus
 
 using namespace std;
+
+/**
+ * Dieses Struct enth&auml;lt die einzelnen Grad Werte des Strings aus der Datei.
+ */
+struct gradAngabe{
+	int grad;
+	int minuten;
+	int sekunden;
+};
 
 /**
  * Diese Klasse stellt eine Georkoordinate dar.<br>
@@ -66,25 +71,7 @@ public:
 	 * wurde.
 	 * @param gradAngabe Ein Pointer auf das Struct, in das die Werte abgelegt werden sollen.
 	 */
-	void gradEinlesen(string zeichen, float *angabe);
-
-	/**
-	 * Berechnet die entfernung von der aktuellen GeoKoordinate zu einer Ziel Geokoordinate
-	 * Gibt den Wert der entfernung in Km als Float zurueck
-	 * @param ziel die entfernte Geokoordinate zu der der Weg berechnet wrden soll
-	 */
-<<<<<<< HEAD
-	float entfernungBerechnen(GeoKoordinate *ziel);
-
-	string toString();
-	float getBreitenGrad() const;
-	float getLaengenGrad() const;
-
-=======
-	float entfernungBerechnen(GeoKoordinate ziel);
-
-	string toString();
->>>>>>> dkadio
+	void gradEinlesen(string zeichen, gradAngabe* angabe);
 private:
 
 	/**
@@ -92,14 +79,14 @@ private:
 	 * Auch Ostkoordinate.<br>
 	 * In der Dokumentation als X Koordinate bezeichnet.
 	 */
-	float laengenGrad;
+	gradAngabe *laengenGrad;
 
 	/**
 	 * Der Breitengrad der Lokation.<br>
 	 * Auch Nordkoordinate. <br>
 	 * In der Dokumentation als Y-Koordinate bezeichnet.
 	 */
-	float breitenGrad;
+	gradAngabe *breitenGrad;
 
 };
 
