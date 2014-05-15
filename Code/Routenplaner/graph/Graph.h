@@ -14,6 +14,8 @@
 
 #include <map>
 #include "Knoten.h"
+//TODO stdlib wieder entfernen (War Nur zum Testen)
+#include <stdlib.h>
 
 using namespace std;
 

@@ -30,7 +30,8 @@ int Knoten::getId() {
 
 string Knoten::toString() {
 	ostringstream s;
+	s<<"";
 	s << "\nName: " << eigenschaften->getFirstName() << " Anzahl Nachfolger: "
-			<< nachfolger.size();
+			<< nachfolger.size()<< " Id=" <<this->getEigenschaften()->getId();
 	return (s.str());
 }

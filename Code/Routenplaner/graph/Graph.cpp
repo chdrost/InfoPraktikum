@@ -12,12 +12,14 @@ Graph::Graph(map<int, Gebietslokation*> rohDaten) {
 	erstelleKnoten(konstruktionsMap, rohDaten);
 	verlinkeKnoten(konstruktionsMap, rohDaten);
 	//TODO Pruefen, ob hier Destruktoren aufgerufen werden
+
+	//cout<<"\n\n\n\n\n\n\n\nGroesse k MAp: "<<konstruktionsMap.size()<"\n\n\n\n\n\n\n\n";
 	konstruktionsMap.clear();
 }
 
 Graph::~Graph() {
 	for (auto it = knotenListe.begin(); it != knotenListe.end(); it++) {
-        delete *it;
+		delete *it;
 	}
 	knotenListe.clear();
 }
@@ -28,24 +30,16 @@ void Graph::erstelleKnoten(map<int, Knoten*>& konstruktionsMap,
 	for (auto it = rohdaten.begin(); it != rohdaten.end(); it++) {
 		//Pruefen, ob Element eine Punklokation ist
 		Punktlokation *pktLok = (Punktlokation*) it->second;
-		if (pktLok->getType() == PUNKT) {
-			//Pruefen, ob der Intersection Code des Elements schon enthalten ist
-			if (pktLok->getIntersectioncode() != NULL) {
-				if (konstruktionsMap.find(
-						((Punktlokation*) it->second)->getIntersectioncode()->getId())
-						!= konstruktionsMap.end()) {
-					Knoten *k = new Knoten((Punktlokation*) it->second);
-					//In Arbeitsliste
-					this->knotenListe.push_back(k);
-					//In Map
-					konstruktionsMap[k->getId()] = k;
-				}
-			} else {
-				Knoten *k = new Knoten((Punktlokation*) it->second);
-				//In Arbeitsliste
-				this->knotenListe.push_back(k);
-				//In Map
-				konstruktionsMap[k->getId()] = k;
+		if (pktLok->getType() == PUNKT && pktLok->getIntersectioncode() != NULL) {
+			try {
+				//Pruefen, ob der Intersection Code des Elements existiert
+				//Wenn nicht wird eine Out Of Range Exception ausgeloest.
+				//In dem Fall kann ein neuer Knoten erstellt werden.
+				konstruktionsMap.at(pktLok->getIntersectioncode()->getId());
+			} catch (const out_of_range& oor) {
+				Knoten *k = new Knoten(pktLok);
+				knotenListe.push_back(k);
+				konstruktionsMap[k->getEigenschaften()->getId()] = k;
 			}
 		}
 	}
@@ -53,6 +47,7 @@ void Graph::erstelleKnoten(map<int, Knoten*>& konstruktionsMap,
 
 void Graph::verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
 		const map<int, Gebietslokation*> &rohdaten) {
+	int i = 0;
 	for (list<Knoten*>::iterator it = knotenListe.begin();
 			it != knotenListe.end(); it++) {
 		Knoten *knoten = *it;
@@ -66,27 +61,40 @@ void Graph::verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
 			knoten->addNachfolger(konstruktionsMap[pLok->getId()]);
 		}
 		//Die Offsets des Intersection Codes eintragen
-		if (knoten->getEigenschaften()->getIntersectioncode() != NULL) {
-			if (knoten->getEigenschaften()->getIntersectioncode()->getPositiveOffset() != NULL) {
-				knoten->addNachfolger(
-						konstruktionsMap[(knoten->getEigenschaften()->getIntersectioncode()->getPositiveOffset()->getId())]);
+		if (pLok->getIntersectioncode() != NULL) {
+			try {
+				if (pLok->getIntersectioncode()->getPositiveOffset() != NULL) {
+					knoten->addNachfolger(
+							konstruktionsMap.at(
+									pLok->getIntersectioncode()->getPositiveOffset()->getId()));
+				}
+			} catch (out_of_range &e) {
+				cout << "\n" << i++ << " Id: "
+						<< pLok->getIntersectioncode()->getPositiveOffset()->getId();
+				//TODO Ueberlegen, welche Auswrikung es hat, wenn hier nichts gefunden wird
 			}
-			if (knoten->getEigenschaften()->getIntersectioncode()->getNegativeOffset() != NULL) {
-				knoten->addNachfolger(
-						konstruktionsMap[(knoten->getEigenschaften()->getIntersectioncode()->getNegativeOffset()->getId())]);
+			try {
+				if (knoten->getEigenschaften()->getIntersectioncode()->getNegativeOffset() != NULL) {
+					knoten->addNachfolger(
+							konstruktionsMap.at(
+									pLok->getIntersectioncode()->getNegativeOffset()->getId()));
+				}
+			} catch (out_of_range &e) {
+				cout << "\n" << i++ << " Id: "
+						<< pLok->getIntersectioncode()->getNegativeOffset()->getId();
+				//TODO Ueberlegen, welche Auswrikung es hat, wenn hier nichts gefunden wird
 			}
 		}
-
 	}
 
 }
 
 string Graph::toString() {
 	ostringstream s;
-	s<<"\nAusgabe des Graphen: \n";
+	s << "\nAusgabe des Graphen: \n";
 	for (auto it = knotenListe.begin(); it != knotenListe.end(); it++) {
 		s << ((Knoten*) *it)->toString();
 	}
-	s<<"\nEnde Graph\n";
+	s << "\nEnde Graph\n";
 	return (s.str());
 }
