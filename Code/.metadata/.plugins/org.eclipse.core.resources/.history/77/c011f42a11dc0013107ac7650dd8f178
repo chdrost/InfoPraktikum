@@ -1,0 +1,37 @@
+/*
+ * Knoten.cpp
+ *
+ *  Created on: 13.05.2014
+ *      Author: deniz
+ */
+
+#include "Knoten.h"
+
+
+Knoten::~Knoten() {
+	// TODO Auto-generated destructor stub
+}
+
+Knoten::Knoten(Punktlokation* punktLokation) {
+	//TODO
+}
+
+void Knoten::addNachfolger(Knoten* nachfolger) {
+	//TODO
+}
+
+float Knoten::berechneLaenge(Knoten * derAnnere) {
+	return (derAnnere->getEigenschaften()->getGeoKoordinate()->entfernungBerechnen(this->eigenschaften->getGeoKoordinate()))));
+}
+
+bool Knoten::isIntersectionCodeEqual(Punktlokation* intersectioncode) {
+	if(intersectioncode == this->interSectionCode){
+		return (true);
+	}else{
+		return (false);
+	}
+}
+
+int Knoten::getId() {
+	return(eigenschaften->getId());
+}

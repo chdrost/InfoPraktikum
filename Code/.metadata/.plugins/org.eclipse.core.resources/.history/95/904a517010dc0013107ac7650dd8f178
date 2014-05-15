@@ -1,0 +1,14 @@
+/*
+ * Knoten.cpp
+ *
+ *  Created on: 13.05.2014
+ *      Author: deniz
+ */
+
+#include "Knoten.h"
+
+
+Knoten::~Knoten() {
+	// TODO Auto-generated destructor stub
+}
+

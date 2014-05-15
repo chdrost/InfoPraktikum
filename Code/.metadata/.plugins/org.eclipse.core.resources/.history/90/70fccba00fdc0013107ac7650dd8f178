@@ -1,0 +1,44 @@
+/*
+ * Graph.cpp
+ *
+ *  Created on: 13.05.2014
+ *      Author: deniz
+ */
+
+#include "Graph.h"
+
+Graph::Graph(map<int, Gebietslokation*> rohDaten) {
+	map<int, Knoten*> konstruktionsMap;
+	erstelleKnoten(konstruktionsMap, rohDaten);
+	verlinkeKnoten(konstruktionsMap);
+	konstruktionsMap.clear();
+}
+
+Graph::~Graph() {
+	for (auto it = knotenListe.begin(); it != knotenListe.end(); it++) {
+		delete &*it;
+	}
+	knotenListe.clear();
+}
+
+void Graph::erstelleKnoten(const map<int, Knoten*>& konstruktionsMap,
+		const map<int, Gebietslokation*>& rohdaten) {
+	//Alle Elemente durchlaufen
+	for (auto it = rohdaten.begin(); it != rohdaten.end(); it++) {
+		//Pruefen, ob Element eine Punklokation ist
+		if (it->second->getType() == PUNKT) {
+			//Pruefen, ob das Element schon enthalten ist
+			if (konstruktionsMap.find(it->second->getId())
+					!= konstruktionsMap.end()) {
+				Knoten *k = new Knoten((Punktlokation*)it->second);
+				//In Arbeitsliste
+				this->knotenListe.push_back(k);
+				//In Map
+				konstruktionsMap[k->getId()] =  k;
+			}
+		}
+	}
+}
+
+void Graph::verlinkeKnoten(const map<int, Knoten*>& konstruktionsMap) {
+}

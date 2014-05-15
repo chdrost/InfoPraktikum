@@ -1,0 +1,29 @@
+/*
+ * Knoten.cpp
+ *
+ *  Created on: 13.05.2014
+ *      Author: deniz
+ */
+
+#include "Knoten.h"
+
+
+Knoten::~Knoten() {
+	// TODO Auto-generated destructor stub
+}
+
+Knoten::Knoten(Punktlokation* punktLokation) {
+}
+
+void Knoten::addNachfolger(Knoten* nachfolger) {
+}
+
+float Knoten::berechneLaenge() {
+}
+
+bool Knoten::isIntersectionCodeEqual(Punktlokation* intersectioncode) {
+}
+
+int Knoten::getId() {
+	return(eigenschaften->getId());
+}
