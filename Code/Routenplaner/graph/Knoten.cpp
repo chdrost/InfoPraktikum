@@ -16,7 +16,7 @@ Knoten::Knoten(Punktlokation* punktLokation) {
 }
 
 void Knoten::addNachfolger(Knoten* nachfolger) {
-	//TODO
+	this->nachfolger.push_back(nachfolger);
 }
 
 float Knoten::berechneLaenge(Knoten * derAnnere) {
