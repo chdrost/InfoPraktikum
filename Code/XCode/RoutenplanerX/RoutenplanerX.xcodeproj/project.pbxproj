@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		592ED7CF191C0BCE005DAA56 /* TypProblemEcxeption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */; };
-		5954E19319177FFD00C0D7F0 /* FileNotFoundException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */; };
-		5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */; };
-		5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */; };
-		5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */; };
-		5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */; };
-		5954E19819177FFD00C0D7F0 /* Punktlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */; };
-		5954E19919177FFD00C0D7F0 /* Hello.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18719177FFD00C0D7F0 /* Hello.cpp */; };
-		5954E19A19177FFD00C0D7F0 /* Aktualitaet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */; };
-		5954E19B19177FFD00C0D7F0 /* GeoKoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */; };
-		5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */; };
-		597769B5191902A8004091DD /* BenutzerInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 597769B3191902A8004091DD /* BenutzerInterface.cpp */; };
-		59BFFAB6191B7CAD007546EA /* SuchenKlasse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59BFFAB4191B7CAD007546EA /* SuchenKlasse.cpp */; };
+		590F8A0C1924C67700A95596 /* FileNotFoundException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89E71924C67700A95596 /* FileNotFoundException.cpp */; };
+		590F8A0D1924C67700A95596 /* TypProblemEcxeption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89E91924C67700A95596 /* TypProblemEcxeption.cpp */; };
+		590F8A0E1924C67700A95596 /* ZeitException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89EB1924C67700A95596 /* ZeitException.cpp */; };
+		590F8A0F1924C67700A95596 /* Gebietslokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89EF1924C67700A95596 /* Gebietslokation.cpp */; };
+		590F8A101924C67700A95596 /* Linearlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89F11924C67700A95596 /* Linearlokation.cpp */; };
+		590F8A111924C67700A95596 /* LokationsVerwaltung.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89F31924C67700A95596 /* LokationsVerwaltung.cpp */; };
+		590F8A121924C67700A95596 /* Punktlokation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89F51924C67700A95596 /* Punktlokation.cpp */; };
+		590F8A131924C67700A95596 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89F81924C67700A95596 /* Graph.cpp */; };
+		590F8A141924C67700A95596 /* Knoten.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89FA1924C67700A95596 /* Knoten.cpp */; };
+		590F8A151924C67700A95596 /* Hello.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89FC1924C67700A95596 /* Hello.cpp */; };
+		590F8A161924C67700A95596 /* Aktualitaet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F89FF1924C67700A95596 /* Aktualitaet.cpp */; };
+		590F8A171924C67700A95596 /* BenutzerInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F8A011924C67700A95596 /* BenutzerInterface.cpp */; };
+		590F8A181924C67700A95596 /* GeoKoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F8A031924C67700A95596 /* GeoKoordinate.cpp */; };
+		590F8A191924C67700A95596 /* SuchenKlasse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F8A061924C67700A95596 /* SuchenKlasse.cpp */; };
+		590F8A1A1924C67700A95596 /* FileOpener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 590F8A091924C67700A95596 /* FileOpener.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,36 +37,40 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TypProblemEcxeption.cpp; path = ../exceptions/TypProblemEcxeption.cpp; sourceTree = "<group>"; };
-		592ED7CE191C0BCE005DAA56 /* TypProblemEcxeption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypProblemEcxeption.h; path = ../exceptions/TypProblemEcxeption.h; sourceTree = "<group>"; };
-		5954E16C19177FB100C0D7F0 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RoutenplanerX; sourceTree = BUILT_PRODUCTS_DIR; };
-		5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileNotFoundException.cpp; sourceTree = "<group>"; };
-		5954E17A19177FFD00C0D7F0 /* FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileNotFoundException.h; sourceTree = "<group>"; };
-		5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeitException.cpp; sourceTree = "<group>"; };
-		5954E17C19177FFD00C0D7F0 /* ZeitException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeitException.h; sourceTree = "<group>"; };
-		5954E17E19177FFD00C0D7F0 /* AttributDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributDefines.h; sourceTree = "<group>"; };
-		5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gebietslokation.cpp; sourceTree = "<group>"; };
-		5954E18019177FFD00C0D7F0 /* Gebietslokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gebietslokation.h; sourceTree = "<group>"; };
-		5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearlokation.cpp; sourceTree = "<group>"; };
-		5954E18219177FFD00C0D7F0 /* Linearlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linearlokation.h; sourceTree = "<group>"; };
-		5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LokationsVerwaltung.cpp; sourceTree = "<group>"; };
-		5954E18419177FFD00C0D7F0 /* LokationsVerwaltung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LokationsVerwaltung.h; sourceTree = "<group>"; };
-		5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Punktlokation.cpp; sourceTree = "<group>"; };
-		5954E18619177FFD00C0D7F0 /* Punktlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punktlokation.h; sourceTree = "<group>"; };
-		5954E18719177FFD00C0D7F0 /* Hello.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hello.cpp; path = ../../../Routenplaner/Hello.cpp; sourceTree = "<group>"; };
-		5954E18819177FFD00C0D7F0 /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hello.h; path = ../../../Routenplaner/Hello.h; sourceTree = "<group>"; };
-		5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Aktualitaet.cpp; sourceTree = "<group>"; };
-		5954E18B19177FFD00C0D7F0 /* Aktualitaet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aktualitaet.h; sourceTree = "<group>"; };
-		5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeoKoordinate.cpp; sourceTree = "<group>"; };
-		5954E18D19177FFD00C0D7F0 /* GeoKoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoKoordinate.h; sourceTree = "<group>"; };
-		5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileOpener.cpp; sourceTree = "<group>"; };
-		5954E19019177FFD00C0D7F0 /* FileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOpener.h; sourceTree = "<group>"; };
-		5954E19119177FFD00C0D7F0 /* testdatei.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testdatei.csv; path = ../../../Routenplaner/testdatei.csv; sourceTree = "<group>"; };
-		5954E19219177FFD00C0D7F0 /* utf8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = utf8.csv; path = ../../../Routenplaner/utf8.csv; sourceTree = "<group>"; };
-		597769B3191902A8004091DD /* BenutzerInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BenutzerInterface.cpp; sourceTree = "<group>"; };
-		597769B4191902A8004091DD /* BenutzerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenutzerInterface.h; sourceTree = "<group>"; };
-		59BFFAB4191B7CAD007546EA /* SuchenKlasse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuchenKlasse.cpp; sourceTree = "<group>"; };
-		59BFFAB5191B7CAD007546EA /* SuchenKlasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuchenKlasse.h; sourceTree = "<group>"; };
+		590F89E71924C67700A95596 /* FileNotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileNotFoundException.cpp; sourceTree = "<group>"; };
+		590F89E81924C67700A95596 /* FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileNotFoundException.h; sourceTree = "<group>"; };
+		590F89E91924C67700A95596 /* TypProblemEcxeption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypProblemEcxeption.cpp; sourceTree = "<group>"; };
+		590F89EA1924C67700A95596 /* TypProblemEcxeption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypProblemEcxeption.h; sourceTree = "<group>"; };
+		590F89EB1924C67700A95596 /* ZeitException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZeitException.cpp; sourceTree = "<group>"; };
+		590F89EC1924C67700A95596 /* ZeitException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeitException.h; sourceTree = "<group>"; };
+		590F89EE1924C67700A95596 /* AttributDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributDefines.h; sourceTree = "<group>"; };
+		590F89EF1924C67700A95596 /* Gebietslokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gebietslokation.cpp; sourceTree = "<group>"; };
+		590F89F01924C67700A95596 /* Gebietslokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gebietslokation.h; sourceTree = "<group>"; };
+		590F89F11924C67700A95596 /* Linearlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Linearlokation.cpp; sourceTree = "<group>"; };
+		590F89F21924C67700A95596 /* Linearlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Linearlokation.h; sourceTree = "<group>"; };
+		590F89F31924C67700A95596 /* LokationsVerwaltung.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LokationsVerwaltung.cpp; sourceTree = "<group>"; };
+		590F89F41924C67700A95596 /* LokationsVerwaltung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LokationsVerwaltung.h; sourceTree = "<group>"; };
+		590F89F51924C67700A95596 /* Punktlokation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Punktlokation.cpp; sourceTree = "<group>"; };
+		590F89F61924C67700A95596 /* Punktlokation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punktlokation.h; sourceTree = "<group>"; };
+		590F89F81924C67700A95596 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		590F89F91924C67700A95596 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		590F89FA1924C67700A95596 /* Knoten.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Knoten.cpp; sourceTree = "<group>"; };
+		590F89FB1924C67700A95596 /* Knoten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knoten.h; sourceTree = "<group>"; };
+		590F89FC1924C67700A95596 /* Hello.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hello.cpp; path = ../../Routenplaner/Hello.cpp; sourceTree = "<group>"; };
+		590F89FD1924C67700A95596 /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hello.h; path = ../../Routenplaner/Hello.h; sourceTree = "<group>"; };
+		590F89FF1924C67700A95596 /* Aktualitaet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Aktualitaet.cpp; sourceTree = "<group>"; };
+		590F8A001924C67700A95596 /* Aktualitaet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aktualitaet.h; sourceTree = "<group>"; };
+		590F8A011924C67700A95596 /* BenutzerInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BenutzerInterface.cpp; sourceTree = "<group>"; };
+		590F8A021924C67700A95596 /* BenutzerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenutzerInterface.h; sourceTree = "<group>"; };
+		590F8A031924C67700A95596 /* GeoKoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeoKoordinate.cpp; sourceTree = "<group>"; };
+		590F8A041924C67700A95596 /* GeoKoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoKoordinate.h; sourceTree = "<group>"; };
+		590F8A051924C67700A95596 /* sicherLesen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sicherLesen.h; sourceTree = "<group>"; };
+		590F8A061924C67700A95596 /* SuchenKlasse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuchenKlasse.cpp; sourceTree = "<group>"; };
+		590F8A071924C67700A95596 /* SuchenKlasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuchenKlasse.h; sourceTree = "<group>"; };
+		590F8A091924C67700A95596 /* FileOpener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileOpener.cpp; sourceTree = "<group>"; };
+		590F8A0A1924C67700A95596 /* FileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOpener.h; sourceTree = "<group>"; };
+		590F8A0B1924C67700A95596 /* sicherLesen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sicherLesen.h; path = ../../Routenplaner/sicherLesen.h; sourceTree = "<group>"; };
+		5954E16C19177FB100C0D7F0 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = RoutenplanerX; path = /Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/XCode/RoutenplanerX/build/Debug/RoutenplanerX; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,92 +84,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590F89E61924C67700A95596 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				590F89E71924C67700A95596 /* FileNotFoundException.cpp */,
+				590F89E81924C67700A95596 /* FileNotFoundException.h */,
+				590F89E91924C67700A95596 /* TypProblemEcxeption.cpp */,
+				590F89EA1924C67700A95596 /* TypProblemEcxeption.h */,
+				590F89EB1924C67700A95596 /* ZeitException.cpp */,
+				590F89EC1924C67700A95596 /* ZeitException.h */,
+			);
+			name = exceptions;
+			path = ../../Routenplaner/exceptions;
+			sourceTree = "<group>";
+		};
+		590F89ED1924C67700A95596 /* geopunkte */ = {
+			isa = PBXGroup;
+			children = (
+				590F89EE1924C67700A95596 /* AttributDefines.h */,
+				590F89EF1924C67700A95596 /* Gebietslokation.cpp */,
+				590F89F01924C67700A95596 /* Gebietslokation.h */,
+				590F89F11924C67700A95596 /* Linearlokation.cpp */,
+				590F89F21924C67700A95596 /* Linearlokation.h */,
+				590F89F31924C67700A95596 /* LokationsVerwaltung.cpp */,
+				590F89F41924C67700A95596 /* LokationsVerwaltung.h */,
+				590F89F51924C67700A95596 /* Punktlokation.cpp */,
+				590F89F61924C67700A95596 /* Punktlokation.h */,
+			);
+			name = geopunkte;
+			path = ../../Routenplaner/geopunkte;
+			sourceTree = "<group>";
+		};
+		590F89F71924C67700A95596 /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				590F89F81924C67700A95596 /* Graph.cpp */,
+				590F89F91924C67700A95596 /* Graph.h */,
+				590F89FA1924C67700A95596 /* Knoten.cpp */,
+				590F89FB1924C67700A95596 /* Knoten.h */,
+			);
+			name = graph;
+			path = ../../Routenplaner/graph;
+			sourceTree = "<group>";
+		};
+		590F89FE1924C67700A95596 /* hilfsklassen */ = {
+			isa = PBXGroup;
+			children = (
+				590F89FF1924C67700A95596 /* Aktualitaet.cpp */,
+				590F8A001924C67700A95596 /* Aktualitaet.h */,
+				590F8A011924C67700A95596 /* BenutzerInterface.cpp */,
+				590F8A021924C67700A95596 /* BenutzerInterface.h */,
+				590F8A031924C67700A95596 /* GeoKoordinate.cpp */,
+				590F8A041924C67700A95596 /* GeoKoordinate.h */,
+				590F8A051924C67700A95596 /* sicherLesen.h */,
+				590F8A061924C67700A95596 /* SuchenKlasse.cpp */,
+				590F8A071924C67700A95596 /* SuchenKlasse.h */,
+			);
+			name = hilfsklassen;
+			path = ../../Routenplaner/hilfsklassen;
+			sourceTree = "<group>";
+		};
+		590F8A081924C67700A95596 /* reader */ = {
+			isa = PBXGroup;
+			children = (
+				590F8A091924C67700A95596 /* FileOpener.cpp */,
+				590F8A0A1924C67700A95596 /* FileOpener.h */,
+			);
+			name = reader;
+			path = ../../Routenplaner/reader;
+			sourceTree = "<group>";
+		};
 		5954E16319177FB100C0D7F0 = {
 			isa = PBXGroup;
 			children = (
-				5954E16E19177FB100C0D7F0 /* RoutenplanerX */,
-				5954E16D19177FB100C0D7F0 /* Products */,
+				590F89E61924C67700A95596 /* exceptions */,
+				590F89ED1924C67700A95596 /* geopunkte */,
+				590F89F71924C67700A95596 /* graph */,
+				590F89FC1924C67700A95596 /* Hello.cpp */,
+				590F89FD1924C67700A95596 /* Hello.h */,
+				590F89FE1924C67700A95596 /* hilfsklassen */,
+				590F8A081924C67700A95596 /* reader */,
+				590F8A0B1924C67700A95596 /* sicherLesen.h */,
 			);
-			sourceTree = "<group>";
-		};
-		5954E16D19177FB100C0D7F0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5954E16C19177FB100C0D7F0 /* RoutenplanerX */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5954E16E19177FB100C0D7F0 /* RoutenplanerX */ = {
-			isa = PBXGroup;
-			children = (
-				5954E17819177FFD00C0D7F0 /* exceptions */,
-				5954E17D19177FFD00C0D7F0 /* geopunkte */,
-				5954E18719177FFD00C0D7F0 /* Hello.cpp */,
-				5954E18819177FFD00C0D7F0 /* Hello.h */,
-				5954E18919177FFD00C0D7F0 /* hilfsklassen */,
-				5954E18E19177FFD00C0D7F0 /* reader */,
-				5954E19119177FFD00C0D7F0 /* testdatei.csv */,
-				5954E19219177FFD00C0D7F0 /* utf8.csv */,
-			);
-			path = RoutenplanerX;
-			sourceTree = "<group>";
-		};
-		5954E17819177FFD00C0D7F0 /* exceptions */ = {
-			isa = PBXGroup;
-			children = (
-				5954E17919177FFD00C0D7F0 /* FileNotFoundException.cpp */,
-				5954E17A19177FFD00C0D7F0 /* FileNotFoundException.h */,
-				5954E17B19177FFD00C0D7F0 /* ZeitException.cpp */,
-				5954E17C19177FFD00C0D7F0 /* ZeitException.h */,
-			);
-			name = exceptions;
-			path = ../../../Routenplaner/exceptions;
-			sourceTree = "<group>";
-		};
-		5954E17D19177FFD00C0D7F0 /* geopunkte */ = {
-			isa = PBXGroup;
-			children = (
-				5954E17E19177FFD00C0D7F0 /* AttributDefines.h */,
-				5954E17F19177FFD00C0D7F0 /* Gebietslokation.cpp */,
-				5954E18019177FFD00C0D7F0 /* Gebietslokation.h */,
-				5954E18119177FFD00C0D7F0 /* Linearlokation.cpp */,
-				5954E18219177FFD00C0D7F0 /* Linearlokation.h */,
-				5954E18319177FFD00C0D7F0 /* LokationsVerwaltung.cpp */,
-				5954E18419177FFD00C0D7F0 /* LokationsVerwaltung.h */,
-				5954E18519177FFD00C0D7F0 /* Punktlokation.cpp */,
-				592ED7CD191C0BCE005DAA56 /* TypProblemEcxeption.cpp */,
-				592ED7CE191C0BCE005DAA56 /* TypProblemEcxeption.h */,
-				5954E18619177FFD00C0D7F0 /* Punktlokation.h */,
-			);
-			name = geopunkte;
-			path = ../../../Routenplaner/geopunkte;
-			sourceTree = "<group>";
-		};
-		5954E18919177FFD00C0D7F0 /* hilfsklassen */ = {
-			isa = PBXGroup;
-			children = (
-				5954E18A19177FFD00C0D7F0 /* Aktualitaet.cpp */,
-				597769B3191902A8004091DD /* BenutzerInterface.cpp */,
-				597769B4191902A8004091DD /* BenutzerInterface.h */,
-				5954E18B19177FFD00C0D7F0 /* Aktualitaet.h */,
-				59BFFAB4191B7CAD007546EA /* SuchenKlasse.cpp */,
-				59BFFAB5191B7CAD007546EA /* SuchenKlasse.h */,
-				5954E18C19177FFD00C0D7F0 /* GeoKoordinate.cpp */,
-				5954E18D19177FFD00C0D7F0 /* GeoKoordinate.h */,
-			);
-			name = hilfsklassen;
-			path = ../../../Routenplaner/hilfsklassen;
-			sourceTree = "<group>";
-		};
-		5954E18E19177FFD00C0D7F0 /* reader */ = {
-			isa = PBXGroup;
-			children = (
-				5954E18F19177FFD00C0D7F0 /* FileOpener.cpp */,
-				5954E19019177FFD00C0D7F0 /* FileOpener.h */,
-			);
-			name = reader;
-			path = ../../../Routenplaner/reader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +205,7 @@
 				en,
 			);
 			mainGroup = 5954E16319177FB100C0D7F0;
-			productRefGroup = 5954E16D19177FB100C0D7F0 /* Products */;
+			productRefGroup = 5954E16319177FB100C0D7F0;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -217,19 +219,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5954E19919177FFD00C0D7F0 /* Hello.cpp in Sources */,
-				5954E19B19177FFD00C0D7F0 /* GeoKoordinate.cpp in Sources */,
-				5954E19A19177FFD00C0D7F0 /* Aktualitaet.cpp in Sources */,
-				5954E19319177FFD00C0D7F0 /* FileNotFoundException.cpp in Sources */,
-				5954E19519177FFD00C0D7F0 /* Gebietslokation.cpp in Sources */,
-				5954E19719177FFD00C0D7F0 /* LokationsVerwaltung.cpp in Sources */,
-				59BFFAB6191B7CAD007546EA /* SuchenKlasse.cpp in Sources */,
-				5954E19C19177FFD00C0D7F0 /* FileOpener.cpp in Sources */,
-				592ED7CF191C0BCE005DAA56 /* TypProblemEcxeption.cpp in Sources */,
-				597769B5191902A8004091DD /* BenutzerInterface.cpp in Sources */,
-				5954E19419177FFD00C0D7F0 /* ZeitException.cpp in Sources */,
-				5954E19619177FFD00C0D7F0 /* Linearlokation.cpp in Sources */,
-				5954E19819177FFD00C0D7F0 /* Punktlokation.cpp in Sources */,
+				590F8A161924C67700A95596 /* Aktualitaet.cpp in Sources */,
+				590F8A0F1924C67700A95596 /* Gebietslokation.cpp in Sources */,
+				590F8A191924C67700A95596 /* SuchenKlasse.cpp in Sources */,
+				590F8A171924C67700A95596 /* BenutzerInterface.cpp in Sources */,
+				590F8A0E1924C67700A95596 /* ZeitException.cpp in Sources */,
+				590F8A0C1924C67700A95596 /* FileNotFoundException.cpp in Sources */,
+				590F8A0D1924C67700A95596 /* TypProblemEcxeption.cpp in Sources */,
+				590F8A131924C67700A95596 /* Graph.cpp in Sources */,
+				590F8A121924C67700A95596 /* Punktlokation.cpp in Sources */,
+				590F8A101924C67700A95596 /* Linearlokation.cpp in Sources */,
+				590F8A111924C67700A95596 /* LokationsVerwaltung.cpp in Sources */,
+				590F8A1A1924C67700A95596 /* FileOpener.cpp in Sources */,
+				590F8A151924C67700A95596 /* Hello.cpp in Sources */,
+				590F8A181924C67700A95596 /* GeoKoordinate.cpp in Sources */,
+				590F8A141924C67700A95596 /* Knoten.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

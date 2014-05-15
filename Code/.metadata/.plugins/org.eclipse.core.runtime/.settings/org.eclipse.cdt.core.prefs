@@ -17,5 +17,5 @@ indexer/skipTypeReferences=false
 indexer/updatePolicy=0
 indexer/useHeuristicIncludeResolution=true
 language.settings.providers.workspace.prefs.toggle=true
-macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n
+macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros>\n<stringMacro name\="C11" type\="VALUE_TEXT" value\="-std\=c++11"/>\n</macros>\n
 org.eclipse.cdt.core.showSourceRootsAtTopLevelOfProject=true
