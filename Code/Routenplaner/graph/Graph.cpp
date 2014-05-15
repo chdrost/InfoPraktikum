@@ -42,6 +42,11 @@ void Graph::erstelleKnoten(map<int, Knoten*>& konstruktionsMap,
 				konstruktionsMap[k->getEigenschaften()->getId()] = k;
 			}
 		}
+		if (pktLok->getType() == PUNKT && pktLok->getIntersectioncode() == NULL) {
+			Knoten *k = new Knoten(pktLok);
+			knotenListe.push_back(k);
+			konstruktionsMap[k->getEigenschaften()->getId()] = k;
+		}
 	}
 }
 

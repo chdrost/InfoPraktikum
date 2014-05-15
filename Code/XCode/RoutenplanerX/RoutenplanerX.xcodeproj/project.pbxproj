@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5906C960192550350052E280 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RoutenplanerX; sourceTree = BUILT_PRODUCTS_DIR; };
 		590F89E71924C67700A95596 /* FileNotFoundException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileNotFoundException.cpp; sourceTree = "<group>"; };
 		590F89E81924C67700A95596 /* FileNotFoundException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileNotFoundException.h; sourceTree = "<group>"; };
 		590F89E91924C67700A95596 /* TypProblemEcxeption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypProblemEcxeption.cpp; sourceTree = "<group>"; };
@@ -69,8 +70,6 @@
 		590F8A071924C67700A95596 /* SuchenKlasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuchenKlasse.h; sourceTree = "<group>"; };
 		590F8A091924C67700A95596 /* FileOpener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileOpener.cpp; sourceTree = "<group>"; };
 		590F8A0A1924C67700A95596 /* FileOpener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOpener.h; sourceTree = "<group>"; };
-		590F8A0B1924C67700A95596 /* sicherLesen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sicherLesen.h; path = ../../Routenplaner/sicherLesen.h; sourceTree = "<group>"; };
-		5954E16C19177FB100C0D7F0 /* RoutenplanerX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = RoutenplanerX; path = /Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/XCode/RoutenplanerX/build/Debug/RoutenplanerX; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +163,7 @@
 				590F89FD1924C67700A95596 /* Hello.h */,
 				590F89FE1924C67700A95596 /* hilfsklassen */,
 				590F8A081924C67700A95596 /* reader */,
-				590F8A0B1924C67700A95596 /* sicherLesen.h */,
+				5906C960192550350052E280 /* RoutenplanerX */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,7 +184,7 @@
 			);
 			name = RoutenplanerX;
 			productName = RoutenplanerX;
-			productReference = 5954E16C19177FB100C0D7F0 /* RoutenplanerX */;
+			productReference = 5906C960192550350052E280 /* RoutenplanerX */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */

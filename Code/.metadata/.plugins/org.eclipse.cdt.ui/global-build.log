@@ -1,4 +1,4 @@
-20:19:51 **** Incremental Build of configuration Release for project Routenplaner ****
+21:37:04 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
 Building file: ../graph/Graph.cpp
 Invoking: Cross G++ Compiler

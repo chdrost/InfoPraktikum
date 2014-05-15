@@ -1,0 +1,24 @@
+graph/Knoten.d: ../graph/Knoten.cpp ../graph/Knoten.h \
+  ../graph/../geopunkte/Punktlokation.h \
+  ../graph/../geopunkte/Linearlokation.h \
+  ../graph/../geopunkte/./Gebietslokation.h \
+  ../graph/../geopunkte/../hilfsklassen/Aktualitaet.h \
+  ../graph/../geopunkte/../hilfsklassen/./../exceptions/ZeitException.h \
+  ../graph/../geopunkte/AttributDefines.h \
+  ../graph/../geopunkte/../hilfsklassen/GeoKoordinate.h
+
+../graph/Knoten.h:
+
+../graph/../geopunkte/Punktlokation.h:
+
+../graph/../geopunkte/Linearlokation.h:
+
+../graph/../geopunkte/./Gebietslokation.h:
+
+../graph/../geopunkte/../hilfsklassen/Aktualitaet.h:
+
+../graph/../geopunkte/../hilfsklassen/./../exceptions/ZeitException.h:
+
+../graph/../geopunkte/AttributDefines.h:
+
+../graph/../geopunkte/../hilfsklassen/GeoKoordinate.h:
