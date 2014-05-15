@@ -25,6 +25,7 @@ C_UPPER_DEPS :=
 SUBDIRS := \
 reader \
 hilfsklassen \
+graph \
 geopunkte \
 exceptions \
 . \

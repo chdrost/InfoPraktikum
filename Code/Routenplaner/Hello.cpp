@@ -33,7 +33,7 @@ int main() {                                             // Hauptfunktion
 	delete datei;
 
 	Graph *g = new Graph(lokVerwaltung->getGebieteMap());
-	//cout << g->toString();
+	cout << g->toString();
 	delete g;
 
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);

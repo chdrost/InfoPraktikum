@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include reader/subdir.mk
 -include hilfsklassen/subdir.mk
+-include graph/subdir.mk
 -include geopunkte/subdir.mk
 -include exceptions/subdir.mk
 -include .metadata/.plugins/org.eclipse.cdt.make.core/subdir.mk
