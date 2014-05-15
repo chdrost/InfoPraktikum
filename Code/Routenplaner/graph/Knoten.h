@@ -18,13 +18,18 @@
 using namespace std;
 class Knoten {
 public:
-	Knoten(Punktlokation* punktLokation, );
+	Knoten(Punktlokation* punktLokation);
 	virtual ~Knoten();
-	void suchenachfolger();
-	void berechneLaenge();
+	void addNachfolger(Knoten *nachfolger);
+	float berechneLaenge(Knoten * derAnnere);
+	int getId();
+
+	Punktlokation* getEigenschaften() {
+		return (eigenschaften);
+	}
+
 private:
 	Punktlokation* eigenschaften; //getid ist die knotennummer
-	list<Punktlokation*> nachfolgern;
-	Punktlokation* interSectionCode;
+	list<Knoten*> nachfolger;
 };
 #endif /* KNOTEN_H_ */

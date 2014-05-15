@@ -47,6 +47,10 @@ Linearlokation* Linearlokation::getNegativeOffset() {
 	return (negativeOffset);
 }
 
+Linearlokation* Linearlokation::getPositiveOffset() {
+	return (positiveOffset);
+}
+
 bool Linearlokation::isOutNegative() const {
 	return (outNegative);
 }
@@ -57,10 +61,6 @@ bool Linearlokation::isOutPositive() const {
 
 const string& Linearlokation::getPoldir() const {
 	return (poldir);
-}
-
-Linearlokation* Linearlokation::getPositiveOffset() {
-	return (positiveOffset);
 }
 
 bool Linearlokation::isPresentNegative() const {
@@ -238,8 +238,6 @@ string Linearlokation::toString() {
 	return (s.str());
 }
 
-
-
 int Linearlokation::getType() {
 	return (LINEAR);
 }
@@ -262,22 +260,22 @@ void Linearlokation::speichereInterruptsRoad(
 
 void Linearlokation::initialisieren() {
 	this->roadName = "";
-		this->roadNumber = "";
-		this->secondName = "";
-		this->areaReference = NULL;
-		this->negativeOffset = NULL;
-		this->positiveOffset = NULL;
-		this->urban = false;
-		this->intersectioncode = NULL;
-		this->interruptsRoad = NULL;
-		this->inPositive = false;
-		this->outPositive = false;
-		this->inNegative = false;
-		this->outNegative = false;
-		this->presentPositive = false;
-		this->presentNegative = false;
-		this->veraendert = 0;
-		this->tern = false;
-		this->poldir = "";
-		this->adminCounty = "";
+	this->roadNumber = "";
+	this->secondName = "";
+	this->areaReference = NULL;
+	this->negativeOffset = NULL;
+	this->positiveOffset = NULL;
+	this->urban = false;
+	this->intersectioncode = NULL;
+	this->interruptsRoad = NULL;
+	this->inPositive = false;
+	this->outPositive = false;
+	this->inNegative = false;
+	this->outNegative = false;
+	this->presentPositive = false;
+	this->presentNegative = false;
+	this->veraendert = 0;
+	this->tern = false;
+	this->poldir = "";
+	this->adminCounty = "";
 }

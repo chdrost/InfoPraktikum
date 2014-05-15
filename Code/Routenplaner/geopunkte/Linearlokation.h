@@ -62,10 +62,10 @@ public:
 	Linearlokation* getInterruptsRoad();
 	Linearlokation* getIntersectioncode();
 	Linearlokation* getNegativeOffset();
+	Linearlokation* getPositiveOffset();
 	bool isOutNegative() const;
 	bool isOutPositive() const;
 	const string& getPoldir() const;
-	Linearlokation* getPositiveOffset();
 	bool isPresentNegative() const;
 	bool isPresentPositive() const;
 	const string& getRoadName() const;

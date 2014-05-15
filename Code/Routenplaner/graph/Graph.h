@@ -6,15 +6,15 @@
  */
 
 /**
- * Diese Klasse stellt einen Grph dar. Die enth&auml;lt neben
+ * Diese Klasse stellt einen Graph dar. Die enth&auml;lt neben
  * einer geeigneten Datenstruktur auch Methoden um den Graph aufzubauen.
  */
 #ifndef GRAPH_H_
 #define GRAPH_H_
 
-#include <list>
 #include <map>
 #include "Knoten.h"
+
 using namespace std;
 
 class Graph {
@@ -29,7 +29,7 @@ public:
 	 * Knoten zusammen mit einer Id gespeichert.
 	 * @param rohdaten Eine Map mit den Rohdaten, also allen Lokationen.
 	 */
-	void erstelleKnoten(const map<int, Knoten*> &konstruktionsMap,
+	void erstelleKnoten(map<int, Knoten*> &konstruktionsMap,
 			const map<int, Gebietslokation*> &rohdaten);
 
 	/**
@@ -38,12 +38,13 @@ public:
 	 * @param konstruktionsMap Die Kkonstruktionsmap erlaubt einen schnellen Zugriff
 	 * auf ein Knotenobjekt.
 	 */
-	void verlinkeKnoten(const map<int, Knoten*> &konstruktionsMap);
+	void verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
+			const map<int, Gebietslokation*> &rohdaten);
 private:
 	/**
 	 * Diese Liste enth&auml;lt den eigentlichen Graphen.
 	 */
-	list<Knoten> knotenListe;
+	list<Knoten*> knotenListe;
 };
 
 //knoten.getitem().getnachfolger().getitem().getentfernung();

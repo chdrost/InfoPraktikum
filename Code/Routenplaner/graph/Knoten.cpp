@@ -7,18 +7,24 @@
 
 #include "Knoten.h"
 
-Knoten::Knoten() {
-	// TODO Auto-generated constructor stub
-
-}
-
 Knoten::~Knoten() {
 	// TODO Auto-generated destructor stub
 }
 
-/**
- * sucht die Nachfolger sprich nach intersectioncode, pos und neg offset
- */
-void Knoten::suchenachfolger() {
+Knoten::Knoten(Punktlokation* punktLokation) {
+	this->eigenschaften = punktLokation;
+}
 
+void Knoten::addNachfolger(Knoten* nachfolger) {
+	//TODO
+}
+
+float Knoten::berechneLaenge(Knoten * derAnnere) {
+	return (derAnnere->getEigenschaften()->getGeoKoordinate()->entfernungBerechnen(
+			this->eigenschaften->getGeoKoordinate()));
+}
+
+
+int Knoten::getId() {
+	return (eigenschaften->getId());
 }
