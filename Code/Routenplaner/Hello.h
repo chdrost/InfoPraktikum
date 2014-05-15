@@ -15,6 +15,7 @@
 #include <regex>
 #include <cmath>
 #include <unistd.h>
+#include "graph/Graph.h"
 //#include "hilfsklassen/SuchenKlasse.h"
 
 class Hello {

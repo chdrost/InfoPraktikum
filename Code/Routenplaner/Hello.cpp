@@ -21,16 +21,20 @@ Hello::~Hello() {
 int main() {                                             // Hauptfunktion
 	//Jetzt mal die Datei auslesen
 	FileOpener *datei = new FileOpener();
-	datei->oeffneDatei("../utf8.csv");
+	//datei->oeffneDatei("../utf8.csv");
 	//ich brauche es so fuer den Debugger
-	//datei->oeffneDatei(
-	//		"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/utf8.csv");
+	datei->oeffneDatei(
+		"/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/Routenplaner/utf8.csv");
 	datei->leseDateiAus();
 	cout << "\n\n------------Einlesen abgeschlossen-----------\n\n";
 	vector<vector<string> > erg = datei->getDatensatz();
 
 	LokationsVerwaltung *lokVerwaltung = new LokationsVerwaltung(&erg);
 	delete datei;
+
+	Graph *g = new Graph(lokVerwaltung->getGebieteMap());
+	//cout << g->toString();
+	delete g;
 
 	BenutzerInterface interface = BenutzerInterface(lokVerwaltung);
 	interface.zeigeHauptMenue();

@@ -42,6 +42,16 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1631042012.637311731" name="/" resourcePath="graph">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1408522067" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.662775386" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.516816359"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1524210729" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2084885904"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.744032024" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.1735139400"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1887317172" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.1752265320"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.1046015469" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.1794686147"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.163552046" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.1863790908"/>
+						</toolChain>
+					</folderInfo>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -72,8 +82,8 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.447381200" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
 								<option id="gnu.cpp.compiler.option.optimization.level.1729644297" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1378551280" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.dialect.std.425079920" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.1309323281" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0  -std=c++11" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.425079920" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.1309323281" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0  -std=c++11" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1885468524" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.562949527" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
@@ -87,6 +97,16 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.1102280966" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.663358634" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.release.12931328.1211911564" name="/" resourcePath="graph">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.release.1897087898" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.release" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.347675064" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.1557304252"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1903318757" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.447381200"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.176166992" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.562949527"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.964921693" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.956481253"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.844119131" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.2124844951"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.979548028" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.1102280966"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>
@@ -115,6 +135,11 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Release">
+			<resource resourceType="FOLDER" workspacePath="/Routenplaner/graph"/>
+			<resource resourceType="FOLDER" workspacePath="/Routenplaner/exceptions"/>
+			<resource resourceType="FOLDER" workspacePath="/Routenplaner/hilfsklassen"/>
+			<resource resourceType="FOLDER" workspacePath="/Routenplaner/geopunkte"/>
+			<resource resourceType="FOLDER" workspacePath="/Routenplaner/reader"/>
 			<resource resourceType="PROJECT" workspacePath="/Routenplaner"/>
 		</configuration>
 		<configuration configurationName="Debug">

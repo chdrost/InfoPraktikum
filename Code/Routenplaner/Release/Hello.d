@@ -9,7 +9,8 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
   ../hilfsklassen/BenutzerInterface.h \
   ../geopunkte/../hilfsklassen/SuchenKlasse.h \
   ../geopunkte/../hilfsklassen/../exceptions/TypProblemEcxeption.h \
-  ../geopunkte/../hilfsklassen/sicherLesen.h
+  ../geopunkte/../hilfsklassen/sicherLesen.h ../graph/Graph.h \
+  ../graph/Knoten.h
 
 ../Hello.h:
 
@@ -40,3 +41,7 @@ Hello.d: ../Hello.cpp ../Hello.h .././reader/FileOpener.h \
 ../geopunkte/../hilfsklassen/../exceptions/TypProblemEcxeption.h:
 
 ../geopunkte/../hilfsklassen/sicherLesen.h:
+
+../graph/Graph.h:
+
+../graph/Knoten.h:
