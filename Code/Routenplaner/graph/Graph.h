@@ -5,22 +5,47 @@
  *      Author: deniz
  */
 
+/**
+ * Diese Klasse stellt einen Grph dar. Die enth&auml;lt neben
+ * einer geeigneten Datenstruktur auch Methoden um den Graph aufzubauen.
+ */
 #ifndef GRAPH_H_
 #define GRAPH_H_
 
 #include <list>
+#include <map>
 #include "Knoten.h"
 using namespace std;
 
-
 class Graph {
 public:
-	Graph();
+	Graph(map<int, Gebietslokation*> rohDaten);
 	virtual ~Graph();
+
+	/**
+	 * Diese Methode erstellt die erste Spalte der Adjazenzmatrix (n=0).<br>
+	 * Dabei werden neue Knoten erstellt und in die Liste eingepflegt.
+	 * @param konstruktionsMap Die Konstruktionsmap, dort sind die neuen
+	 * Knoten zusammen mit einer Id gespeichert.
+	 * @param rohdaten Eine Map mit den Rohdaten, also allen Lokationen.
+	 */
+	void erstelleKnoten(const map<int, Knoten*> &konstruktionsMap,
+			const map<int, Gebietslokation*> &rohdaten);
+
+	/**
+	 * Diese Methode baut die eigentloch Adjazenzliste auf. Hierzu werden die
+	 * Spalten n>0 gef&uuml;llt.
+	 * @param konstruktionsMap Die Kkonstruktionsmap erlaubt einen schnellen Zugriff
+	 * auf ein Knotenobjekt.
+	 */
+	void verlinkeKnoten(const map<int, Knoten*> &konstruktionsMap);
 private:
-	list<Knoten> knoten;
+	/**
+	 * Diese Liste enth&auml;lt den eigentlichen Graphen.
+	 */
+	list<Knoten> knotenListe;
 };
 
-	knoten.getitem().getnachfolger().getitem().getentfernung();
+//knoten.getitem().getnachfolger().getitem().getentfernung();
 
 #endif /* GRAPH_H_ */

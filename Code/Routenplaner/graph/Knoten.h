@@ -9,15 +9,20 @@
 #define KNOTEN_H_
 #include <list>
 #include "../geopunkte/Punktlokation.h"
-#include "Child.h"
+
+/**
+ * Diese Klasse repr&auml;sentiert einen Knotenpunkt im Graph.<br>
+ * Sie hat Informationen &uuml;ber ihre Nachbarn und den Abstand zu ihrem
+ * aufrufenden Nachbarn.<br>
+ */
 using namespace std;
 class Knoten {
 public:
-	Knoten();
+	Knoten(Punktlokation* punktLokation, );
 	virtual ~Knoten();
 	void suchenachfolger();
+	void berechneLaenge();
 private:
-	void berechnelaenge();
 	Punktlokation* eigenschaften; //getid ist die knotennummer
 	list<Punktlokation*> nachfolgern;
 	Punktlokation* interSectionCode;
