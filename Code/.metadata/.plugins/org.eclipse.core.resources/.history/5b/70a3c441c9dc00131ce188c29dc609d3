@@ -50,9 +50,7 @@ public:
 	 * Der Einlesevorgang l&auml;ft in zwei Stufen. Erst wird aus jeder Punktlokation
 	 * ein Knoten erzeugt.<br>
 	 * Im zweiten Schritt wird in jedem Knoten, dessen Punktlokation einen
-	 * Intersectioncode hat, der Intersectioncode als Nachfolger eingetragen.<br>
-	 * Da die Knoten der Intersectioncodes w&auml;hrend dem ersten Erstellen noch nicht
-	 * existieren m&uuml;ssen wird, verlinkt diese Methode sie im zweiten Schritt.
+	 * Intersectioncode hat, der Intersectioncode als Nachfolger eingetragen.
 	 * @param konstruktionsMap Die Kkonstruktionsmap erlaubt einen schnellen Zugriff
 	 * auf ein Knotenobjekt.
 	 */

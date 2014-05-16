@@ -7,7 +7,9 @@
 
 /**
  * Diese Klasse stellt einen Graph dar. Die enth&auml;lt neben
- * einer geeigneten Datenstruktur auch Methoden um den Graph aufzubauen.
+ * einer geeigneten Datenstruktur auch Methoden um den Graph aufzubauen.<br>
+ * Ein Knoten ist durch maximal 3 Nachfolger gekennzeichnet.<br>
+ * Die Knoten sind alle in einer doppelt verketteten Liste enthalten.
  */
 #ifndef GRAPH_OLD_H_
 #define GRAPH_OLD_H_

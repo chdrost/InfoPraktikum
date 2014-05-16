@@ -1,9 +1,14 @@
-08:58:51 **** Incremental Build of configuration Release for project Routenplaner ****
+09:17:54 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../graph/Graph_OLD.cpp
+Building file: ../graph/Graph.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"graph/Graph_OLD.d" -MT"graph/Graph_OLD.d" -o "graph/Graph_OLD.o" "../graph/Graph_OLD.cpp"
-Finished building: ../graph/Graph_OLD.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"graph/Graph.d" -MT"graph/Graph.d" -o "graph/Graph.o" "../graph/Graph.cpp"
+Finished building: ../graph/Graph.cpp
+ 
+Building file: ../graph/Knoten.cpp
+Invoking: Cross G++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"graph/Knoten.d" -MT"graph/Knoten.d" -o "graph/Knoten.o" "../graph/Knoten.cpp"
+Finished building: ../graph/Knoten.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker

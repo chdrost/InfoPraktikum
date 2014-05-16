@@ -58,8 +58,6 @@ void Graph::verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
 									pLok->getIntersectioncode()->getId()));
 			}catch(out_of_range &e){
 				cout<<"\nIntersectioncode nicht gefunden";
-				cout<<"\nDas Programm wird aufgrund des unerwarteten Fehlers beendet";
-				exit(EXIT_FAILURE);
 			}
 		}
 	}
@@ -73,6 +71,5 @@ string Graph::toString() {
 		s << ((Knoten*) *it)->toString();
 	}
 	s << "\nEnde Graph\n";
-	s<<"Der Graph enthaelt "<<knotenListe.size()<<" Elemente.\n";
 	return (s.str());
 }

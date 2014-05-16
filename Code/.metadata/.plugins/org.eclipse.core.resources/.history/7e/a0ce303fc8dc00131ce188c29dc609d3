@@ -12,13 +12,8 @@
 
 /**
  * Diese Klasse repr&auml;sentiert einen Knotenpunkt im Graph.<br>
- * Ein Knoten hat maximal 3 Nachfolger,<br>
- * <ol>
- * 	<li>Positive Offset </li>
- * 	<li>Negative Offset </li>
- * 	<li>Intersection Code </li>
- * </ol><br>
- *
+ * Sie hat Informationen &uuml;ber ihre Nachbarn und den Abstand zu ihrem
+ * aufrufenden Nachbarn.<br>
  */
 using namespace std;
 class Knoten {

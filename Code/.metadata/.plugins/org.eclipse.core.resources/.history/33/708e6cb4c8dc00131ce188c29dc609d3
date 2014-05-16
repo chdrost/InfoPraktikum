@@ -23,15 +23,7 @@ using namespace std;
 
 class Graph {
 public:
-	/**
-	 * Der Standardkonstrukor. Er baut den Graphen ohne Wertung der einzelnen
-	 * Knoten auf.
-	 */
 	Graph(map<int, Gebietslokation*> rohDaten);
-	/**
-	 * Der Destruktor.<br>
-	 * Er destruiert die enthaltenen Knoten.
-	 */
 	virtual ~Graph();
 
 	/**
@@ -46,13 +38,7 @@ public:
 
 	/**
 	 * Diese Methode baut die eigentloch Adjazenzliste auf. Hierzu werden die
-	 * Spalten n>0 gef&uuml;llt.<br>
-	 * Der Einlesevorgang l&auml;ft in zwei Stufen. Erst wird aus jeder Punktlokation
-	 * ein Knoten erzeugt.<br>
-	 * Im zweiten Schritt wird in jedem Knoten, dessen Punktlokation einen
-	 * Intersectioncode hat, der Intersectioncode als Nachfolger eingetragen.<br>
-	 * Da die Knoten der Intersectioncodes w&auml;hrend dem ersten Erstellen noch nicht
-	 * existieren m&uuml;ssen wird, verlinkt diese Methode sie im zweiten Schritt.
+	 * Spalten n>0 gef&uuml;llt.
 	 * @param konstruktionsMap Die Kkonstruktionsmap erlaubt einen schnellen Zugriff
 	 * auf ein Knotenobjekt.
 	 */
