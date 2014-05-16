@@ -12,8 +12,6 @@ Graph::Graph(map<int, Gebietslokation*> rohDaten) {
 	erstelleKnoten(konstruktionsMap, rohDaten);
 	verlinkeKnoten(konstruktionsMap, rohDaten);
 	//TODO Pruefen, ob hier Destruktoren aufgerufen werden
-
-	//cout<<"\n\n\n\n\n\n\n\nGroesse k MAp: "<<konstruktionsMap.size()<"\n\n\n\n\n\n\n\n";
 	konstruktionsMap.clear();
 }
 
@@ -30,29 +28,16 @@ void Graph::erstelleKnoten(map<int, Knoten*>& konstruktionsMap,
 	for (auto it = rohdaten.begin(); it != rohdaten.end(); it++) {
 		//Pruefen, ob Element eine Punklokation ist
 		Punktlokation *pktLok = (Punktlokation*) it->second;
-		if (pktLok->getType() == PUNKT && pktLok->getIntersectioncode() != NULL) {
-			try {
-				//Pruefen, ob der Intersection Code des Elements existiert
-				//Wenn nicht wird eine Out Of Range Exception ausgeloest.
-				//In dem Fall kann ein neuer Knoten erstellt werden.
-				konstruktionsMap.at(pktLok->getIntersectioncode()->getId());
-			} catch (const out_of_range& oor) {
+		if (pktLok->getType() == PUNKT) {
 				Knoten *k = new Knoten(pktLok);
 				knotenListe.push_back(k);
 				konstruktionsMap[k->getEigenschaften()->getId()] = k;
-			}
-		}
-		if (pktLok->getType() == PUNKT && pktLok->getIntersectioncode() == NULL) {
-			Knoten *k = new Knoten(pktLok);
-			knotenListe.push_back(k);
-			konstruktionsMap[k->getEigenschaften()->getId()] = k;
 		}
 	}
 }
 
 void Graph::verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
 		const map<int, Gebietslokation*> &rohdaten) {
-	int i = 0;
 	for (list<Knoten*>::iterator it = knotenListe.begin();
 			it != knotenListe.end(); it++) {
 		Knoten *knoten = *it;
@@ -65,29 +50,14 @@ void Graph::verlinkeKnoten(map<int, Knoten*> konstruktionsMap,
 		if (pLok->getNegativeOffset() != NULL) {
 			knoten->addNachfolger(konstruktionsMap[pLok->getId()]);
 		}
-		//Die Offsets des Intersection Codes eintragen
+		//Den Intersectioncode als Nachfolgereintragen
 		if (pLok->getIntersectioncode() != NULL) {
 			try {
-				if (pLok->getIntersectioncode()->getPositiveOffset() != NULL) {
 					knoten->addNachfolger(
 							konstruktionsMap.at(
-									pLok->getIntersectioncode()->getPositiveOffset()->getId()));
-				}
-			} catch (out_of_range &e) {
-				cout << "\n" << i++ << " Id: "
-						<< pLok->getIntersectioncode()->getPositiveOffset()->getId();
-				//TODO Ueberlegen, welche Auswrikung es hat, wenn hier nichts gefunden wird
-			}
-			try {
-				if (knoten->getEigenschaften()->getIntersectioncode()->getNegativeOffset() != NULL) {
-					knoten->addNachfolger(
-							konstruktionsMap.at(
-									pLok->getIntersectioncode()->getNegativeOffset()->getId()));
-				}
-			} catch (out_of_range &e) {
-				cout << "\n" << i++ << " Id: "
-						<< pLok->getIntersectioncode()->getNegativeOffset()->getId();
-				//TODO Ueberlegen, welche Auswrikung es hat, wenn hier nichts gefunden wird
+									pLok->getIntersectioncode()->getId()));
+			}catch(out_of_range &e){
+				cout<<"\nIntersectioncode nicht gefunden";
 			}
 		}
 	}

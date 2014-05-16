@@ -1,12 +1,12 @@
-21:37:04 **** Incremental Build of configuration Release for project Routenplaner ****
+08:58:51 **** Incremental Build of configuration Release for project Routenplaner ****
 make all 
-Building file: ../graph/Graph.cpp
+Building file: ../graph/Graph_OLD.cpp
 Invoking: Cross G++ Compiler
-g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"graph/Graph.d" -MT"graph/Graph.d" -o "graph/Graph.o" "../graph/Graph.cpp"
-Finished building: ../graph/Graph.cpp
+g++ -O3 -Wall -c -fmessage-length=0  -std=c++11 -MMD -MP -MF"graph/Graph_OLD.d" -MT"graph/Graph_OLD.d" -o "graph/Graph_OLD.o" "../graph/Graph_OLD.cpp"
+Finished building: ../graph/Graph_OLD.cpp
  
 Building target: Routenplaner
 Invoking: Cross G++ Linker
-g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/SuchenKlasse.o  ./graph/Graph.o ./graph/Knoten.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
+g++  -o "Routenplaner"  ./reader/FileOpener.o  ./hilfsklassen/Aktualitaet.o ./hilfsklassen/BenutzerInterface.o ./hilfsklassen/GeoKoordinate.o ./hilfsklassen/SuchenKlasse.o  ./graph/Graph.o ./graph/Graph_OLD.o ./graph/Knoten.o  ./geopunkte/Gebietslokation.o ./geopunkte/Linearlokation.o ./geopunkte/LokationsVerwaltung.o ./geopunkte/Punktlokation.o  ./exceptions/FileNotFoundException.o ./exceptions/TypProblemEcxeption.o ./exceptions/ZeitException.o  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./Hello.o   
 Finished building target: Routenplaner
  

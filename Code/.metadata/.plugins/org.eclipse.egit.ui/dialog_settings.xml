@@ -9,7 +9,6 @@
 		<item value="Christoph Drost &lt;christoph.drost@htw-saarland.de&gt;"/>
 	</list>
 	<list key="RepositorySelectionPage.UsedUris">
-		<item value="https://github.com/dkadio/tkpraktikum.git"/>
 		<item value="https://github.com/chdrost/InfoPraktikum.git"/>
 	</list>
 	<section name="GitImportWizard">
@@ -20,43 +19,22 @@
 	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
 		<item value="626" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="199" key="DIALOG_X_ORIGIN"/>
 		<item value="623" key="DIALOG_HEIGHT"/>
-		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
-	</section>
-	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
-		<item value="409" key="DIALOG_WIDTH"/>
-		<item value="224" key="DIALOG_Y_ORIGIN"/>
-		<item value="264" key="DIALOG_HEIGHT"/>
-		<item value="436" key="DIALOG_X_ORIGIN"/>
+		<item value="199" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.fetch.FetchResultDialog.dialogBounds">
 		<item value="600" key="DIALOG_WIDTH"/>
-		<item value="107" key="DIALOG_Y_ORIGIN"/>
+		<item value="59" key="DIALOG_Y_ORIGIN"/>
 		<item value="440" key="DIALOG_HEIGHT"/>
-		<item value="340" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
-	</section>
-	<section name="org.eclipse.egit.ui.internal.repository.CreateBranchPage$SourceSelectionDialog.dialogBounds">
-		<item value="525" key="DIALOG_WIDTH"/>
-		<item value="-47" key="DIALOG_Y_ORIGIN"/>
-		<item value="462" key="DIALOG_HEIGHT"/>
-		<item value="0" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
-	</section>
-	<section name="org.eclipse.egit.ui.internal.dialogs.CheckoutDialog.dialogBounds">
-		<item value="571" key="DIALOG_WIDTH"/>
-		<item value="92" key="DIALOG_Y_ORIGIN"/>
-		<item value="462" key="DIALOG_HEIGHT"/>
-		<item value="355" key="DIALOG_X_ORIGIN"/>
+		<item value="212" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
 		<item value="650" key="DIALOG_WIDTH"/>
-		<item value="59" key="DIALOG_Y_ORIGIN"/>
-		<item value="187" key="DIALOG_X_ORIGIN"/>
+		<item value="107" key="DIALOG_Y_ORIGIN"/>
 		<item value="440" key="DIALOG_HEIGHT"/>
+		<item value="315" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

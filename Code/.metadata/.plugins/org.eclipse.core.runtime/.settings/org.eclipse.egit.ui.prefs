@@ -1,3 +1,5 @@
 //BranchProjectTracker__/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/.git_cdrost=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="cdrost">\n<project>/Code/Routenplaner</project>\n</projects>
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Knoten.h</message>\n<message>an Graph weitergemacht</message>\n<message>Knoten</message>\n<message>Comm&\#x0A;</message>\n<message>Graph</message>\n</messages>
+//BranchProjectTracker__/Users/christoph/Documents/HTW/SEM6/InfoPraktikum/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="master">\n<project>/Code/Routenplaner</project>\n</projects>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\n<messages>\n<message>Kleiner Fix beim Einlesen und Comiler auf c++11 eingestellt</message>\n<message>Metadata</message>\n<message>Comm</message>\n<message>metadata</message>\n</messages>
 eclipse.preferences.version=1
+show_checkout_confirmation=always
