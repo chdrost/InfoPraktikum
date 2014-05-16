@@ -8944,3 +8944,16 @@ java.lang.UnsupportedOperationException: addMember method should be called inste
 
 !ENTRY org.eclipse.cdt.core 1 0 2014-05-15 13:10:34.381
 !MESSAGE Indexed 'Routenplaner' (15 sources, 368 headers) in 10,16 sec: 65.745 declarations; 149.832 references; 0 unresolved inclusions; 25 syntax errors; 857 unresolved names (0,40 %)
+
+!ENTRY org.eclipse.core.jobs 4 2 2014-05-16 09:22:53.375
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 21, new: 1). Location: /Users/christoph/Documents/HTW/SEM6/InfoPraktikum/Code/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1564)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1228)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1197)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1109)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
